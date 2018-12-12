@@ -1,0 +1,58 @@
+﻿
+
+<layout name="head"/>
+
+
+<div class="index_1">
+<img src="__PUBLIC__/images/logo1.jpg" width="35%">
+<input type="text" class="input1">
+<p><img src="__PUBLIC__/images/notice.png"><a href="news_text.html">最新公告最新公告最新公最新公....</a></p>
+</div>
+
+<div class="addWrap">
+	<div class="swipe" id="mySwipe">
+		<div class="swipe-wrap">
+			<div><a href="javascript:;"><img class="img-responsive" src="__PUBLIC__/images/banner1.jpg"/></a></div>
+			<div><a href="javascript:;"><img class="img-responsive" src="__PUBLIC__/images/banner1.jpg" /></a></div>
+			<div><a href="javascript:;"><img class="img-responsive" src="__PUBLIC__/images/banner1.jpg"/></a></div>
+		</div>
+	</div>
+	
+	<ul id="position">
+		<li class="cur"></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div><!--/addWrap--> 
+<script src="__PUBLIC__/js/hhSwipe.js" type="text/javascript"></script>
+<script type="text/javascript">
+var bullets = document.getElementById('position').getElementsByTagName('li');
+
+var banner = Swipe(document.getElementById('mySwipe'), {
+	auto: 4000,
+	continuous: true,
+	disableScroll:false,
+	callback: function(pos) {
+		var i = bullets.length;
+		while (i--) {
+			bullets[i].className = ' ';
+		}
+		bullets[pos].className = 'cur';
+	}
+})
+</script>
+
+	<div class="index_2">
+		<ul>
+			<volist name="data" id="vo">
+				<li><a href="/Home/Product/index/id/{$vo.id}">
+
+				<img src="__PUBLIC__/images/pic1.jpg">
+				<b>{$vo.title}</b><font>123456人付款</font>
+				</a></li>
+			</volist>
+		</ul>
+	</div>
+
+<div class="index_3"><a href="/Home/News/index"><img src="__PUBLIC__/images/pic4.jpg"></a></div>
+

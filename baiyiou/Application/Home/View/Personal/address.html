@@ -1,0 +1,32 @@
+﻿<layout name="head"/>
+
+<div class="personal_1">
+<img src="<?php echo $_SESSION['img']?> ">
+<p><?php echo $_SESSION['name']?>   <?php echo $_SESSION['sex']?><br>
+运营董事<br>
+<?php echo $_SESSION['tel']?></p>
+</div>
+	<div class="personal">
+		<ul>
+			<li><img src="__PUBLIC__/images/personal3.png">收货地址</li>
+		</ul>
+	</div>
+	<div class="address">
+		<form action="/Home/Personal/address_add" method="post">
+			<volist name="data" id="vo">
+			<dl>
+				<dt><img src="__PUBLIC__/images/contact1.png">{$vo.name} <span>{$vo.tel}</span></dt>
+
+				<dd>{$vo.address}</dd>
+
+				<input name="pass" type="checkbox" class="checkbox" id="d" value="X" checked>
+
+				<label for="d" class="checkbox">默认地址</label>
+
+				<a onclick="return confirm('确认删除吗？')" href="/Home/Personal/del/id/{$vo.id}"><img src="__PUBLIC__/images/delete.jpg" height="25">删除</a>
+
+			</dl>
+			</volist>
+			<button class="button4">添加新地址</button>	
+		</form>		
+	</div>

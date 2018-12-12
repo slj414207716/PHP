@@ -1,0 +1,36 @@
+<layout name="head"/>
+<?php
+         if(empty($_SESSION['tel']))
+         {
+            echo "<script>alert('请你登录');location.href='/Home/Login/index';</script>";
+        }       
+?>  
+<div class="personal">
+<ul>
+<a href=""><li><img src="__PUBLIC__/images/personal5.png">购物车</li></a>
+</ul>
+</div>
+
+<div class="cart1">
+<ul>
+<li>本次订单下线累计购买<span>折扣</span><span>利差</span></li>
+<li class="cur">￥59280元<span>5.5折</span><span>￥720.00</span></li>
+</ul>
+</div>
+<div class="cart2">
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+  <tr>
+    <td width="8%"><img src="__PUBLIC__/images/pic1.jpg"></td>
+    <td width="69%"><b>加厚黑板贴儿童涂鸦办公可擦写环保绿白板自粘墙纸膜</b><br>
+    <font>【加厚黑色】120*1.5米 【加厚绿色】120*2米 【加厚绿色】120*2米 【加厚白色】120*2米 【定制专拍】</font>
+    </td>
+    <td width="6%">12个</td>
+    <td width="5%" align="center"><a href="#">-</a><br><input class="input3" type="text" value="1" min="0" ><br><a href="#">+</a></td>
+    <td width="7%">240元</td>
+    <td width="4%" ><a href="#">删除</a></td>
+  </tr>
+</table>
+<span>合计：<b>￥557.00</b></span>
+
+</div>
+<button class="button3">结算</button>

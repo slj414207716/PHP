@@ -1,0 +1,61 @@
+<layout name="head"/>
+
+<div class="classify1">
+<input type="text" class="input2"><input type="image" src="__PUBLIC__/images/search.png">
+</div>
+
+   <div class="tab">
+		<div class="classify2">
+			<ul class="tabs" id="tabs">
+				<volist name="data" id="vo">
+					<li class="selected"><a href="{$vo.id}">{$vo.name}</a></li>
+				</volist>
+			</ul>
+			<!-- <ul>
+				<li class="selected">产品属性</li>
+				<li>产品尺码表</li>
+				<li>产品介绍</li>
+			</ul> -->
+		</div>
+		<div class="index_2">
+			<ul class="tab_conbox" id="tab_conbox">
+				<volist name="adata" id="vi">
+					
+						<li class="hide">
+							<a href="/Home/Product/index/id/{$vi.id}">
+							<img src="__PUBLIC__/images/pic1.jpg">
+							<b>{$vi.title}</b><font>123456人付款</font>
+							</a>
+						</li>
+					
+				</volist>
+				<!-- <li><a href="#">
+					<img src="__PUBLIC__/images/pic3.jpg">
+				<b>儿童涂鸦教学培训黑板绿板白板墙贴纸</b><font>123456人付款</font>
+				</a>
+				</li> -->
+			</ul>
+
+			<!-- <ul>
+				<li>
+					产品属性产品属性产品属性产品属性产品属性产品属性产品属性产品属性产品属性产品属性产品属性产品属性</li>
+				<li class="hide">产品尺码表</li>
+				<li class="hide">产品介绍</li>
+			</ul> -->
+		</div>
+	</div>
+<script src="__PUBLIC__/js/jquery-1.9.0.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function(){
+	//选项卡功能
+	var $li=$('div.classify2 ul li');
+	$li.click(function(){
+		$(this).addClass('selected')
+		.siblings().removeClass('selected');
+		var $index=$li.index(this);//索引当前的值
+		$('div.index_2 ul li').eq($index).show()
+		.siblings().hide();
+	});
+});
+</script>
+

@@ -1,0 +1,36 @@
+
+<layout name="head"/>
+<?php
+         if(empty($_SESSION['tel']))
+         {
+            echo "<script>alert('请你登录');location.href='/Home/Login/index';</script>";
+        }       
+?>  
+<div class="personal_1">
+<img src="<?php echo $_SESSION['img']?> ">
+<p><?php echo $_SESSION['name']?>   <?php echo $_SESSION['sex']?><br>
+运营董事<br>
+<?php echo $_SESSION['tel'] ?></p>
+</div>
+
+<div class="personal">
+<ul>
+<a href="information"><li><span><img src="__PUBLIC__/images/vip_right.png"></span><img src="__PUBLIC__/images/personal1.png">个人信息</li></a>
+<a href="agent"><li><span><img src="__PUBLIC__/images/vip_right.png"></span><img src="__PUBLIC__/images/personal2.png">代理报备</li></a>
+
+<a href="ercode/tel/<?php echo $_SESSION['tel'] ?>">
+	<li>
+		<span><img src="__PUBLIC__/images/vip_right.png"></span>
+		<img src="__PUBLIC__/images/personal2.png">二维码推广
+	</li>
+</a>
+
+<a href="address"><li><span><img src="__PUBLIC__/images/vip_right.png"></span><img src="__PUBLIC__/images/personal3.png">收货地址</li></a>
+<a href="Password"><li><span><img src="__PUBLIC__/images/vip_right.png"></span><img src="__PUBLIC__/images/personal4.png">修改密码</li></a>
+<a href="mail"><li><span><img src="__PUBLIC__/images/vip_right.png"></span><img src="__PUBLIC__/images/personal5.png">站内消息（4）</li></a>
+<a href="message"><li><span><img src="__PUBLIC__/images/vip_right.png"></span><img src="__PUBLIC__/images/personal6.png">我的留言</li></a>
+<a href="contact"><li><span><img src="__PUBLIC__/images/vip_right.png"></span><img src="__PUBLIC__/images/personal7.png">联系我们</li></a>
+<a href="loginout"><li><span><img src="__PUBLIC__/images/vip_right.png"></span><img src="__PUBLIC__/images/personal7.png">退出登录</li></a>
+</ul>
+
+</div>

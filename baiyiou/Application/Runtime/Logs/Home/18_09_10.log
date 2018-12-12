@@ -1,0 +1,491 @@
+[ 2018-09-10T08:18:24+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.042003s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.042003s ]
+SQL: SHOW COLUMNS FROM `cp_ify` [ RunTime:0.0390s ]
+SQL: SELECT * FROM `cp_ify`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.064003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.064003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.007001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-09-10T08:21:14+08:00 ] ::1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `cp_ify` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `cp_ify`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-09-10T08:25:13+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cp_ify` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `cp_ify`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-10T08:33:24+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cp_ify` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `cp_ify`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-10T08:33:30+08:00 ] ::1 /Home/Product/index/id/6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cp_fruit` [ RunTime:0.0330s ]
+SQL: SELECT * FROM `cp_fruit`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cp_orders` [ RunTime:0.0260s ]
+SQL: SELECT * FROM `cp_orders`  [ RunTime:0.0170s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: strPice D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 22 行.
+NOTIC: [8] Undefined variable: ids D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 22 行.
+NOTIC: [8] Undefined variable: spattr D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 25 行.
+NOTIC: [8] Undefined variable: strPice D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 25 行.
+NOTIC: [8] Undefined index: tel D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 46 行.
+NOTIC: [8] Undefined offset: 0 D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 48 行.
+NOTIC: [8] Undefined index: tel D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 46 行.
+NOTIC: [8] Undefined offset: 0 D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 48 行.
+NOTIC: [8] Undefined index: tel D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 46 行.
+NOTIC: [8] Undefined offset: 0 D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 48 行.
+NOTIC: [8] Undefined index: tel D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 46 行.
+NOTIC: [8] Undefined offset: 0 D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 48 行.
+NOTIC: [8] Undefined index: tel D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 46 行.
+NOTIC: [8] Undefined offset: 0 D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 48 行.
+NOTIC: [8] Undefined index: tel D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 46 行.
+NOTIC: [8] Undefined offset: 0 D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 48 行.
+NOTIC: [8] Undefined index: tel D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 46 行.
+NOTIC: [8] Undefined offset: 0 D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 48 行.
+NOTIC: [8] Undefined index: kc D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 54 行.
+NOTIC: [8] Undefined index: title D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 98 行.
+NOTIC: [8] Undefined index: price D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 99 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: price D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 125 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 125 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.042002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-10T08:34:27+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cp_ify` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `cp_ify`  [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-10T08:34:30+08:00 ] ::1 /Home/Product/index/id/6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cp_fruit` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `cp_fruit`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cp_orders` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `cp_orders`  [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: strPice D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 22 行.
+NOTIC: [8] Undefined variable: ids D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 22 行.
+NOTIC: [8] Undefined variable: spattr D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 25 行.
+NOTIC: [8] Undefined variable: strPice D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 25 行.
+NOTIC: [8] Undefined index: tel D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 46 行.
+NOTIC: [8] Undefined offset: 0 D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 48 行.
+NOTIC: [8] Undefined index: tel D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 46 行.
+NOTIC: [8] Undefined offset: 0 D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 48 行.
+NOTIC: [8] Undefined index: tel D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 46 行.
+NOTIC: [8] Undefined offset: 0 D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 48 行.
+NOTIC: [8] Undefined index: tel D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 46 行.
+NOTIC: [8] Undefined offset: 0 D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 48 行.
+NOTIC: [8] Undefined index: tel D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 46 行.
+NOTIC: [8] Undefined offset: 0 D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 48 行.
+NOTIC: [8] Undefined index: tel D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 46 行.
+NOTIC: [8] Undefined offset: 0 D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 48 行.
+NOTIC: [8] Undefined index: tel D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 46 行.
+NOTIC: [8] Undefined offset: 0 D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 48 行.
+NOTIC: [8] Undefined index: kc D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 54 行.
+NOTIC: [8] Undefined index: title D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 98 行.
+NOTIC: [8] Undefined index: price D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 99 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: price D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 125 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 125 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-10T08:34:31+08:00 ] ::1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cp_ify` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `cp_ify`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-09-10T08:35:51+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cp_ify` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `cp_ify`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-09-10T08:35:53+08:00 ] ::1 /Home/Product/index/id/6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `cp_fruit` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `cp_fruit`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cp_orders` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `cp_orders`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: strPice D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 22 行.
+NOTIC: [8] Undefined variable: ids D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 22 行.
+NOTIC: [8] Undefined variable: spattr D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 25 行.
+NOTIC: [8] Undefined variable: strPice D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 25 行.
+NOTIC: [8] Undefined index: tel D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 46 行.
+NOTIC: [8] Undefined offset: 0 D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 48 行.
+NOTIC: [8] Undefined index: tel D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 46 行.
+NOTIC: [8] Undefined offset: 0 D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 48 行.
+NOTIC: [8] Undefined index: tel D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 46 行.
+NOTIC: [8] Undefined offset: 0 D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 48 行.
+NOTIC: [8] Undefined index: tel D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 46 行.
+NOTIC: [8] Undefined offset: 0 D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 48 行.
+NOTIC: [8] Undefined index: tel D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 46 行.
+NOTIC: [8] Undefined offset: 0 D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 48 行.
+NOTIC: [8] Undefined index: tel D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 46 行.
+NOTIC: [8] Undefined offset: 0 D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 48 行.
+NOTIC: [8] Undefined index: tel D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 46 行.
+NOTIC: [8] Undefined offset: 0 D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 48 行.
+NOTIC: [8] Undefined index: kc D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 54 行.
+NOTIC: [8] Undefined index: title D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 98 行.
+NOTIC: [8] Undefined index: price D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 99 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: type D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 105 行.
+NOTIC: [8] Undefined index: price D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 125 行.
+NOTIC: [8] Undefined index: id D:\phpstudy2018\PHPTutorial\WWW\Application\Runtime\Cache\Home\3458861da0342b1f9413030055ee3fb6.php 第 125 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-09-10T08:47:00+08:00 ] ::1 /bai/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cp_ify` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `cp_ify`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
