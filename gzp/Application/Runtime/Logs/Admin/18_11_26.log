@@ -1,0 +1,30 @@
+[ 2018-11-26T17:25:26+08:00 ] 127.0.0.1 /index.php/Admin/news/jour/sid/1
+ERR: 非法操作:jour
+
+[ 2018-11-26T17:25:29+08:00 ] 127.0.0.1 /index.php/Admin/news/jour/sid/1
+ERR: 非法操作:jour
+
+[ 2018-11-26T17:25:37+08:00 ] 127.0.0.1 /index.php/Admin/news/jour/sid/2
+ERR: 非法操作:jour
+
+[ 2018-11-26T17:27:38+08:00 ] 127.0.0.1 /index.php/Admin/news/jour/sid/2
+ERR: 非法操作:jour
+
+[ 2018-11-26T17:27:45+08:00 ] 127.0.0.1 /index.php/Admin/news/jour/sid/1
+ERR: 非法操作:jour
+
+[ 2018-11-26T17:29:44+08:00 ] 127.0.0.1 /index.php/Admin/news/jour/sid/1
+ERR: 非法操作:jour
+
+[ 2018-11-26T17:31:05+08:00 ] 127.0.0.1 /index.php/Admin/News/jour/sid/1
+ERR: 非法操作:jour
+
+[ 2018-11-26T17:31:36+08:00 ] 127.0.0.1 /index.php/Admin/News/sid/1
+ERR: 非法操作:sid
+
+[ 2018-11-26T17:31:48+08:00 ] 127.0.0.1 /index.php/Admin/News
+ERR: 非法操作:index
+
+[ 2018-11-26T17:32:22+08:00 ] 127.0.0.1 /index.php/Admin/news/jour/sid/1
+ERR: 非法操作:jour
+

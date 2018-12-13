@@ -1,0 +1,287 @@
+<extend name="Layout/sub"/>
+<block name="nav">城市管理 / 环卫扫保</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/Home/Static/css/style2.css"/>
+
+<div id="outer">
+	<include file="Layout/left_city"/>
+	<div id="content">
+		<ul style="display:block;">
+			<div class="aqsc">
+				<h3>环卫扫保</h3>
+				<div class="div">
+
+					<!--{/*
+					<div class="map_area">
+						<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="fill:#255BA0;stroke:#DDD;stroke-width:1" viewBox="0, 0, 960, 510">
+							<polygon title="鞍子山村" id="3" points="234,110 120,95 92,87 74,87 58,104 55,120 56,146 50,153 49,159 53,164 49,171 44,172 20,223 33,240 32,248, 33,253 31,260 33,266 47,274 71,279 99,304 115,327 125,328 134,334 144,329 153,336 157,330 185,308 200,307 207,298 202,290 210,284 216,266 232,267 236,275 244,274 241,260 255,245 257,240 267,232 273,220 269,215 260,228 251,226 223,232 215,221 219,212 230,210 238,198 226,169 235,147"/>
+							<polygon title="夏家河子村" id="6" points="235,110 285,118 317,118 345,118 403,111 493,88 498,100 497,114 491,122 489,130 493,133 494,141 498,144 500,164 513,182 511,198 501,210 497,206 491,205 488,209 484,208 482,216 478,219 468,220 465,215 468,206 475,200 470,195 463,197 451,188 441,190 427,189 413,214 407,210 401,213 399,219 388,225 377,220 366,223 366,232 359,236 354,234 344,238 337,234 326,246 318,250 319,267 322,269 326,292 305,297 304,308 296,310 292,317 296,325 268,317 267,305 258,315 251,315 249,324 242,319 238,319 231,307 220,317 214,328 208,341 200,329 192,334 185,334 187,344 158,330 185,309 200,308 208,298 203,290 211,284 216,267 232,268 236,276 245,275 242,260 256,245 258,240 268,232 274,220 269,214 260,227 251,225 223,231 216,221 219,213 230,211 239,198 227,169 236,147"/>
+							<polygon title="中革村" id="2" points="283,347 287,351 290,348 307,359 315,358 310,368 328,378 331,370 349,378 343,394 358,399 357,411 388,403 381,421 390,433 389,445 398,446 397,454 391,452 385,460 367,463 364,478 378,480 387,480 393,474 402,477 413,475 424,484 437,488 452,486 455,481 487,481 491,484 498,476 500,468 507,458 514,463 520,459 527,471 544,471 550,463 552,451 559,446 558,437 535,435 519,417 517,413 515,407 519,401 511,389 502,386 502,379 498,372 498,365 480,351 462,360 445,345 448,342 441,331 422,332 413,329 424,310 417,296 415,291 407,290 405,283 392,276 392,272 380,273 370,269 371,263 378,264 383,262 384,238 373,226 376,221 367,223 367,232 359,237 354,235 344,239 337,235 327,246 319,250 320,267 323,269 327,292 306,297 305,308 297,310 293,317 298,328 288,335"/>
+							<polygon title="后革村" id="1" points="535,434 519,416 516,407 520,401 511,388 503,386 503,379 499,372 499,365 480,350 462,359 446,345 449,342 441,330 422,331 414,329 425,310 415,290 407,289 405,282 393,276 393,271 380,272 371,269 371,264 378,265 384,262 385,238 374,226 377,221 388,226 399,220 402,213 407,211 413,215 427,190 441,191 451,189 459,195 463,198 470,196 474,200 467,206 464,215 468,221 477,220 481,217 488,222 489,229 494,233 495,248 514,253 514,262 525,266 531,261 560,263 560,280 567,280 586,271 596,271 613,281 608,291 611,297 629,307 624,320 612,322 610,328 606,328 599,330 596,337 589,337 587,332 569,347 582,360 585,357 589,358 588,362 596,362 599,353 616,351 620,356 628,356 625,361 605,364 600,380 595,381 589,376 583,386 558,436"/>
+							<polygon title="羊圈子村" id="4" points="494,88 498,83 502,82 508,76 514,77 521,67 528,68 535,63 553,63 568,68 580,68 603,65 614,60 628,60 633,68 629,93 637,102 639,115 631,116 627,123 609,134 623,148 617,167 620,171 618,173 613,173 612,176 619,184 619,192 626,195 620,227 606,232 561,262 545,261 531,260 525,265 515,262 515,253 496,248 495,233 490,229 489,222 482,217 484,209 488,210 491,206 497,207 501,211 512,198 514,182 501,164 499,144 495,141 494,133 490,130 491,123 498,114 499,100"/>
+							<polygon title="棋盘村" id="5" points="646,71 662,71 664,68 671,67 677,70 680,74 689,74 694,77 696,73 695,70 694,62 698,61 701,66 700,77 702,81 699,85 705,90 727,80 746,70 770,54 797,35 807,22 814,20 816,30 808,31 807,40 813,44 827,42 831,46 826,78 820,92 825,99 850,94 875,88 896,83 925,70 929,72 929,82 919,81 918,86 914,91 920,99 935,103 937,110 916,148 904,166 898,173 896,184 908,196 914,198 915,204 905,205 889,202 873,201 870,211 862,215 852,215 839,207 839,220 837,224 835,242 829,245 823,252 833,262 824,263 816,268 801,264 795,265 789,282 783,285 783,295 778,297 775,293 768,293 763,297 758,295 763,283 753,282 749,278 740,287 733,288 731,291 737,296 743,295 745,304 740,307 727,298 724,296 725,310 715,306 707,300 696,295 693,301 687,301 683,291 686,285 685,277 681,276 669,290 663,291 654,284 650,287 642,289 629,306 612,297 609,291 614,281 601,273 595,270 586,270 567,279 561,279 561,263 606,233 621,228 627,195 620,191 620,184 613,176 614,174 619,174 621,171 618,167 624,148 610,134 628,123 631,117 640,116 638,102 630,93 640,77"/>
+						</svg>
+					</div>
+					*/}-->
+
+					<!--主干路图标-->
+					<div class="part-row">
+						<div class="part-left">
+							<div id="main" style="width:100%;height: 300px;"></div>
+						</div>
+						<div class="part-right">
+							<table style="height: 250px;margin: 0px" border=1 class="sys_table">
+								<tr>
+									<th width="10%">序列</th>
+									<th>名称</th>
+									<th>面积</th>
+								</tr>
+								<volist name="zhugandata" id="vo">
+									<tr>
+										<td align="center">{$i}</td>
+										<td align="center">{$vo['name']}</td>
+										<td align="center">{$vo['area']}平方米</td>
+									</tr>
+								</volist>
+							</table>
+						</div>
+					</div>
+					<!--果皮箱、垃圾箱、垃圾槽数量-->
+					<div class="part-row">
+						<div class="part-left">
+							<div id="main1" style="width:100%;height: 300px;"></div>
+						</div>
+						<div class="part-right">
+							<table style="height: 250px;margin: 0px" border=1 class="sys_table">
+								<tr>
+									<th width="10%">序列</th>
+									<th>名称</th>
+									<th>数量</th>
+								</tr>
+								<volist name="shuliangdata" id="vo">
+									<tr>
+										<td align="center">{$i}</td>
+										<td align="center">{$vo['name']}</td>
+										<td align="center">{$vo['count']}个</td>
+									</tr>
+								</volist>
+							</table>
+						</div>
+					</div>
+					<!--街道环卫车辆-->
+					<div class="part-row">
+						<div class="part-left">
+							<div id="main2" style="width:100%;height: 300px;"></div>
+						</div>
+						<div class="part-right">
+							<table style="height: 250px;margin: 0px" border=1 class="sys_table">
+								<tr>
+									<th width="10%">序列</th>
+									<th>名称</th>
+									<th>数量</th>
+								</tr>
+								<volist name="cardata" id="vo">
+									<tr>
+										<td align="center">{$i}</td>
+										<td align="center">{$vo['name']}</td>
+										<td align="center">{$vo['count']}辆</td>
+									</tr>
+								</volist>
+							</table>
+						</div>
+					</div>
+					<!--环卫人员-->
+					<div class="part-row">
+						<div class="part-left">
+							<div id="main3" style="width:100%;height: 300px;"></div>
+						</div>
+						<div class="part-right">
+							<table style="height: 250px;margin: 0px" border=1 class="sys_table">
+								<tr>
+									<th width="10%">序列</th>
+									<th>名称</th>
+									<th>数量</th>
+								</tr>
+								<volist name="renyuandata" id="vo">
+									<tr>
+										<td align="center">{$i}</td>
+										<td align="center">{$vo['name']}</td>
+										<td align="center">{$vo['count']}人</td>
+									</tr>
+								</volist>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ul>
+	</div>
+</div>
+
+<!--{/*
+<script type="text/javascript">
+    $(document).ready(
+        function () {
+			// 监听svg子元素的点击
+            $('polygon').click
+            (
+                function () {
+                    // 获取区域ID
+                    var area_id = $(this).attr('id');
+                    if (area_id == 3) { //鞍子山
+                        // 跳转
+                        window.location.href = "<?php echo U('anzishan') ?>";
+                    }
+                    if (area_id == 6) { //夏家河子村
+                        // 跳转
+                        window.location.href = "<?php echo U('xiajiahezi') ?>";
+                    }
+                    if (area_id == 1) { //后革村
+                        // 跳转
+                        window.location.href = "<?php echo U('hougecun') ?>";
+                    }
+                    if (area_id == 2) { //中革村
+                        // 跳转
+                        window.location.href = "<?php echo U('zhonggecun') ?>";
+                    }
+                    if (area_id == 4) { //羊圈子
+                        // 跳转
+                        window.location.href = "<?php echo U('yangquanzi') ?>";
+                    }
+                    if (area_id == 5) { //棋盘子
+                        // 跳转
+                        window.location.href = "<?php echo U('qipanzi') ?>";
+                    }
+                }
+            );
+        }
+    );
+</script>
+*/}-->
+
+<script>
+    var country_data     = '{$country_data_json}';
+    var listen_list_json = '{$listen_list_json}';
+
+    // 基于准备好的dom，初始化echarts实例
+    var myChart  = echarts.init(document.getElementById('main'), 'shine');
+    var myChart1 = echarts.init(document.getElementById('main1'), 'shine');
+    var myChart2 = echarts.init(document.getElementById('main2'), 'shine');
+    var myChart3 = echarts.init(document.getElementById('main3'), 'shine');
+
+    // 指定图表的配置项和数据
+    option  = {
+        title: {
+            text: '扫保面积'
+        },
+        tooltip: {},
+        xAxis: {
+            data: ["张前路", "滨海路", "羊革路", "北羊路", "中航华府北侧"],
+            axisLine: {
+                lineStyle: {
+                    color: '#fff'
+                }
+            }
+        },
+        yAxis: {
+			axisLine: {
+				lineStyle: {
+					color: '#fff'
+				}
+			}
+        },
+        series: [{
+            name: '平方米',
+            type: 'bar',
+            barWidth: 30,//柱图宽度
+            data: [151667.2, 417890.56, 87424.12, 42516.25, 34157.2]
+        }]
+    };
+    option1 = {
+        title: {
+            text: '道具数量'
+        },
+        tooltip: {},
+        xAxis: {
+            data: ["果皮箱", "垃圾箱", "垃圾槽"],
+            axisLine: {
+                lineStyle: {
+                    color: '#fff'
+                }
+            }
+        },
+        yAxis: {
+            axisLine: {
+                lineStyle: {
+                    color: '#fff'
+                }
+            }
+        },
+        series: [{
+            name: '数量(个)',
+            type: 'bar',
+            barWidth: 30,//柱图宽度
+            data: [24, 33, 248]
+        }]
+    };
+    option2 = {
+        title: {
+            text: '车辆数量'
+        },
+        tooltip: {},
+        xAxis: {
+            data: ["垃圾收集车辆", "洗扫车", "清洗车", "区间收集车辆", "扫路机", "城肥专用车", "其他车辆"],
+            axisLine: {
+                lineStyle: {
+                    color: '#fff'
+                }
+            }
+        },
+        yAxis: {
+            axisLine: {
+                lineStyle: {
+                    color: '#fff'
+                }
+            }
+		},
+        series: [{
+            name: '数量(辆)',
+            type: 'bar',
+            barWidth: 30,//柱图宽度
+            data: [23, 1, 1, 14, 1, 1, 31]
+        }]
+    };
+    option3 = {
+        title: {
+            text: '人数'
+        },
+        tooltip: {},
+        xAxis: {
+            data: ["棋盘村", "羊圈子村", "后革村", "中革村", "夏家河子村", "鞍子山村", "渤海居民委", "斌海清洁公司"],
+            axisLine: {
+                lineStyle: {
+                    color: '#fff'
+                }
+            }
+        },
+        yAxis: {
+            axisLine: {
+                lineStyle: {
+                    color: '#fff'
+                }
+            }
+		},
+        series: [{
+            name: '数量(个)',
+            type: 'bar',
+            barWidth: 30,//柱图宽度
+            data: [30, 19, 27, 10, 11, 8, 1, 53]
+        }]
+    };
+    myChart.setOption(option);
+    myChart1.setOption(option1);
+    myChart2.setOption(option2);
+    myChart3.setOption(option3);
+</script>
+
+</block>

@@ -1,0 +1,27 @@
+<extend name="Layout/base"/>
+<block name="main">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">行业分类管理</h1>
+        </div>
+    </div>
+
+    <form action="hyfl_add" method="post">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">行业分类名称</label>
+                    <div class="col-sm-10">
+                        <input name="name" type="text">
+                        <i>*</i>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button type="submit" class="btn btn-primary">提交</button>
+                <button type="button" class="btn btn-default btn-back">返回</button>
+            </div>
+        </div>
+    </form>
+</block>

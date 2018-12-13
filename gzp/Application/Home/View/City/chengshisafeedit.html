@@ -1,0 +1,40 @@
+<extend name="Layout/sub"/>
+<block name="nav">城市管理 / 安全上报</block>
+<block name="main">
+    <link rel="stylesheet" href="/Public/Home/Static/css/style2.css"/>
+
+    <div id="outer">
+        <include file="Layout/left_city"/>
+        <div id="content">
+            <ul style="display:block;">
+                <div class="aqsc">
+                    <h3>安全上报</h3>
+                    <div class="div">
+                        <form action="__SELF__" method="post">
+                            <ul class="form">
+                                <li>
+                                    <div class="label">标题：</div>
+                                    <div class="value"><input name="title" type="text" value="{$data.title}"/></div>
+                                </li>
+                                <li>
+                                    <div class="label">内容：</div>
+                                    <div class="value"><textarea name="content" id="ue_content">{$data.content}</textarea></div>
+                                </li>
+                                </li>
+                                <li>
+                                    <div class="label">
+                                        <input type="submit" value="提交"/>
+                                    </div>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <include file="Layout/include_ueditor" id="ue_content" />
+
+</block>

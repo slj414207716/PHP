@@ -1,0 +1,73 @@
+<extend name="Layout/sub" />
+<block name="nav">民生保障 / 少数民族统计</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.css" />
+<style>
+.data h3{margin: 0px 0px 20px 0px};
+</style>
+<script type="text/javascript" src="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.js"></script>
+<script type="text/javascript">
+    var key = '';
+    key = '<?php echo $key; ?>';
+    var value = '';
+    value = '<?php echo $value; ?>';
+
+</script>
+<div id="outer">
+<include file="Layout/left_people"/>
+    <div id="content">
+        	<div class="data">
+        		<H3 style="color: #fff;">各少数民族数据</H3>
+        		<div id="canji1" style="width: 100%; height: 100%; margin: auto;"></div>
+        	</div>
+       		<div class="data">
+       			<H3 style="color: #fff;">各村少数民族总人数</H3>
+       			<div id="canji2" style="width: 100%; height: 100%; margin: auto;"></div>
+       		</div>
+            <ul style="display:block;">
+            <div class="aqsc">
+                <h3>少数民族统计</h3>
+                <div class="div"> 
+        	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<th scope="col">单位</th>
+					<th scope="col">满族</th>
+                    <th scope="col">壮族</th>
+                    <th scope="col">蒙古</th>
+                    <th scope="col">回族</th>
+                    <th scope="col">朝鲜族</th>
+                    <th scope="col">锡伯族</th>
+                    <th scope="col">达翰尔</th>
+                    <th scope="col">合计</th>
+				</tr>
+				<volist name="data" id="v">
+				<tr>
+					<td>{$v.name}</td>
+					<td>{$v.man}</td>
+                    <td>{$v.zhuang}</td>
+                    <td>{$v.meng}</td>
+                    <td>{$v.hui}</td>
+                    <td>{$v.chaoxian}</td>
+                    <td>{$v.xibo}</td>
+                    <td>{$v.dhe}</td>
+                    <td></td>
+				</tr>
+				</volist>
+                <tr>
+                    <th scope="col">合计</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+			</table>
+        </div>
+    </div>
+</ul>
+    </div>
+</div>
+</block>	

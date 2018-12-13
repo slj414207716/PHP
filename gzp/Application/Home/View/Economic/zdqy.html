@@ -1,0 +1,61 @@
+<extend name="Layout/base" />
+<block name="main">
+	
+<link rel="stylesheet" href="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.css" />
+<script type="text/javascript" src="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.js"></script>
+
+<style type="text/css">
+	#content input{
+		width: auto;height: auto;margin: 30px 10px 0px 0px;
+	}
+	#content table{
+		width: 100%;
+		margin-top:20px;
+	}
+</style>
+
+<div id="outer">
+    <div id="content">
+    	<!-- 地区生产总值 -->
+        <ul style="display:block">
+        	<h2>基本指标贡献排名</h2>
+        	<div>
+				<input type="radio" name="zb" value="dqsc" <if condition="($Think.get.key eq 'dqsc') or ($Think.get.key eq '')">checked="checked"</if> onclick="window.location.href='{$Think.const.HOST_NAME}/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/zdqy/key/dqsc'" />地区生产总值
+				<input type="radio" name="zb" value="czsr" <if condition="$Think.get.key eq 'czsr'">checked="checked"</if> onclick="window.location.href='{$Think.const.HOST_NAME}/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/zdqy/key/czsr'" />财政收入
+				<input type="radio" name="zb" value="gsgy" <if condition="$Think.get.key eq 'gsgy'">checked="checked"</if> onclick="window.location.href='{$Think.const.HOST_NAME}/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/zdqy/key/gsgy'" />规上工业总产值
+				<input type="radio" name="zb" value="gdzc" <if condition="$Think.get.key eq 'gdzc'">checked="checked"</if> onclick="window.location.href='{$Think.const.HOST_NAME}/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/zdqy/key/gdzc'" />固定资产投资
+				<input type="radio" name="zb" value="shxf" <if condition="$Think.get.key eq 'shxf'">checked="checked"</if> onclick="window.location.href='{$Think.const.HOST_NAME}/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/zdqy/key/shxf'" />社会消费品零售额
+				<input type="radio" name="zb" value="synz" <if condition="$Think.get.key eq 'synz'">checked="checked"</if> onclick="window.location.href='{$Think.const.HOST_NAME}/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/zdqy/key/synz'" />使用内资
+				<input type="radio" name="zb" value="yjwz" <if condition="$Think.get.key eq 'yjwz'">checked="checked"</if> onclick="window.location.href='{$Think.const.HOST_NAME}/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/zdqy/key/yjwz'" />引进外资
+        	</div>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<th scope="col">序号</th>
+					<th scope="col">企业名称</th>
+					<th scope="col">地区生产总值（万元）</th>
+					<th scope="col">财政收入（万元）</th>
+					<th scope="col">规上工业总产值（万元）</th>
+					<th scope="col">固定资产投资（万元）</th>
+					<th scope="col">社会消费品零售额（万元）</th>
+					<th scope="col">使用内资（万元）</th>
+					<th scope="col">引进外资（万元）</th>
+				</tr>
+				<volist name="zdqyData" id="v">
+					<tr>
+						<td>{$i}</td>
+						<td>{$v.name}</td>
+						<td>{$v.dqsc}</td>
+						<td>{$v.czsr}</td>
+						<td>{$v.gsgy}</td>
+						<td>{$v.gdzc}</td>
+						<td>{$v.shxf}</td>
+						<td>{$v.synz}</td>
+						<td>{$v.yjwz}</td>
+					</tr>
+				</volist>
+			</table>
+        </ul>
+    </div>
+</div>
+
+</block>	

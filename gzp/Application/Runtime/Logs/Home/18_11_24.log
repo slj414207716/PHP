@@ -1,0 +1,12 @@
+[ 2018-11-24T16:38:43+08:00 ] 127.0.0.1 /index.php/Home/People/jygzxx/sid/18
+ERR: 非法操作:jygzxx
+
+[ 2018-11-24T16:46:58+08:00 ] 127.0.0.1 /index.php/Home/whty/religion/sid/17
+ERR: 无法加载控制器:Whty
+
+[ 2018-11-24T16:50:30+08:00 ] 127.0.0.1 /index.php/Home/people/canji/sid/5
+ERR: 非法操作:canji
+
+[ 2018-11-24T16:50:36+08:00 ] 127.0.0.1 /index.php/Home/sports/religion/sid/17
+ERR: 非法操作:religion
+

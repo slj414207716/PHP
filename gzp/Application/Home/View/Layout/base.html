@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+<title>革镇堡街道挂图作战系统</title>
+<link href="/Public/Home/Static/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+<link href="/Public/Home/Static/css/style.css" type="text/css" rel="stylesheet">
+<link href="/Public/Home/Static/css/style1440.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="/Public/Common/Js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="/Public/Common/echars/echarts.min.js"></script>
+<script type="text/javascript" src="/Public/Common/echars/shine.js"></script>
+</head>
+<body>
+
+<h1 class="masked">
+	<a href="#" onclick="javascript:history.back(-1);">
+	<i class="fa fa-arrow-circle-left"></i></a>
+	<img src="/Public/Home/Static/images/logo.png">
+</h1>
+
+<block name="main"></block>
+<?php
+	$columnModel = M('H_column');
+	$data = $columnModel->order("sort ASC")->select();
+?>
+<div class="text">
+	<a>导航<br>v</a>
+	<div class="win">
+        <ul>
+			<volist name="data" id="v">
+			<li>
+				<!-- 栏目警报 -->
+				<img src="/Public/Home/Static/images/timg.gif" class="jb">
+				<!-- 导航 -->
+				<a href="{$Think.const.HOST_NAME}/{$v.module}/{$v.controller}/{$v.action}">
+					<img width="80" src="{$v.logo}" >
+					{$v.name}
+				</a>
+			</li>
+			</volist>
+        </ul>
+	</div>
+</div>
+</body>
+</html>

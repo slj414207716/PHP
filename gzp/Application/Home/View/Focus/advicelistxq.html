@@ -1,0 +1,22 @@
+<extend name="Layout/sub"/>
+<block name="nav">重点督办 / 部门建议</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/Home/Static/css/style2.css"/>
+
+<div id="outer">
+	<include file="Layout/left_focus"/>
+	<div id="content">
+		<ul style="display:block;">
+			<div class="aqsc">
+				<h3>部门建议</h3>
+
+				<div class="div">
+					<?php echo htmlspecialchars_decode($data) ?>
+				</div>
+
+			</div>
+		</ul>
+	</div>
+</div>
+
+</block>

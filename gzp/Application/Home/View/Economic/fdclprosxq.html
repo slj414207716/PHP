@@ -1,0 +1,21 @@
+<extend name="Layout/base" />
+<block name="main">
+	
+<link rel="stylesheet" href="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.css" />
+<script type="text/javascript" src="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.js"></script>
+<style type="text/css">
+	#content td img{width:auto}
+</style>
+
+
+<div class="warpp">
+	<div class="main">
+	<h2>进展详情</h2>
+		<p>完成情况&nbsp;:&nbsp;{$fdclprosData.completion}%</p>
+		<p>计划任务&nbsp;:&nbsp;{$fdclprosData.plan}</p>
+		<p>存在问题&nbsp;:&nbsp;</p>
+		{$fdclprosData.problem|htmlspecialchars_decode}
+	</div>
+</div>
+
+</block>	

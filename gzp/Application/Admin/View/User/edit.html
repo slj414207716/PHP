@@ -1,0 +1,114 @@
+<extend name="Layout/base" />
+<block name="main">
+
+<script>
+    $(function () {
+        function username() {
+            var reg = /^[A-Za-z]\w+$/; //正则表达式 必须以字母开头的账号
+            if ($("#username").val().search(reg) == -1) {
+                $("#username").next().html("必须以字母开头，可以包含数字、字母、下划线");
+                return false;
+            } else {
+                $("#username").next().html("账号格式正确");
+                return true;
+            }
+            return true;
+        }
+        $("#username").blur(username);
+        function password() {
+            if($("#password").val()){
+                var reg = /^\d{6,9}$/; //正则表达式 必须以数字开头和结尾  6-9位
+                if ($("#password").val().search(reg) == -1) {
+                    $("#password").next().html("必须为6-9位数字");
+                    return false;
+                } else {
+                    $("#password").next().html("密码格式正确");
+                    return true;
+                }
+                return true;
+            }else{
+                return true;
+            }
+        }
+        $("#password").blur(password);
+        function repassword() {
+            var reg = /^\d{6,9}$/;
+            if ($("#repassword").val().search(reg) == -1) {
+                $("#repassword").next().html("必须为6-9位数字");
+                return false;
+            } else {
+                if ($("#password").val() !== $("#repassword").val()) {
+                    $("#repassword").next().html("两次输入的密码不相同");
+                    return false;
+                } else {
+                    $("#repassword").next().html("密码确认成功");
+                    return true;
+                }
+            }
+            return true;
+        }
+        $("#repassword").blur(repassword);
+        function tijiao() {
+            if (!(username() && password())) {
+                alert('*提交内容不合法');
+                return false;
+            } else {
+                return true;
+            }
+            return true;
+        }
+        $("form").submit(function() {
+            return tijiao();
+        });
+    })
+</script>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">用户修改</h1>
+    </div>
+</div>
+
+<form action="edit/id/{:I('get.id')}" method="post">
+<input type="hidden" name="salt" value="{:time()}"/>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">分配角角色</label>
+            <div class="col-sm-10">
+                <volist name="$roleData" id="v">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="role_id[]" value="{$v.id}" <if condition="in_array($v.id, $roleIds)">checked</if>> {$v.name}
+                    </label>
+                </volist>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="username" class="col-sm-2 col-form-label">用户名</label>
+            <div class="col-sm-10">
+                <input type="text" name="username" id="username" class="form-control" value="{$data.username}" placeholder="用户名">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="password" class="col-sm-2 col-form-label">密码</label>
+            <div class="col-sm-10">
+                <input type="password" name="password" id="password" class="form-control" value="" placeholder="密码">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="repassword" class="col-sm-2 col-form-label">确认密码</label>
+            <div class="col-sm-10">
+                <input type="password" name="repassword" id="repassword" class="form-control" value="" placeholder="确认密码">
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <button type="submit" class="btn btn-primary">提交</button>
+        <button type="button" class="btn btn-default">返回</button>
+    </div>
+</div>
+
+</form>
+
+</block>

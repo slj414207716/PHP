@@ -1,0 +1,85 @@
+<extend name="Layout/sub"/>
+<block name="nav">重点督办 / 延期申请</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/Home/Static/css/style2.css"/>
+
+<div id="outer">
+	<include file="Layout/left_focus"/>
+	<div id="content">
+		<ul style="display:block;">
+			<div class="aqsc">
+				<h3>延期申请</h3>
+
+                <div class="search_2">
+                    <form action="" method="get" class="sys_form">
+                    <label>按年份筛选</label>
+                    <select name="start_year">
+                        <for start="$current_year-5" end="$current_year+1">
+                            <option value="{$i}">{$i}年</option>
+                        </for>
+                    </select>
+                    <select name="start_month">
+                        <for start="1" end="13">
+                            <option value="{$i}">{$i}月</option>
+                        </for>
+                    </select>
+                    &nbsp;&nbsp; — &nbsp;&nbsp;
+                    <select name="end_year">
+                        <for start="$current_year-5" end="$current_year+1">
+                            <option value="{$i}">{$i}年</option>
+                        </for>
+                    </select>
+                    <select name="end_month">
+                        <for start="1" end="13">
+                            <option value="{$i}">{$i}月</option>
+                        </for>
+                    </select>
+                    <input class="sub" type="submit" value="查询"/>
+                    </form>
+                </div>
+				<table border=1 class="sys_table">
+					<tr>
+						<th>工作名称</th>
+						<th>项目类型</th>
+						<th>责任领导</th>
+						<th>督办时间</th>
+						<th>预计完成</th>
+						<th>延期时间</th>
+						<th>延期原因</th>
+						<th>领导批示</th>
+						<th>操作</th>
+					</tr>
+					<volist name="event_list" id="vo">
+						<tr>
+							<td align="center">{$vo['name']}</td>
+							<td align="center">{$vo['type']}</td>
+							<td align="center">{$vo['leader']}</td>
+							<td align="center">{$vo['add_time_str']}</td>
+							<td align="center">{$vo['finish_time_plan_str']}</td>
+							<td align="center">{$vo['delay_time_str']}</td>
+							<td align="center">{$vo['delay_reason']}</td>
+							<?php if(substr($vo['delay_reason'],-15)=='（待审批）'): ?>
+							<td align="center">
+								<a href="/index.php/Admin/Focus/tongyi/id/{$vo['id']}"><span style="color: green">同意</span></a> |
+								<a href="/index.php/Admin/Focus/butongyi/id/{$vo['id']}"><span style="color: red">不同意</span></a>
+							</td>
+							<?php elseif(substr($vo['delay_reason'],-15)!='（待审批）'): ?>
+							<td align="center">--</td>
+							<?php endif; ?>
+							<td align="center"><a href="__URL__/event_detail?id={$vo['id']}">详情</a>
+							</td>
+						</tr>
+					</volist>
+				</table>
+				<div class="pagelist_area">
+					<if condition="$PAGE['total_page'] gt 1">
+						<include file="Layout/_pagelist"/>
+					</if>
+				</div>
+
+			</div>
+		</ul>
+	</div>
+</div>
+
+</block>

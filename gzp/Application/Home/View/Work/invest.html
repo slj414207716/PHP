@@ -1,0 +1,62 @@
+<extend name="Layout/sub" />
+<block name="nav">教育工作 / 教育 / 教育投资情况</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.css" />
+<style>
+.data h3{margin: 0px 0px 20px 0px};
+</style>
+<script type="text/javascript" src="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.js"></script>
+<script type="text/javascript">
+
+</script>
+<div id="outer">
+<include file="Layout/left_educ"/>
+    <div id="content">
+        	<div class="data">
+        		<H3 style="color: #fff;">近五年数据</H3>
+        		<div id="party1"></div>
+        	</div>
+       		<div class="data">
+       			<H3 style="color: #fff;">本年数据</H3>
+       			<div id="party2"></div>
+       		</div>
+            <ul style="display:block;">
+            <div class="aqsc">
+                <h3>教育投资统计</h3>
+                <div class="div">
+        	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<th scope="col">序号</th>
+                    <th scope="col">投资项目</th>
+                    <th scope="col">金额（万元）</th>
+                    <th scope="col">完工情况</th>
+                    <th scope="col">备注</th>
+				</tr>
+				<volist name="data" id="v">
+				<tr>
+					<td><?php echo ++$a?></td>
+                    <td>{$v.tzxm}</td>
+                    <td>{$v.money}</td>
+                    <td>
+                        <if condition="$v['wgqk'] eq '1'">
+                            已完工
+                        <else/>
+                            正在组建
+                        </if>
+                    </td>
+                    <td>{$v.remark}</td>
+				</tr>
+				</volist>
+                <tr>
+                    <th scope="col">合计</th>
+                    <th colspan="4">
+                       总金额：{$sum}                    
+                   </th>
+                </tr>
+			</table>
+            </div>
+        </div>
+        </ul>
+    </div>
+</div>
+</block>	

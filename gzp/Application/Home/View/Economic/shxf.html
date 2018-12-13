@@ -1,0 +1,120 @@
+<extend name="Layout/base" />
+<block name="main">
+<link rel="stylesheet" href="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.css" />
+<style>
+.data h3{margin: 0px};
+</style>
+<script type="text/javascript" src="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.js"></script>
+<script type="text/javascript">
+    var jsonShxf = '';
+    jsonShxf = '<?php echo $jsonShxf; ?>';
+</script>
+<div id="outer">
+    <ul id="tab">
+        <li num="1" <if condition = "$Think.get.sid eq 1"> class="current" </if> >地区生产总值</li>
+        <li num="2" <if condition = "$Think.get.sid eq 2"> class="current" </if> >财政收入</li>
+        <li num="3" <if condition = "$Think.get.sid eq 3"> class="current" </if> >规上工业总产值</li>
+        <li num="4" <if condition = "$Think.get.sid eq 4"> class="current" </if> >固定资产投资</li>
+        <li num="5" <if condition = "$Think.get.sid eq 5"> class="current" </if> >社会消费品零售额</li>
+        <li num="6" <if condition = "$Think.get.sid eq 6"> class="current" </if> >使用内资</li>
+        <li num="7" <if condition = "$Think.get.sid eq 7"> class="current" </if> >引进外资</li>
+    	<!-- <p> 数据查询<br><input type="text"><input type="text"><br> <button type="submit" class="search">查询</button></p> -->
+    </ul>
+    <div id="content">
+        <?php echo $_GET['sid'] ?>
+        <?php echo $csid ?>
+        <ul <if condition="$Think.get.sid eq $csid"> style="display: block;" <else /> style="display: none;" </if> >
+        	<div class="data">
+        		<H3>完成情况</H3>
+        		<div id="shxf1"></div>
+        	</div>
+       		<div class="data">
+       			<H3>同比/环比</H3>
+       			<div id="shxf2"></div>
+       		</div>
+        	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<th scope="col">月份</th>
+					<th scope="col">计划完成(亿)</th>
+					<th scope="col">实际完成(亿)</th>
+					<th scope="col">任务完成情况</th>
+					<th scope="col">同比</th>
+					<th scope="col">环比</th>
+					<th scope="col">完成年度百分比</th>
+				</tr>
+				<volist name="shxf['data']" id="v">
+				<tr>
+					<td>{$v.month}月</td>
+					<td>{$v.plan}</td>
+					<td>{$v.real}</td>
+					<td>
+						<if condition="$v.over LT 0">						
+							<img src="/Public/Home/Static/images/timg.gif">	
+						<else />
+							完成
+						</if>
+					</td>
+					<!-- 同比 -->
+					<td>
+						{$shxf['tb'][$v['month']]}
+						<if condition="$shxf['tb'][$v['month']] GT 0">
+							<span class="trendUp">↑</span>
+						<elseif condition="$shxf['tb'][$v['month']] LT 0" />
+							<span class="trendDown">↓</span>	
+						</if>				
+					</td>
+					<!-- 环比 -->
+					<td>
+						{$shxf['hb'][$v['month']]}
+						<if condition="$shxf['hb'][$v['month']] GT 0">
+							<span class="trendUp">↑</span>
+						<elseif condition="$shxf['hb'][$v['month']] LT 0" />
+							<span class="trendDown">↓</span>	
+						</if>		
+					</td>
+					<td>
+						{$shxf['zb'][$v['month']]}
+					</td>									
+				</tr>
+				</volist>
+				<tr>
+					<th scope="col">合计</th>
+					<th colspan="5" scope="col">
+						全年计划任务：<strong><span class="hj">{$shxf['real']}</span></strong>&nbsp亿；
+						实际完成：<strong><span class="hj">{$shxf['yearData']}</span></strong>&nbsp亿；
+						完成全年计划任务占比：<strong><span class="hj">{$shxf['nowZb']}</span></strong>
+					</th>
+                    <th><a class="search1" href="{$Think.const.HOST_NAME}/Home/Economic/yearShxf/sid/{$Think.get.sid}">年度数据查询</a></th>
+				</tr>
+			</table>
+        </ul>
+    </div>
+</div>
+
+<script src="/Public/Home/Static/js/jquery.min.js"></script>
+<script>
+	$(function(){
+		window.onload = function()
+		{
+			var $li = $('#tab li');
+			var $ul = $('#content ul');
+			$li.click(function(){
+				var num = $(this).attr("num");
+				//console.log(num);
+				var url = "<?php echo C('HOST_NAME'); ?>";
+				console.log(url);
+				window.location.href= url+"/Home/Economic/shxf/sid/"+num;
+				/*
+				var $this = $(this);
+				var $t = $this.index();
+				$li.removeClass();
+				$this.addClass('current');
+				$ul.css('display','none');
+				$ul.eq($t).css('display','block');
+				*/
+			})
+		}
+	});
+</script>
+
+</block>	

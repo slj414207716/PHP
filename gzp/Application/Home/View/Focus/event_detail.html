@@ -1,0 +1,130 @@
+<extend name="Layout/sub"/>
+<block name="nav">重点督办 / {$event_info['name']}</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/Home/Static/css/style2.css"/>
+
+<div id="outer">
+	<include file="Layout/left_focus"/>
+	<div id="content">
+		<ul style="display:block;">
+			<div class="aqsc">
+				<h3>{$event_info['name']}</h3>
+
+				<div class="div">
+					<ul class="tags">
+						<li data-type="event" class="active">基本信息</li>
+						<li data-type="log">详细日志</li>
+						<li data-type="problem">存在问题</li>
+						<li data-type="over">办结</li>
+						<div class="cl"></div>
+					</ul>
+					<div class="event_window">
+						<div class="fl">
+							<h3 class="event_title_v3">基本信息</h3>
+							<table class="base_info_window">
+								<tr>
+									<td width="80px"><b>工作类型：</b></td>
+									<td>{$event_info['type']}</td>
+								</tr>
+								<tr>
+									<td><b>责任领导：</b></td>
+									<td>{$event_info['leader']}</td>
+								</tr>
+								<tr>
+									<td><b>督办日期：</b></td>
+									<td>{$event_info['add_time_str']}</td>
+								</tr>
+								<tr>
+									<td><b>工作状态：</b></td>
+									<td>{$event_info['status_str']}</td>
+								</tr>
+							</table>
+						</div>
+						<div class="fr">
+							<h3 class="event_title_v3">项目指标</h3>
+							<table class="chart_window">
+								<tr>
+									<td width="40%" class="event_description">{$event_info['description']}</td>
+									<td width="30%">
+										<canvas id="ratio_1" width="130px" height="130px"></canvas>
+									</td>
+									<td width="30%">
+										<canvas id="ratio_2" width="130px" height="130px"></canvas>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="cl"></div>
+						<h3 class="event_title_v2">项目进度</h3>
+						<div class="timeline">
+							<div class="course_nr">
+								<ul class="course_nr2">
+									<volist name="timeline" id="vo">
+										<li>
+											<span>{$vo['time_str']}</span>
+											<div class="shiji">
+												<h1>{$vo['time_str']}</h1>
+												<p>{$vo['contents']}</p>
+											</div>
+										</li>
+									</volist>
+									<div class="cl"></div>
+								</ul>
+							</div>
+						</div>
+						<div class="pic_window">
+							<h2 class="event_title_v4 fl">督办进展</h2>
+							<div class="more fr"><a href="javascript:void(0);">More</a></div>
+							<div class="cl"></div>
+							<ul>
+								<volist name="log_img_list" id="vo">
+									<li><img src="{$vo}" class="thumb_pic"/></li>
+								</volist>
+								<div class="cl"></div>
+								<ul>
+						</div>
+					</div>
+					<div class="log_window">
+						<ul>
+							<volist name="log" id="vo">
+								<li>
+									<div>
+										<h3 class="log_title">
+											{$vo['add_time_str']}
+											<if condition="$user_power">
+												<em class="zhenggai_button">
+													<a style="color: black" href="/index/Focus/zhenggai/event_id/{:I('get.id')}/log_id/{$vo['id']}">整改</a>
+												</em>
+											</if>
+										</h3>
+										<p class="log_contents">
+											<span>{$vo['contents']}</span>
+											<volist name="vo['img']" id="vo2">
+												<img src="{$vo2}" class="log_pic thumb_pic"/>
+											</volist>
+											<if condition="$vo['zhenggai']">
+												<volist name="vo['zhenggai']" id="vo2">
+													<span class="leader_comment">{$vo2['time_str']} &nbsp;&nbsp; {$vo2['leader']}：{$vo2['contents']}</span>
+												</volist>
+											</if>
+										</p>
+									</div>
+								</li>
+							</volist>
+						</ul>
+					</div>
+					<div class="problem_window">{$event_info['problem']}</div>
+					<div class="over_window">
+						<form action="/index.php/Admin/Focus/banjie/id/{:I('get.id')}" method="post">
+						<div><textarea name="comment" class="inputtext" style="width: 100%;height: 200px"></textarea></div>
+						<div style="text-align: right;margin-top: 20px"><input style="width: 50px;height: 30px" type="submit" value="办结"/></div>
+						</form>
+					</div>
+				</div>
+
+			</div>
+		</ul>
+	</div>
+</div>
+
+</block>

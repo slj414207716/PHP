@@ -1,0 +1,93 @@
+<extend name="Layout/sub"/>
+<block name="nav">重点督办 / 进度总览</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/Home/Static/css/style2.css"/>
+{$app:self_css()}
+
+<div id="outer">
+	<include file="Layout/left_focus"/>
+	<div id="content">
+		<ul style="display:block;">
+			<div class="zddb-1"><div id="main1"></div></div>
+			<div class="zddb-1"><div id="main2"></div></div>
+			<div class="zddb-1 last"><div id="main3"></div></div>
+
+			<div class="aqsc">
+				<h3>进度总览</h3>
+
+				<div class="search_2">
+					<form action="" method="get" class="sys_form">
+					<label>按年份筛选</label>
+					<select name="ly">
+						<option value="0">--请选择--</option>
+						<?php for($i=0;$i<5;++$i): ?>
+						<option
+						<?php if((date("Y")-$i)==I('get.ly'))echo 'selected="selected"' ?> value="<?php echo date("Y")-$i ?>"><?php echo date("Y")-$i ?>年</option>
+						<?php endfor; ?>
+					</select>
+					<select name="lm">
+						<option value="0">--请选择--</option>
+						<?php for($i=1;$i<13;++$i): ?>
+						<option
+						<?php if((13-$i)==I('get.lm'))echo 'selected="selected"' ?> value="<?php echo 13-$i ?>"><?php echo 13-$i ?>月</option>
+						<?php endfor; ?>
+					</select>
+					&nbsp;&nbsp; — &nbsp;&nbsp;
+					<select name="ry">
+						<option value="0">--请选择--</option>
+						<?php for($i=0;$i<5;++$i): ?>
+						<option
+						<?php if((date("Y")-$i)==I('get.ry'))echo 'selected="selected"' ?> value="<?php echo date("Y")-$i ?>"><?php echo date("Y")-$i ?>年</option>
+						<?php endfor; ?>
+					</select>
+					<select name="rm">
+						<option value="0">--请选择--</option>
+						<?php for($i=1;$i<13;++$i): ?>
+						<option
+						<?php if((13-$i)==I('get.rm'))echo 'selected="selected"' ?> value="<?php echo 13-$i ?>"><?php echo 13-$i ?>月</option>
+						<?php endfor; ?>
+					</select>
+					<input class="sub" type="submit" value="查询"/>
+					</form>
+				</div>
+
+				<table border=1 class="sys_table">
+					<tr>
+						<th width="30%">工作名称</th>
+						<th width="12%">项目类型</th>
+						<th width="12%">责任领导</th>
+						<th width="12%">督办时间</th>
+						<th width="12%">预计完成</th>
+						<th width="12%">进度状态</th>
+						<th width="10%">操作</th>
+					</tr>
+					<volist name="event_list" id="vo">
+						<tr>
+							<td>{$vo['name']}</td>
+							<td>{$vo['type']}</td>
+							<td>{$vo['leader']}</td>
+							<td>{$vo['add_time_str']}</td>
+							<td>{$vo['finish_time_plan_str']}</td>
+							<td>{$vo['status_str']}</td>
+							<td><a href="__URL__/event_detail?id={$vo['id']}">详情</a></td>
+						</tr>
+					</volist>
+				</table>
+
+			</div>
+		</ul>
+	</div>
+</div>
+
+<script type="text/javascript">
+    var current_start_year  = "{$current_start_year}";
+    var current_start_month = "{$current_start_month}";
+    var current_end_year    = "{$current_end_year}";
+    var current_end_month   = "{$current_end_month}";
+    var amount_data         = {$amount_data};
+    var type_data           = {$type_data};
+    var progress_data       = {$progress_data};
+</script>
+{$app:self_js()}
+
+</block>

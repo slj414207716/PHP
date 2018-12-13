@@ -1,0 +1,15 @@
+<!-- 引入时间插件 -->
+<link href="/Public/Common/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="/Public/Common/jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/Public/Common/jquery-ui/jquery-ui-datepicker-zh_cn.js"></script>
+<script>
+    $(function () {
+        $('[selector]').prop('readonly', true).datepicker({
+            dateFormat: "yy-mm-dd",
+            inline: true,
+            showButtonPanel: true,
+            changeMonth: true,
+            changeYear: true
+        });
+    });
+</script>

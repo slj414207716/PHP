@@ -1,0 +1,112 @@
+<extend name="Layout/base" />
+<block name="main">
+<link rel="stylesheet" href="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.css" />
+<script type="text/javascript" src="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.js"></script>
+<script type="text/javascript" src="/Public/Home/Static/js/shiftzoom.js"></script>
+<div id="outer">
+    <!-- 左侧导航 -->
+    <ul id="tab">
+        <li num="1" <if condition = "$Think.get.sid eq 1"> class="current" </if> >空间战略规划</li>
+        <li num="2" <if condition = "$Think.get.sid eq 2"> class="current" </if> >拟出让地块详情</li>
+        <li num="3" <if condition = "$Think.get.sid eq 3"> class="current" </if> >项目个案</li>
+    </ul>
+    <!-- 右侧内容 -->
+    <div id="content">
+        <ul <if condition="$Think.get.sid eq 1"> style="display: block;" <else /> style="display: none;" </if> >
+            <div class="zl">
+                <h3>
+                    <select id="zl" name="zl" style="margin-bottom:10px">
+                        <option value="0">--请选择--</option>
+                        <option <if condition="$Think.get.zl eq 1">selected="selected"</if> value="1" >图1</option>
+                        <option <if condition="$Think.get.zl eq 2">selected="selected"</if> value="2">图2</option>
+                    </select>
+                </h3>
+                <div class="pic_window" style="width:780px">
+                    <if condition="($Think.get.sid eq 1)&&(($Think.get.zl eq 1)||($Think.get.zl eq ''))">
+                        <img src="/Uploads/Land/kjzl1.jpg" class="shiftzoom" onLoad="shiftzoom.add(this,{showcoords:true,zoom:40});"/>
+                    <elseif condition="($Think.get.sid eq 1)&&($Think.get.zl eq 2)" />
+                        <img src="/Uploads/Land/kjzl2.jpg" class="shiftzoom" onLoad="shiftzoom.add(this,{showcoords:true,zoom:40});"/>
+                    </if>
+                </div>
+            </div>
+        </ul>
+        <ul <if condition="$Think.get.sid eq 2"> style="display: block;" <else /> style="display: none;" </if> >
+            <!-- 地图框 -->
+            <div class="data06">
+                <h3>
+                    <select id="cun" name="cun">
+                        <option value="0">--请选择--</option>
+                        <option value="1">图1</option>
+                    </select>
+                </h3>
+                <div class="pic_window" style="width:780px">
+                    <if condition="($Think.get.sid eq 2)&&(($Think.get.cun eq 1)||($Think.get.cun eq ''))">
+                        <img src="/Uploads/Land/plan1.jpg" class="shiftzoom" onLoad="shiftzoom.add(this,{showcoords:true,zoom:10});"/>
+                    </if>
+                </div>
+            </div>
+            <!-- 批文框 -->
+            <div class="pw">  
+                <h3>批文</h3>
+                <div class="div"> 
+                    <table border=0 width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <th>序号</th>
+                            <th>编号</th>
+                            <th>类型</th>
+                            <th>面积(公顷)</th>
+                        </tr>
+                        <volist name="data" id="v">
+                            <tr>
+                                <td>{$i}</td>
+                                <td>{$v.cat1}</td>
+                                <td>{$v.cat2}</td>
+                                <td>{$v.area}</td>
+                            </tr>
+                        </volist>
+                        <tr>
+                            <td colspan="3">合计</td>
+                            <td>{$sum}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </ul>
+        <ul <if condition="$Think.get.sid eq 3"> style="display: block;" <else /> style="display: none;" </if> >
+        </ul>
+    </div>
+</div>   
+
+<script src="/Public/Home/Static/js/jquery.min.js"></script>
+<script>
+	$(function(){
+		window.onload = function()
+		{
+			var $li = $('#tab li');
+			var $ul = $('#content ul');
+			$li.click(function(){
+				var num = $(this).attr("num");
+				//console.log(num);
+				var url = "<?php echo C('HOST_NAME'); ?>";
+				console.log(url);
+				window.location.href= url+"/Home/Land/plan/sid/"+num;
+			})
+		}
+	});
+</script>
+<script type="text/javascript">
+    var parm = "<?php echo $_GET['sid'] ?>";
+    if(parm == 1) {
+        $('.pic_window').css("width","1240px");
+    }else if(parm == 2) {
+        $('.pic_window').css("width","780px");
+    }
+</script>
+<script type="text/javascript">
+    $('#zl').change(function(){
+        var url = "{:U('/Home/Land/plan','',false)}/sid/1";
+        var zlid = $(this).val();
+        window.location.href=""+url+"/zl/"+$('#zl').val()+"";
+    });
+</script>
+</block>	

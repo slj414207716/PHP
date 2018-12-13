@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		body,
+		html {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			font-family: "微软雅黑";
+		}
+
+		#allmap {
+			width: 100%;
+			height: 100%;
+		}
+
+		#r-result {
+			width: 100%;
+			margin-top: 5px;
+		}
+
+		p {
+			margin: 5px;
+			font-size: 14px;
+		}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZMeRv4P7zfn7c23xQRGK7fDo"></script>
+	<title>墓园</title>
+</head>
+
+<body>
+<div id="allmap"></div>
+</body>
+
+</html>
+<script type="text/javascript">
+	// 百度地图API功能
+	//新建三个地图上点
+	var points = [
+		{ "lng": 121.596795, "lat": 39.042164, "url": "#", "id": "棋盘墓园", "name": "<img src='__PUBLIC__/images/index/muyuan/01.jpg' width='220' height='160' /><br/>棋盘村墓园位于两眼井东山国有林内，<br/>占地面积约2070㎡，2013年建成并使<br/>用，总坟数为329㙓，已使用171㙓，<br/>主要用于本村石灰窑屯村民故人回迁<br/>使用，不出售。"},
+		{ "lng": 121.553353, "lat": 39.05106, "url": "#", "id": "柳山墓园", "name": "<img src='__PUBLIC__/images/index/muyuan/02.png' width='220' height='160' /><br/>墓园位于革镇堡街道羊圈子村，总面积<br/>16650㎡，墓穴总数7846盔，迁入墓<br/>穴数量6596盔，剩余墓穴数量2000盔"},
+		{ "lng": 121.536717, "lat": 39.033784, "url": "#", "id": "松山墓园", "name": "<img src='__PUBLIC__/images/index/muyuan/03.png' width='220' height='160' /><br/>面积：15000平方米,位置：后革后山,<br/>共2317盔，迁入1769盔，空548盔"},
+		{ "lng": 121.531632, "lat": 39.033827, "url": "#", "id": "长山墓园", "name": "<img src='__PUBLIC__/images/index/muyuan/04.jpg' width='220' height='160' /><br/>夏家河子长山墓园，位于夏家河子长<br/>山，2011年6月施工建设，2015年12<br/>月建成，占地面积2万平，建有墓穴<br/>4490盔（其中小孩墓穴112盔），已<br/>使用1149盔，余3341盔."},
+		{ "lng": 121.474256, "lat": 39.010535, "url": "#", "id": "鞍子山墓园", "name": "<img src='__PUBLIC__/images/index/muyuan/05.jpg' width='220' height='160' /><br/>鞍子山墓园占地面积2万平方米，共<br/>建墓位3375盔。现己使用1372盔，<br/>未使用2003盔。"},
+		{ "lng": 121.534035, "lat": 39.010824, "url": "#", "id": "中革墓园", "name": "<img src='__PUBLIC__/images/index/muyuan/06.jpg' width='220' height='160' /><br/>位置：大连市甘井子区革镇堡中革街<br/>墓园总面积：16000㎡，墓穴总数：<br/>5010盔，迁入墓穴数量：1742盔，<br/>剩余墓穴数量：3268盔"}
+	];
+	//创建标注点并添加到地图中
+	function addMarker(points) {
+		var myIcon = new BMap.Icon("{$Think.const.__APP_PUBLIC__}/images/index/tip_ico.png", new BMap.Size(27,27),{
+			anchor:new BMap.Size(13,15),
+			imageOffset:new BMap.Size(0,0)
+		});
+		//循环建立标注点
+		for (var i = 0, pointsLen = points.length; i < pointsLen; i++) {
+			var point = new BMap.Point(points[i].lng, points[i].lat); //将标注点转化成地图上的点
+			var label = new BMap.Label(points[i].id, { offset: new BMap.Size(30, 0) });
+			var marker = new BMap.Marker(point,{icon:myIcon},label); //将点转化成标注点
+
+			map.addOverlay(marker);  //将标注点添加到地图上
+			label.setStyle({
+				color: "#000",                   //颜色
+				fontSize: "14px",               //字号
+				border:"1",
+				height: "23px",                //高度
+				textAlign: "center",            //文字水平居中显示
+				lineHeight: "22px",            //行高，文字垂直居中显示
+				background: "url({$Think.const.__APP_PUBLIC__}/images/index/tip.jpg)",    //背景图片，这是房产标注的关键！
+				cursor: "pointer"
+			});
+			marker.setLabel(label);//显示地理名称
+			//添加监听事件
+			(function () {
+				var thePoint = points[i];
+				marker.addEventListener("click",
+					function () {
+						showInfo(this, thePoint);
+					});
+			})();
+		}
+	}
+	function showInfo(thisMarker, point) {
+		//获取点的信息
+		var sContent =
+			    '<ul style="margin:0 0 5px 0;padding:0.2em 0">'
+			    + '<li style="line-height: 26px;font-size: 14px;">'
+			    + '<span></span>' + point.id + '</li>'
+			    + '<li style="line-height: 26px;font-size: 14px;">'
+			    + '<span></span>' + point.name + '</li>'
+			    + '<li style="line-height: 26px;font-size: 14px;"></li>'
+			    + '</ul>';
+		var infoWindow = new BMap.InfoWindow(sContent); //创建信息窗口对象
+		thisMarker.openInfoWindow(infoWindow); //图片加载完后重绘infoWindow
+	}
+	var map = new BMap.Map("allmap", { mapType: BMAP_HYBRID_MAP });
+	map.centerAndZoom(new BMap.Point(121.516318,39.022448), 14);
+	map.enableScrollWheelZoom(true);
+	var mapType1 = new BMap.MapTypeControl({ mapTypes: [BMAP_NORMAL_MAP, BMAP_HYBRID_MAP] });
+
+	var overView = new BMap.OverviewMapControl();
+	var overViewOpen = new BMap.OverviewMapControl({ isOpen: true, anchor: BMAP_ANCHOR_BOTTOM_RIGHT });
+	map.addControl(mapType1);          //2D图，卫星图
+	map.addControl(overView);          //添加默认缩略地图控件
+	map.addControl(overViewOpen);      //右下角，打开
+
+
+	addMarker(points);
+
+
+
+</script>

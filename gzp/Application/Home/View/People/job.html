@@ -1,0 +1,48 @@
+<extend name="Layout/sub" />
+<block name="nav">民生保障 / 就业和失业</block>
+<block name="main">
+
+<script type="text/javascript" src="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Common/echars/shine.js"></script>
+
+<div id="outer">
+<include file="Layout/left_people"/>
+    <div id="content">
+<!--社会化管理人员情况-->
+		<div class="data">
+			<h3 style="color: #fff">统计数据</h3>
+        	<div id="main1" style="width: 100%;height: 100%"></div>
+        </div>
+        <div class="data">
+			<h3 style="color: #fff">数据比例</h3>
+        	<div id="main2" style="width: 100%;height: 100%"></div>
+        </div>
+        <ul style="display:block;">
+            <div class="aqsc">
+                <h3>就业和失业统计</h3>
+                <div class="div"> 		
+        	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<th scope="col">单位</th>
+					<th scope="col">失业资源</th>
+					<th scope="col">本期就业</th>
+					<th scope="col">其他原因减少</th>
+					<th scope="col">期末失业资源</th>
+				</tr>
+				<volist name="data" id="vo">
+				<tr>
+					<td>{$vo.name}</td>
+					<td>{$vo.syzy}</td>
+					<td>{$vo.bqjy}</td>
+					<td>{$vo.qtyy}</td>
+					<td>{$vo.qmsy}</td>
+				</tr>
+				</volist>
+			</table>
+		</div>
+	</div>
+</ul>
+
+    </div>
+</div>
+</block>	

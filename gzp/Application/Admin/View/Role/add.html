@@ -1,0 +1,75 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<extend name="Layout/base" />
+<block name="main">
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">角色添加</h1>
+    </div>
+</div>
+
+            <form action="add" method="post">
+            <div class="xjhy">
+                <ul class="hypz">
+                    <li class="clearfix">
+                        <span class="title">角色名称：</span>
+                        <div class="li_r" style="width: 500px">
+                            <input name="name" type="text">
+                            <i>*</i>
+                        </div>
+                    </li>
+                    <li class="clearfix" style="height: auto">
+                        <span class="title" style="float: left">权限名称：</span>
+                        <div style="height: auto;float: left;margin-left: 24px;line-height: 20px">
+                            <?php foreach($priData as $k=>$v): ?>
+                                <?php echo str_repeat('&nbsp&nbsp&nbsp&nbsp',$v['level'])?>
+                                <input level_id="<?php echo $v['level'] ?>" value="<?php echo $v['id'] ?>" name="permission_id[]" type="checkbox" />
+                                <?php echo $v['name'] ?>
+                                <br/>
+                            <?php endforeach; ?>
+                        </div>
+                    </li>
+                    <li class="tj_btn">
+                        <a href="lst" class="back">返回</a>
+                        <a onclick="$('form').submit()" href="javascript:void(0)">提交</a>
+                    </li>
+                </ul>
+            </div>
+            </form>
+
+<script>
+    // 为所有的复选框绑定一个点击事件
+    $(":checkbox").click(function(){
+        // 先获取点击的这个level_id
+        var tmp_level_id = level_id = $(this).attr("level_id");
+        // 判断是选中还是取消
+        if($(this).prop("checked"))
+        {
+            // 所有的子权限也选中
+            $(this).nextAll(":checkbox").each(function(k,v){
+                if($(v).attr("level_id") > level_id)
+                    $(v).prop("checked", "checked");
+                else
+                    return false;
+            });
+            // 所有的上级权限也选中
+            $(this).prevAll(":checkbox").each(function(k,v){
+                if($(v).attr("level_id") < tmp_level_id)
+                {
+                    $(v).prop("checked", "checked");
+                    tmp_level_id--; // 再找更上一级的
+                }
+            });
+        }else{
+            // 所有的子权限也取消
+            $(this).nextAll(":checkbox").each(function(k,v){
+                if($(v).attr("level_id") > level_id)
+                    $(v).prop("checked", "");
+                else
+                    return false;
+            });
+        }
+    });
+</script>
+
+</block>

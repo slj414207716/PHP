@@ -1,0 +1,46 @@
+<extend name="Layout/sub" />
+<block name="nav">医疗卫生 /卫计/ 计划生育</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.css" />
+
+<script type="text/javascript" src="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.js"></script>
+<script type="text/javascript">
+
+</script>
+<div id="outer">
+<include file="Layout/left_ylwj"/>
+    <div id="content">
+        	<div class="data">
+                <H3 style="color: #fff;">近五年数据</H3>
+                <div id="main1" style="width: 100%; height: 100%; margin: auto;"></div>
+            </div>
+            <div class="data">
+                <H3 style="color: #fff;">本年数据</H3>
+                <div id="main2" style="width: 100%; height: 100%; margin: auto;"></div>
+            </div>
+            <ul style="display:block;">
+            <div class="aqsc">
+                <h3>计划生育统计</h3>
+                <div class="div"> 
+        	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<th scope="col">单位</th>
+                    <th scope="col">户籍人口数</th>
+                    <th scope="col">常住人口数</th>
+                    <th scope="col">流动人口数</th>
+				</tr>
+				<volist name="data" id="v">
+				<tr>
+					<td>{$v.name}</td>
+                    <td>{$v.hjsum}</td>
+                    <td>{$v.czsum}</td>
+                    <td>{$v.ldsum}</td>
+				</tr>
+				</volist>
+			</table>
+        </div>
+    </div>
+        </ul>
+    </div>
+</div>
+</block>	

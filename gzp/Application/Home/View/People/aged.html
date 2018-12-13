@@ -1,0 +1,43 @@
+<extend name="Layout/sub" />
+<block name="nav">民生保障 / 居家养老中心</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.css" />
+<style>
+.data h3{margin: 0px 0px 20px 0px};
+</style>
+<script type="text/javascript" src="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.js"></script>
+<script type="text/javascript">
+</script>
+<div id="outer">
+<include file="Layout/left_people"/>
+    <div id="content">
+    	<ul style="display:block;">
+            <div class="aqsc">
+                <h3>居家养老中心统计</h3>
+                <div class="div"> 
+        	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<th scope="col">序号</th>
+					<th scope="col">项目名称</th>
+                        <th scope="col">项目地址</th>
+                        <th scope="col">建筑面积（㎡）</th>
+                        <th scope="col">服务内容</th>
+                        <th scope="col">是否为示范中心</th>
+				</tr>
+				<volist name="data" id="v">
+				<tr>
+					<td>{$v.id}</td>
+					<td>{$v.name}</td>
+                    <td>{$v.address}</td>
+                    <td>{$v.area}</td>
+                    <td>{$v.content}</td>
+                    <td><if condition="$v['pid'] eq '1'">是<else/>否</if></td>
+				</tr>
+				</volist>
+			</table>
+		</div>
+	</div>
+</ul>
+    </div>
+</div>
+</block>	

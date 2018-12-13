@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>{$Think.const.SITE_TITLE}</title>
+		<link rel="stylesheet" href="{$Think.const.__APP_PUBLIC__}/css/reset.css" />
+		<link rel="stylesheet" href="{$Think.const.__APP_PUBLIC__}/css/{$Think.const.GROUP_NAME}/public.css" />
+		<link rel="stylesheet" href="{$Think.const.__APP_PUBLIC__}/font-awesome/css/font-awesome.css" />
+		<script type="text/javascript" src="{$Think.const.__APP_PUBLIC__}/js/jQuery/jquery-1.8.2.js"></script>
+		<script type="text/javascript" src="{$Think.const.__APP_PUBLIC__}/js/{$Think.const.GROUP_NAME}/public.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZMeRv4P7zfn7c23xQRGK7fDo"></script>
+		<script type="text/javascript">
+			var APP_PUBLIC = "{$Think.const.__APP_PUBLIC__}";
+		</script>
+		<style>
+			#allmap
+			{
+				width: 100%;
+				height: 100%;
+			}
+			#r-result
+			{
+				width: 100%;
+				margin-top: 5px;
+			}
+			p
+			{
+				margin: 5px;
+				font-size: 14px;
+			}
+			li
+			{
+				list-style: none;
+				display: block;
+				width: 100%;
+			}
+			ul{ width: 100%; }
+		</style>
+	</head>
+	<body>
+		<include file="index/Common/header" />
+		<include file="index/Common/left_nav" />
+		<div class="contents">
+			<include file="index/Common/nav_son" />
+			<div id="allmap"></div>
+		</div>
+		<div class="cl"></div>
+	</body>
+	<script type="text/javascript">
+		// 百度地图API功能
+		//新建三个地图上点
+		var points = [
+			{ "lng": 121.545583, "lat": 39.003978, "url": "#", "id": "大连重工·起重集团有限公司", "name": "地址：甘井区革镇堡新水泥路78号" },
+			{ "lng": 121.56424, "lat": 39.026698, "url": "#", "id": "中国外运辽宁储运公司一分公司", "name": "地址：北羊线南50米" },
+			{ "lng": 121.540211, "lat": 39.002471, "url": "#", "id": "雪龙黑牛股份有限公司", "name": "地址：新水泥路271号" },
+			{ "lng": 121.561078, "lat": 39.008182, "url": "#", "id": "大连环嘉集团有限公司", "name": "地址：辽宁省大连市甘井子区新水泥路3号" },
+			{ "lng": 121.566689, "lat": 39.007593, "url": "#", "id": "大连鹏拓钢材市场", "name": "地址：辽宁省大连市甘井子区西北路861号" },
+			{ "lng": 121.558489, "lat": 39.007686, "url": "#", "id": "大连赛楠木业有限公司", "name": "地址：新水泥路8号" },
+			{ "lng": 121.543127, "lat": 39.008851, "url": "#", "id": "大连中革第二储运仓库有限公司", "name": "地址：辽宁省大连市甘井子区革镇堡街道中革街大连北方金达驾校" },
+			{ "lng": 121.546521, "lat": 38.997082, "url": "#", "id": "大连君发混凝土有限公司", "name": "地址：玉浓街附近" },
+			{ "lng": 121.553306, "lat": 39.005245, "url": "#", "id": "大连聚丰储运有限公司", "name": "地址：新水泥路6号" }
+		];
+		//创建标注点并添加到地图中
+		function addMarker(points) {
+			var myIcon = new BMap.Icon(APP_PUBLIC + "/images/index/tip_ico.png", new BMap.Size(27,27),{
+					anchor:new BMap.Size(13,15),
+					imageOffset:new BMap.Size(0,0)
+				});
+			//循环建立标注点
+			for (var i = 0, pointsLen = points.length; i < pointsLen; i++) {
+				var point = new BMap.Point(points[i].lng, points[i].lat); //将标注点转化成地图上的点
+				var label = new BMap.Label(points[i].id, { offset: new BMap.Size(30, 0) });
+				var marker = new BMap.Marker(point,{icon:myIcon},label); //将点转化成标注点
+
+				map.addOverlay(marker);  //将标注点添加到地图上
+				label.setStyle({
+					color: "#000",                   //颜色
+					fontSize: "14px",               //字号
+					border:"1",
+					height: "23px",                //高度
+					textAlign: "center",            //文字水平居中显示
+					lineHeight: "22px",            //行高，文字垂直居中显示
+					background: "url(" + APP_PUBLIC + "/images/index/tip.jpg)",    //背景图片，这是房产标注的关键！
+					cursor: "pointer"
+				});
+				marker.setLabel(label);//显示地理名称
+				//添加监听事件
+				(function () {
+					var thePoint = points[i];
+					marker.addEventListener("click",
+						function () {
+							showInfo(this, thePoint);
+						});
+				})();
+			}
+		}
+		function showInfo(thisMarker, point) {
+			//获取点的信息
+			var sContent =
+				'<ul style="margin:0 0 5px 0;padding:0.2em 0">'
+				+'<li style="float:left;margin-right:10px;width:70px;height:110px;"><img src="' + APP_PUBLIC + '/Uploads/house.png" ></li>'
+				+ '<li style="line-height: 26px;font-size: 14px;">'
+				+ '<span></span>' + point.id + '</li>'
+				+ '<li style="line-height: 26px;font-size: 14px;">'
+				+ '<span></span>' + point.name + '</li>'
+				+ '<li style="line-height: 26px;font-size: 14px;"><span style="display: inline-block;">查看详情：</span><a href="video">详情</a></li>'
+				+ '</ul>';
+			var infoWindow = new BMap.InfoWindow(sContent); //创建信息窗口对象
+			thisMarker.openInfoWindow(infoWindow); //图片加载完后重绘infoWindow
+		}
+
+
+		var map = new BMap.Map("allmap", { mapType: BMAP_HYBRID_MAP });
+		map.centerAndZoom(new BMap.Point(121.547572,39.00482), 16);
+		map.enableScrollWheelZoom(true);
+		var mapType1 = new BMap.MapTypeControl({ mapTypes: [BMAP_NORMAL_MAP, BMAP_HYBRID_MAP] });
+
+		var overView = new BMap.OverviewMapControl();
+		var overViewOpen = new BMap.OverviewMapControl({ isOpen: true, anchor: BMAP_ANCHOR_BOTTOM_RIGHT });
+		map.addControl(mapType1);          //2D图，卫星图
+		map.addControl(overView);          //添加默认缩略地图控件
+		map.addControl(overViewOpen);      //右下角，打开
+
+		addMarker(points);
+
+		var stCtrl = new BMap.PanoramaControl(); //构造全景控件
+		stCtrl.setOffset(new BMap.Size(20, 40));
+		map.addControl(stCtrl);//添加全景控件
+	</script>
+</html>

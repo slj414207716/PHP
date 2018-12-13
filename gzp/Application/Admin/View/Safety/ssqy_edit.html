@@ -1,0 +1,56 @@
+<extend name="Layout/base"/>
+<block name="main">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">所属区域管理</h1>
+        </div>
+    </div>
+
+    <form action="ssqy_edit/id/{:I('get.id')}" method="post" enctype="multipart/form-data">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">区域名称</label>
+                    <div class="col-sm-10">
+                        <input name="name" type="text" value="{$data.name}">
+                        <i>*</i>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">区域介绍</label>
+                    <div class="col-sm-10">
+                        <input name="content" type="text" value="{$data.content}">
+                        <i>*</i>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">区域经度</label>
+                    <div class="col-sm-10">
+                        <input name="area_lng" type="text" value="{$data.area_lng}">
+                        <i>*</i>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">区域纬度</label>
+                    <div class="col-sm-10">
+                        <input name="area_lat" type="text" value="{$data.area_lat}">
+                        <i>*</i>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">区域logo</label>
+                    <img style="position: absolute;left: 380px;top: -38px" src="__ROOT__/<?php echo $data[img] ?>"/>
+                    <div class="col-sm-10">
+                        <input name="img" type="file">
+                        <i>*</i>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button type="submit" class="btn btn-primary">提交</button>
+                <button type="button" class="btn btn-default btn-back">返回</button>
+            </div>
+        </div>
+    </form>
+</block>

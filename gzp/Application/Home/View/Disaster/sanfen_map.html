@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		body,
+		html {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			font-family: "微软雅黑";
+		}
+
+		#allmap {
+			width: 100%;
+			height: 100%;
+		}
+
+		#r-result {
+			width: 100%;
+			margin-top: 5px;
+		}
+
+		p {
+			margin: 5px;
+			font-size: 14px;
+		}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZMeRv4P7zfn7c23xQRGK7fDo"></script>
+	<title>散坟</title>
+</head>
+
+<body>
+<div id="allmap"></div>
+</body>
+
+</html>
+<script type="text/javascript">
+	// 百度地图API功能
+	//新建三个地图上点
+	var points = [
+		{ "lng": 121.578376, "lat": 39.044125, "url": "#", "id": "榆山","name": "数量：146盔<br>负责人：杜军、于发金等"},
+		{ "lng": 121.595354, "lat": 39.049393, "url": "#", "id": "东山","name": "数量：18盔<br>负责人：张效伦"},
+		{ "lng": 121.566105, "lat": 39.060431, "url": "#", "id": "大脑瓜山","name": "数量：255盔<br>负责人：丛修禄、丛家国等"},
+		{ "lng": 121.563087, "lat": 39.058638, "url": "#", "id": "西北山","name": "数量：67盔<br>负责人：鞠文泉、张永顺等"},
+		{ "lng": 121.566321, "lat": 39.056246, "url": "#", "id": "西山水库","name": "数量：45盔<br>负责人：周健、丛家荣等"},
+		{ "lng": 121.564596, "lat": 39.054733, "url": "#", "id": "大老李山","name": "数量：54盔<br>负责人：李长安、张德满等"},
+		{ "lng": 121.564021, "lat": 39.052876, "url": "#", "id": "北方公司","name": "数量：198盔<br>负责人：王恒奇、高崇等"},
+		{ "lng": 121.554885, "lat": 39.055066, "url": "#", "id": "山洞山","name": "数量：2盔<br>负责人：张效伦"},
+		{ "lng": 121.554885, "lat": 39.053346, "url": "#", "id": "北营山","name": "数量：59盔<br>负责人：关昌慧"},
+		{ "lng": 121.554885, "lat": 39.051346, "url": "#", "id": "当央山","name": "数量：1盔<br>负责人：张效伦"},
+		{ "lng": 121.559885, "lat": 39.053346, "url": "#", "id": "东山","name": ""},
+		{ "lng": 121.549885, "lat": 39.053346, "url": "#", "id": "连岗山","name": ""},
+		{ "lng": 121.547181, "lat": 39.043925, "url": "#", "id": "捞泥塘山","name": "数量：8盔<br>负责人：王兆君"},
+		{ "lng": 121.547738, "lat": 39.043414, "url": "#", "id": "小南山","name": "数量：5盔<br>负责人：王兆君"},
+		{ "lng": 121.556141, "lat": 39.035051, "url": "#", "id": "一队大南山","name": "数量：5盔<br>负责人：金栋"},
+		{ "lng": 121.523099, "lat": 39.036284, "url": "#", "id": "黑影山","name": "数量：104盔<br>负责人：李欣"},
+		{ "lng": 121.514637, "lat": 39.026723, "url": "#", "id": "杨连沟","name": ""},
+		{ "lng": 121.50264, "lat": 39.001195, "url": "#", "id": "七队坟点","name": "数量：426盔<br>负责人：付万红"},
+		{ "lng": 121.505612, "lat": 39.00294, "url": "#", "id": "六队坟点","name": ""}
+	];
+	//创建标注点并添加到地图中
+	function addMarker(points) {
+		var myIcon = new BMap.Icon("{$Think.const.__APP_PUBLIC__}/images/index/tip_ico.png", new BMap.Size(27,27),{
+			anchor:new BMap.Size(13,15),
+			imageOffset:new BMap.Size(0,0)
+		});
+		//循环建立标注点
+		for (var i = 0, pointsLen = points.length; i < pointsLen; i++) {
+			var point = new BMap.Point(points[i].lng, points[i].lat); //将标注点转化成地图上的点
+			var label = new BMap.Label(points[i].id, { offset: new BMap.Size(30, 0) });
+			var marker = new BMap.Marker(point,{icon:myIcon},label); //将点转化成标注点
+
+			map.addOverlay(marker);  //将标注点添加到地图上
+			label.setStyle({
+				color: "#000",                   //颜色
+				fontSize: "14px",               //字号
+				border:"1",
+				height: "23px",                //高度
+				textAlign: "center",            //文字水平居中显示
+				lineHeight: "22px",            //行高，文字垂直居中显示
+				background: "url({$Think.const.__APP_PUBLIC__}/images/index/tip.jpg)",    //背景图片，这是房产标注的关键！
+				cursor: "pointer"
+			});
+			marker.setLabel(label);//显示地理名称
+			//添加监听事件
+			(function () {
+				var thePoint = points[i];
+				marker.addEventListener("click",
+					function () {
+						showInfo(this, thePoint);
+					});
+			})();
+		}
+	}
+	function showInfo(thisMarker, point) {
+		//获取点的信息
+		var sContent =
+			    '<ul style="margin:0 0 5px 0;padding:0.2em 0">'
+			    + '<li style="line-height: 26px;font-size: 14px;">'
+			    + '<span></span>' + point.id + '</li>'
+			    + '<li style="line-height: 26px;font-size: 14px;">'
+			    + '<span></span>' + point.name + '</li>'
+			    + '<li style="line-height: 26px;font-size: 14px;"></li>'
+			    + '</ul>';
+		var infoWindow = new BMap.InfoWindow(sContent); //创建信息窗口对象
+		thisMarker.openInfoWindow(infoWindow); //图片加载完后重绘infoWindow
+	}
+	var map = new BMap.Map("allmap", { mapType: BMAP_HYBRID_MAP });
+	map.centerAndZoom(new BMap.Point(121.516318,39.022448), 14);
+	map.enableScrollWheelZoom(true);
+	var mapType1 = new BMap.MapTypeControl({ mapTypes: [BMAP_NORMAL_MAP, BMAP_HYBRID_MAP] });
+
+	var overView = new BMap.OverviewMapControl();
+	var overViewOpen = new BMap.OverviewMapControl({ isOpen: true, anchor: BMAP_ANCHOR_BOTTOM_RIGHT });
+	map.addControl(mapType1);          //2D图，卫星图
+	map.addControl(overView);          //添加默认缩略地图控件
+	map.addControl(overViewOpen);      //右下角，打开
+
+
+	addMarker(points);
+
+
+
+</script>

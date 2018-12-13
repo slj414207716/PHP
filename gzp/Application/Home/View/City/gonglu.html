@@ -1,0 +1,258 @@
+<extend name="Layout/sub"/>
+<block name="nav">城市管理 / 交通</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/Home/Static/css/style2.css"/>
+
+<div id="outer">
+	<include file="Layout/left_city"/>
+	<div id="content">
+		<ul style="display:block;">
+			<div class="aqsc">
+				<h3>交通</h3>
+				<div class="div">
+
+					<div class="part-row">
+						<div class="part-left" style="width:60%;">
+							<img src="/Public/Home/City/gezhenpugonglu.gif"/>
+						</div>
+						<div class="part-right" style="width:38%; height: 600px;">
+							<div style="width: 100%; height: 525px" class="map_window" id="map_inside"></div>
+							<input style="height: 15px;width: 505px" type="text" id="address" placeholder="请输入地址"/>
+							<button style="width: 50px;border: 0px solid;height: 27px" id="fix_position">定位</button>
+						</div>
+					</div>
+
+					<div class="part-row">
+						<div class="part-left">
+							<div id="main" style="width:800px;height: 350px;"></div>
+						</div>
+						<div class="part-right">
+							<table style="height: 350px;margin: 0px" border=1 class="sys_table">
+								<tr>
+									<th>序列</th>
+									<th>道路</th>
+									<th>详细</th>
+									<th>条数</th>
+									<th>长度</th>
+									<th>面积</th>
+								</tr>
+								<volist name="data" id="vo" empty="--">
+									<tr>
+										<td align="center">{$i}</td>
+										<td align="center">{$vo['name']}</td>
+										<td align="center">{$vo['xiangxi']}</td>
+										<td align="center">{$vo['tiaosh']}</td>
+										<td align="center">{$vo['changdu']}</td>
+										<td align="center">{$vo['mianji']}</td>
+									</tr>
+								</volist>
+							</table>
+							<div style="width: 100%;height: 20px;margin-top: 6px;font-size: 16px">
+								<a target="_blank" href="jiaotongxiangqing">点击这里：道路详情查询表*</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="pagelist_area">
+						<if condition="$PAGE['total_page'] gt 1">
+							<include file="Layout/_pagelist"/>
+						</if>
+					</div>
+				</div>
+			</div>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript">
+	// 基于准备好的dom，初始化echarts实例
+	var myChart = echarts.init(document.getElementById('main'), 'shine');
+
+	// 指定图表的配置项和数据
+	option = {
+		title: {
+		    show: false,
+			text: '公路'
+		},
+		legend: {},
+		tooltip: {},
+		dataset: {
+			source: [
+				['product', '条数', '长度'],
+				['国家公路', 1, 14.5],
+				['县级公路', 5, 16.6],
+				['乡级公路', 2, 11.04],
+				['村路', 321, 161.8]
+			]
+		},
+		xAxis: {
+		    type: 'category',
+            axisLine: {
+                lineStyle: {
+                    color: '#fff'
+                }
+            }},
+		yAxis: {
+			axisLine: {
+				lineStyle: {
+					color: '#fff'
+				}
+			}
+        },
+		// Declare several bar series, each will be mapped
+		// to a column of dataset.source by default.
+		series: [
+			{
+				type: 'bar',
+				barWidth: 30,//柱图宽度
+			},
+			{
+				type: 'bar',
+				barWidth: 30,//柱图宽度
+			},
+		]
+	};
+
+	myChart.setOption(option);
+</script>
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZMeRv4P7zfn7c23xQRGK7fDo"></script>
+<script type="text/javascript">
+	var city_name = '大连';
+	var lng       = 121.534893;
+	var lat       = 39.0171;
+	var map       = new BMap.Map("map_inside");			// 创建Map实例
+	var point     = new BMap.Point(lng, lat);			// 设置中心点
+	map.centerAndZoom(point, 16);					// 初始化地图,设置坐标和地图级别
+	map.addControl(new BMap.MapTypeControl());		// 添加地图类型控件
+	map.setCurrentCity('大连');						// 设置地图显示的城市（此项是必须设置的）
+	map.enableScrollWheelZoom(true);				// 开启鼠标滚轮缩放
+	var marker = new BMap.Marker(point); 			// 创建标记
+	map.addOverlay(marker);            				// 增加标记
+	marker.enableDragging();						// 将标记设置为可拖动
+	// 实例化右上角控件，仅包含平移和缩放按钮
+	var top_right_navigation = new BMap.NavigationControl
+	(
+		{
+			anchor: BMAP_ANCHOR_TOP_RIGHT,
+			type: BMAP_NAVIGATION_CONTROL_SMALL
+		}
+	);
+	// 设置控件位置
+	top_right_navigation.setOffset(new BMap.Size(20, 40));
+	// 加载控件
+	map.addControl(top_right_navigation);
+
+	/* 点击地图时，重新设置标记 */
+	map.addEventListener
+	(
+		"click",
+		function (e) {
+			map.clearOverlays();	// 清除所有标记
+			// 获取当前城市
+			var pt   = e.point;
+			var geoc = new BMap.Geocoder();
+			geoc.getLocation
+			(
+				pt,
+				function (rs) {
+					var new_city = rs.addressComponents.city;
+					// 设置地图显示的城市（此项是必须设置的）
+					map.setCurrentCity(new_city);
+				}
+			);
+			// 设置新的中心点
+			var point = new BMap.Point(e.point.lng, e.point.lat);
+			// 初始化地图,设置坐标和地图级别
+			map.centerAndZoom(point, 16);
+			// 创建标记
+			var marker = new BMap.Marker(point);
+			// 增加标记
+			map.addOverlay(marker);
+			// 将标记设置为可拖动
+			marker.enableDragging();
+		}
+	);
+
+	/* 点击“定位”按钮 */
+	$('#fix_position').click
+	(
+		function () {
+			if (!$('#address').val()) {
+				alert('请将地址填写完整');
+				return false;
+			}
+			// 拼装中文地址
+			var true_address = $('#address').val();
+			// 创建地址解析器实例
+			var myGeo        = new BMap.Geocoder();
+			// 将地址解析结果显示在地图上,并调整地图视野
+			myGeo.getPoint
+			(
+				true_address,
+				function (point) {
+					if (point) {
+						var map = new BMap.Map("map_inside");		// 创建Map实例
+						map.centerAndZoom(point, 16);				// 初始化地图,设置坐标和地图级别
+						map.addControl(new BMap.MapTypeControl());	// 添加地图类型控件
+						map.setCurrentCity(city_name);				// 设置地图显示的城市（此项是必须设置的）
+						map.enableScrollWheelZoom(true);			// 开启鼠标滚轮缩放
+						map.clearOverlays();						// 删除全部标记
+						var marker = new BMap.Marker(point);		// 创建新的标记
+						map.addOverlay(marker);						// 将新标记添加至地图
+						marker.enableDragging();					// 将标记设置为可拖拽
+						// 实例化右上角控件，仅包含平移和缩放按钮
+						var top_right_navigation = new BMap.NavigationControl
+						(
+							{
+								anchor: BMAP_ANCHOR_TOP_RIGHT,
+								type: BMAP_NAVIGATION_CONTROL_SMALL
+							}
+						);
+						// 设置控件位置
+						top_right_navigation.setOffset(new BMap.Size(20, 40));
+						// 加载控件
+						map.addControl(top_right_navigation);
+
+						// 点击地图时，重新设置标记
+						map.addEventListener
+						(
+							"click",
+							function (e) {
+								map.clearOverlays();	// 清除所有标记
+								// 获取当前城市
+								var pt   = e.point;
+								var geoc = new BMap.Geocoder();
+								geoc.getLocation
+								(
+									pt,
+									function (rs) {
+										var new_city = rs.addressComponents.city;
+										// 设置地图显示的城市（此项是必须设置的）
+										map.setCurrentCity(new_city);
+									}
+								);
+								// 设置新的中心点
+								var point = new BMap.Point(e.point.lng, e.point.lat);
+								// 初始化地图,设置坐标和地图级别
+								map.centerAndZoom(point, 16);
+								// 创建标记
+								var marker = new BMap.Marker(point);
+								// 增加标记
+								map.addOverlay(marker);
+								// 将标记设置为可拖动
+								marker.enableDragging();
+							}
+						);
+
+					} else {
+						alert("定位失败，请手动定位");
+					}
+				},
+				city_name
+			);
+		}
+	);
+</script>
+
+
+</block>

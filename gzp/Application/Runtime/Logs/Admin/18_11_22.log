@@ -1,0 +1,27 @@
+[ 2018-11-22T11:04:22+08:00 ] 127.0.0.1 /index.php/Admin/People/adit/id/1
+ERR: 非法操作:adit
+
+[ 2018-11-22T11:04:34+08:00 ] 127.0.0.1 /index.php/Admin/People/adit/id/1
+ERR: 非法操作:adit
+
+[ 2018-11-22T11:05:31+08:00 ] 127.0.0.1 /index.php/Admin/People/adit/id/1
+ERR: 非法操作:adit
+
+[ 2018-11-22T11:11:48+08:00 ] 127.0.0.1 /index.php/Admin/People/adit/id/181
+ERR: 非法操作:adit
+
+[ 2018-11-22T11:14:01+08:00 ] 127.0.0.1 /index.php/Admin/People/index
+ERR: 非法操作:index
+
+[ 2018-11-22T11:16:45+08:00 ] 127.0.0.1 /index.php/Admin/People
+ERR: 非法操作:index
+
+[ 2018-11-22T11:19:00+08:00 ] 127.0.0.1 /index.php/Admin/People
+ERR: 非法操作:index
+
+[ 2018-11-22T11:19:14+08:00 ] 127.0.0.1 /index.php/Admin/People
+ERR: 非法操作:index
+
+[ 2018-11-22T11:21:05+08:00 ] 127.0.0.1 /index.php/Admin/People/quit/id/181
+ERR: 非法操作:quit
+

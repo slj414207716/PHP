@@ -1,0 +1,73 @@
+<extend name="Layout/sub"/>
+<block name="nav">重点督办 / 办结评价</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/Home/Static/css/style2.css"/>
+
+<div id="outer">
+	<include file="Layout/left_focus"/>
+	<div id="content">
+		<ul style="display:block;">
+			<div class="aqsc">
+				<h3>办结评价</h3>
+
+				<div class="search_2">
+					<form action="" method="get" class="sys_form">
+					<label>按年份筛选</label>
+					<select name="start_year">
+						<for start="$current_year-5" end="$current_year+1">
+							<option value="{$i}">{$i}年</option>
+						</for>
+					</select>
+					<select name="start_month">
+						<for start="1" end="13">
+							<option value="{$i}">{$i}月</option>
+						</for>
+					</select>
+					&nbsp;&nbsp; — &nbsp;&nbsp;
+					<select name="end_year">
+						<for start="$current_year-5" end="$current_year+1">
+							<option value="{$i}">{$i}年</option>
+						</for>
+					</select>
+					<select name="end_month">
+						<for start="1" end="13">
+							<option value="{$i}">{$i}月</option>
+						</for>
+					</select>
+					<input class="sub" type="submit" value="查询"/>
+					</form>
+				</div>
+				<table border=1 class="sys_table">
+					<tr>
+						<th width="25%">工作名称</th>
+						<th width="11%">项目类型</th>
+						<th width="11%">责任领导</th>
+						<th width="11%">督办时间</th>
+						<th width="11%">预计完成</th>
+						<th width="21%">上级评价</th>
+						<th width="10%">操作</th>
+					</tr>
+					<volist name="event_list" id="vo">
+						<tr>
+							<td>{$vo['name']}</td>
+							<td>{$vo['type']}</td>
+							<td>{$vo['leader']}</td>
+							<td>{$vo['add_time_str']}</td>
+							<td>{$vo['finish_time_plan_str']}</td>
+							<td>{$vo['comment']}</td>
+							<td><a href="__URL__/event_detail?id={$vo['id']}">详情</a></td>
+						</tr>
+					</volist>
+				</table>
+				<div class="pagelist_area">
+					<if condition="$PAGE['total_page'] gt 1">
+						<include file="Layout/_pagelist"/>
+					</if>
+				</div>
+
+			</div>
+		</ul>
+	</div>
+</div>
+
+</block>

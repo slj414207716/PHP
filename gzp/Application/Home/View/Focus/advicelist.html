@@ -1,0 +1,52 @@
+<extend name="Layout/sub"/>
+<block name="nav">重点督办 / 领导批示</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/Home/Static/css/style2.css"/>
+
+<div id="outer">
+	<include file="Layout/left_focus"/>
+	<div id="content">
+		<ul style="display:block;">
+			<div class="aqsc">
+				<h3>领导批示</h3>
+
+				<div id="main"></div>
+
+				<table border=1 class="sys_table">
+					<tr>
+						<th>序列</th>
+						<th>部门</th>
+						<th>标题</th>
+						<th>建议人</th>
+						<th>建议内容</th>
+						<th>上报时间</th>
+						<th>批示状态</th>
+					</tr>
+					<?php foreach($data as $k=>$v): ?>
+					<tr>
+						<td align="center"><?php echo ++$a ?></td>
+						<td align="center">{$v.list_id}</td>
+						<td align="center">{$v.name}</td>
+						<td align="center">{$v.people}</td>
+						<td align="center">
+							<a href="/index/Safety/advicelistxq/id/{$v.id}">详情</a>
+						</td>
+						<td align="center"><?php echo date("Y-m-d",$v['time']) ?></td>
+						<td align="center">
+							<?php if($v['status']==1)echo '<a style="color: green" href="/index/Safety/advicelisthf/id/'.$v["id"].'">详情</a>';else echo '<span style="color: red">未批示</span>' ?>
+						</td>
+					</tr>
+					<?php endforeach; ?>
+				</table>
+				<div class="pagelist_area">
+					<if condition="$PAGE['total_page'] gt 1">
+						<include file="Layout/_pagelist"/>
+					</if>
+				</div>
+
+			</div>
+		</ul>
+	</div>
+</div>
+
+</block>

@@ -1,0 +1,47 @@
+<extend name="Layout/sub"/>
+<block name="nav">安全生产 / 区内重大安全目标工作</block>
+<block name="main">
+    <link rel="stylesheet" href="/Public/Home/Static/css/style2.css"/>
+
+    <div id="outer">
+        <include file="Layout/left_safety"/>
+        <div id="content">
+            <ul style="display:block;">
+                <div class="aqsc">
+                    <h3>区内重大安全目标工作</h3>
+
+                    <div class="search_2">
+                        <form action="__SELF__" method="get" class="sys_form">
+                            <label>按年份筛选</label>
+                            <input style="height: 24px" class="date" name="lt" type="text" value="{:I('get.lt')}"/> --
+                            <input style="height: 24px" class="date" name="rt" type="text" value="{:I('get.rt')}"/>
+                            <input type="submit" value="查询"/>
+                            <a class="tixing" href="/index.php/Home/Safety/anquanmubiaocheckwarn/id/{:I('get.id')}">设置提醒</a>
+                        </form>
+                    </div>
+                    <a class="tj" href="/index.php/Home/Safety/anquanmubiaocheckadd/id/{:I('get.id')}">上报</a>
+                    <table border=1 class="sys_table">
+                        <tr>
+                            <th width="20%">检查时间</th>
+                            <th width="10%">检查情况</th>
+                            <th>领导批示</th>
+                        </tr>
+                        <?php foreach($data as $k=>$v): ?>
+                        <tr>
+                            <td align="center">{$v.time}</td>
+                            <td align="center">
+                                <a href="/index.php/Home/Safety/anquanmubiaocheckxq/pid/{:I('get.id')}/id/{$v.id}">详情</a>
+                            </td>
+                            <td align="center"><?php if($v['recheck']!=='')echo $v['recheck'];else echo '<span style="color: red">未批示</span>' ?></td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </table>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <include file="Layout/include_datepicker" selector=".date" />
+
+</block>
+

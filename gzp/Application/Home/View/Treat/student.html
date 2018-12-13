@@ -1,0 +1,127 @@
+<extend name="Layout/sub"/>
+<block name="nav">综治维稳 / 综治办校园安全管理工作数据</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/Home/Static/css/style2.css"/>
+
+<div id="outer">
+	<include file="Layout/left_treat"/>
+	<div id="content">
+		<ul style="display:block;">
+			<div class="data05">
+				<h3>{$data.name}</h3>
+				<div id="main"></div>
+			</div>
+
+			<div class="aqsc">
+				<h3>综治办校园安全管理工作数据</h3>
+
+				<div class="search_2">
+					<form action="" method="get" class="sys_form">
+						<label>按年份筛选</label>
+						<select name="start_year">
+							<for start="$current_year-5" end="$current_year+1">
+								<option value="{$i}">{$i}年</option>
+							</for>
+						</select>
+						<select name="start_month">
+							<for start="1" end="13">
+								<option value="{$i}">{$i}月</option>
+							</for>
+						</select>
+						&nbsp;&nbsp; — &nbsp;&nbsp;
+						<select name="end_year">
+							<for start="$current_year-5" end="$current_year+1">
+								<option value="{$i}">{$i}年</option>
+							</for>
+						</select>
+						<select name="end_month">
+							<for start="1" end="13">
+								<option value="{$i}">{$i}月</option>
+							</for>
+						</select>
+						<input type="submit" value="查询"/>
+					</form>
+				</div>
+
+				<table border=1 class="sys_table">
+					<tr>
+						<th width="20%">年份</th>
+						<th width="60%">类型</th>
+						<th width="20%">数量</th>
+					</tr>
+					<volist name="data['details']" id="vo">
+						<tr>
+							<td>{$vo['year']}</td>
+							<td>{$vo['name']}</td>
+							<td>{$vo['value']}{$vo['unit']}</td>
+						</tr>
+					</volist>
+				</table>
+				<div class="pagelist_area">
+					<if condition="$PAGE['total_page'] gt 1">
+						<include file="Layout/_pagelist"/>
+					</if>
+				</div>
+
+			</div>
+		</ul>
+	</div>
+</div>
+
+{$app:self_js()}
+<script type="text/javascript">
+	var current_start_year  = "{$current_start_year}";
+	var current_start_month = "{$current_start_month}";
+	var current_end_year    = "{$current_end_year}";
+	var current_end_month   = "{$current_end_month}";
+	var data_json           = {$data_json};
+
+	function drawChart() {
+		var data = [];
+		for (var i=0; i<data_json.data_class.length; i++) {
+			data.push({
+				name : data_json.data_class[i],
+				value : data_json.data_value[i]
+			});
+		}
+		// 加载数据
+		echarts.init(document.getElementById('main'), 'shine').setOption({
+			title : {
+                show: false,
+                text: data_json.name,
+				subtext: '',
+				x:'center'
+			},
+			tooltip : {
+				trigger: 'item',
+				formatter: "{a} <br/>{b} : {c} ({d}%)"
+			},
+			legend: {
+				orient: 'vertical',
+				left: 'left',
+				data: data_json.data_class
+			},
+			series : [
+				{
+					name: data_json.name,
+					type: 'pie',
+					radius : '55%',
+					center: ['50%', '60%'],
+					data: data,
+					itemStyle: {
+						emphasis: {
+							shadowBlur: 10,
+							shadowOffsetX: 0,
+							shadowColor: 'rgba(0, 0, 0, 0.5)'
+						}
+					}
+				}
+			]
+		});
+	}
+	$(function () {
+		drawChart();
+	});
+</script>
+
+</block>

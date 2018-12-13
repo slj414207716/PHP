@@ -1,0 +1,59 @@
+<link type="text/css" rel="stylesheet" href="{$Think.const.__APP_PUBLIC__}/css/Base/pagelist.css" />
+<div class="pagelist">
+	<table>
+		<tr>
+			<td>
+				<ul class="fl">
+					<li>{$PAGE['count']}条数据，{$PAGE['now_page']}/{$PAGE['total_page']} 页</li>
+				</ul>
+			</td>
+			<td>
+				<ul class="page_button_group">
+					<li>
+						<a href="__ACTION__?{$PAGE['page_button_prm']}now_page={$PAGE['first_page']}">首页</a>
+					</li>
+					<li>
+						<if condition=" $PAGE['prev_page'] eq 'disable' ">
+							<a href="javascript:void(0);" class="disable">上一页</a>
+						<else/>
+							<a href="__ACTION__?{$PAGE['page_button_prm']}now_page={$PAGE['prev_page']}">上一页</a>
+						</if>
+					</li>
+					<volist name="PAGE['page_button']" id="vo">
+					<li>
+						<a href="__ACTION__?{$PAGE['page_button_prm']}now_page={$vo}" id="page_{$vo}">{$vo}</a>
+					</li>
+					</volist>
+					<li>
+						<if condition=" $PAGE['next_page'] eq 'disable' ">
+							<a href="javascript:void(0);" class="disable">下一页</a>
+						<else/>
+							<a href="__ACTION__?{$PAGE['page_button_prm']}now_page={$PAGE['next_page']}">下一页</a>
+						</if>
+					</li>
+					<li>
+						<a href="__ACTION__?{$PAGE['page_button_prm']}now_page={$PAGE['end_page']}">尾页</a>
+					</li>
+				</ul>
+			</td>
+			<td>
+				<ul class="page_jump fr">
+				<form action="__URL__/{$Think.const.ACTION_NAME}" method="get">
+					<li>跳转至</li>
+					<li><input type="text" name="now_page" id="now_page_input" /></li>
+					<li>页</li>
+					<volist name="PAGE['page_button_hidden_parm']" id='vo'>
+						<input type="hidden" name="{$vo['field_name']}" value="{$vo['field_value']}" />
+					</volist>
+					<li class="end"><input type="submit" id="page_submit" value="确定" /></li>
+				</form>
+				</ul>
+			</td>
+		</tr>
+	</table>
+</div>
+<script language="javascript" type="text/javascript">
+	// 将ThinkPHP变量定义为js变量（模板外的JS无法解析ThinkPHP变量）
+	var now_page = {$PAGE['now_page']};
+</script>
+<script language="javascript" type="text/javascript" src="{$Think.const.__APP_PUBLIC__}/js/Base/pagelist.js"></script>

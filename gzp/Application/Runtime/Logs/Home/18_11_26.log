@@ -1,0 +1,129 @@
+[ 2018-11-26T08:40:30+08:00 ] 127.0.0.1 /index.php/Home/people/canjiYear/sid/
+ERR: 非法操作:canjiYear
+
+[ 2018-11-26T15:11:19+08:00 ] 127.0.0.1 /index.php/Home/Word/educ/sid/1
+ERR: 无法加载控制器:Word
+
+[ 2018-11-26T15:11:27+08:00 ] 127.0.0.1 /index.php/Home/Word/educ/sid/1
+ERR: 无法加载控制器:Word
+
+[ 2018-11-26T15:13:26+08:00 ] 127.0.0.1 /index.php/Home/Word/educ/sid/1
+ERR: 无法加载控制器:Word
+
+[ 2018-11-26T15:19:34+08:00 ] 127.0.0.1 /index.php/Home/Work/child/sid/2
+ERR: 非法操作:child
+
+[ 2018-11-26T15:29:58+08:00 ] 127.0.0.1 /index.php/Home/Work/stude/id/17
+ERR: 非法操作:stude
+
+[ 2018-11-26T15:43:41+08:00 ] 127.0.0.1 /index.php/Home/Sports/religion/sid/1
+ERR: 非法操作:religion
+
+[ 2018-11-26T15:43:51+08:00 ] 127.0.0.1 /index.php/Home/People/job/sid/3
+ERR: 非法操作:job
+
+[ 2018-11-26T16:01:05+08:00 ] 127.0.0.1 /index.php/Home/People/job/sid/3
+ERR: 非法操作:job
+
+[ 2018-11-26T16:27:07+08:00 ] 127.0.0.1 /index.php/Home/people/%7B%7D/sid/2
+ERR: 非法操作:{}
+
+[ 2018-11-26T16:27:38+08:00 ] 127.0.0.1 /index.php/Home/people//sid/1
+ERR: 非法操作:sid
+
+[ 2018-11-26T16:53:14+08:00 ] 127.0.0.1 /index.php/Home/people//sid/1
+ERR: 非法操作:sid
+
+[ 2018-11-26T16:53:29+08:00 ] 127.0.0.1 /index.php/Home/people/1/sid/1
+ERR: 非法操作:1
+
+[ 2018-11-26T16:54:16+08:00 ] 127.0.0.1 /index.php/Home/people/xx/sid/1
+ERR: 非法操作:xx
+
+[ 2018-11-26T16:55:39+08:00 ] 127.0.0.1 /index.php/Home/people/xx/sid/1
+ERR: 非法操作:xx
+
+[ 2018-11-26T16:55:47+08:00 ] 127.0.0.1 /index.php/Home/people/xx/sid/3
+ERR: 非法操作:xx
+
+[ 2018-11-26T16:55:50+08:00 ] 127.0.0.1 /index.php/Home/people/xx/sid/1
+ERR: 非法操作:xx
+
+[ 2018-11-26T16:55:52+08:00 ] 127.0.0.1 /index.php/Home/people/xx/sid/2
+ERR: 非法操作:xx
+
+[ 2018-11-26T16:56:01+08:00 ] 127.0.0.1 /index.php/Home/People/xx/sid/1
+ERR: 非法操作:xx
+
+[ 2018-11-26T16:59:16+08:00 ] 127.0.0.1 /index.php/Home/People/mxbz/sid/1
+ERR: 非法操作:mxbz
+
+[ 2018-11-26T17:51:18+08:00 ] 127.0.0.1 /index.php/Home/People/oid/sid/8
+ERR: 非法操作:oid
+
+[ 2018-11-26T17:52:04+08:00 ] 127.0.0.1 /index.php/Home/People/oid/sid/8
+ERR: 模板不存在:./Application/Home/View/People/oid.html
+
+[ 2018-11-26T17:52:15+08:00 ] 127.0.0.1 /index.php/Home/People/oid/sid/8
+ERR: 模板不存在:./Application/Home/View/People/oid.html
+
+[ 2018-11-26T17:52:30+08:00 ] 127.0.0.1 /index.php/Home/People/oid/sid/8
+ERR: 非法操作:oid
+
+[ 2018-11-26T17:52:34+08:00 ] 127.0.0.1 /index.php/Home/People/oid/sid/8
+ERR: 非法操作:oid
+
+[ 2018-11-26T17:52:41+08:00 ] 127.0.0.1 /index.php/Home/People/oid/sid/8
+ERR: 非法操作:oid
+
+[ 2018-11-26T17:54:46+08:00 ] 127.0.0.1 /index.php/Home/Sports/religion/sid/1
+ERR: 非法操作:religion
+
+[ 2018-11-26T17:55:48+08:00 ] 127.0.0.1 /index.php/Home/Health/ylwj/sid/1
+ERR: 非法操作:ylwj
+
+[ 2018-11-26T17:55:51+08:00 ] 127.0.0.1 /index.php/Home/Sports/religion/sid/1
+ERR: 非法操作:religion
+
+[ 2018-11-26T17:56:47+08:00 ] 127.0.0.1 /index.php/Home/Sports/religion/sid/1
+ERR: 非法操作:religion
+
+[ 2018-11-26T18:03:03+08:00 ] 127.0.0.1 /index.php/Home/Work/msbz/sid/2
+ERR: 非法操作:msbz
+
+[ 2018-11-26T18:03:16+08:00 ] 127.0.0.1 /index.php/Home/Work/msbz/sid/2
+ERR: 非法操作:msbz
+
+[ 2018-11-26T20:27:01+08:00 ] 192.168.1.116 /index.php/Home/Health/ylwj/sid/1
+ERR: 非法操作:ylwj
+
+[ 2018-11-26T21:09:24+08:00 ] 192.168.1.116 /index.php/Home/People/religion/sid/1
+ERR: 非法操作:religion
+
+[ 2018-11-26T21:09:35+08:00 ] 192.168.1.116 /index.php/Home/People/religion/sid/1
+ERR: 非法操作:religion
+
+[ 2018-11-26T21:10:48+08:00 ] 192.168.1.116 /index.php/Home/Work/msbz/sid/2
+ERR: 非法操作:msbz
+
+[ 2018-11-26T21:10:52+08:00 ] 192.168.1.116 /index.php/Home/Work/msbz/sid/2
+ERR: 非法操作:msbz
+
+[ 2018-11-26T21:10:54+08:00 ] 192.168.1.116 /index.php/Home/Work/job/sid/3
+ERR: 非法操作:job
+
+[ 2018-11-26T21:11:05+08:00 ] 192.168.1.116 /index.php/Home/Work/child/sid/2
+ERR: 非法操作:child
+
+[ 2018-11-26T21:59:23+08:00 ] 192.168.1.116 /index.php/Home/Work/child
+ERR: 非法操作:child
+
+[ 2018-11-26T21:59:26+08:00 ] 192.168.1.116 /index.php/Home/Work/food
+ERR: 非法操作:food
+
+[ 2018-11-26T22:03:00+08:00 ] 192.168.1.116 /index.php/Home/Work/stude
+ERR: 非法操作:stude
+
+[ 2018-11-26T22:09:01+08:00 ] 192.168.1.116 /index.php/Home/Work/child
+ERR: 非法操作:child
+

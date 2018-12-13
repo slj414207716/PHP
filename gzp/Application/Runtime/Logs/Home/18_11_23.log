@@ -1,0 +1,6 @@
+[ 2018-11-23T17:05:01+08:00 ] 127.0.0.1 /index.php/Home/People/spoil/sid/5
+ERR: 非法操作:spoil
+
+[ 2018-11-23T17:23:21+08:00 ] 127.0.0.1 /index.php/Home/People/canji/sid/5
+ERR: 非法操作:canji
+

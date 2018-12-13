@@ -1,0 +1,152 @@
+<extend name="Layout/sub" />
+<block name="nav">民生保障 / 村（社区）干部</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.css" />
+<style>
+.data h3{margin: 0px 0px 20px 0px};
+</style>
+<script type="text/javascript" src="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.js"></script>
+<script type="text/javascript">
+    var key = '';
+    key = '<?php echo $key; ?>';
+    var value = '';
+    value = '<?php echo $value; ?>';
+
+</script>
+<div id="outer">
+<include file="Layout/left_people"/>
+    <div id="content">
+        	<div class="data">
+        		<H3 style="color:#fff;">村（社区）干部数据</H3>
+        		<div id="main1" style="width: 100%; height: 100%; margin: auto;"></div>
+        	</div>
+       		<div class="data">
+       			<H3 style="color:#fff;">数据比例</H3>
+       			<div id="main2" style="width: 100%; height: 100%; margin: auto;"></div>
+       		</div>
+        	<ul style="display:block;">
+            <div class="aqsc">
+                <h3>村（社区）干部统计</h3>
+                <div class="div"> 
+                  <table width="720" border="0" cellpadding="0" cellspacing="0">                     
+                    <col width="72" span="10"/>
+                    <tr height="18">
+                      <td height="36" width="72" rowspan="2" x:str="x:str"><div align="center">单位</div></td>
+                      <td width="72" rowspan="2" x:str="x:str"><div align="center">总人数</div></td>
+                      <td width="216" colspan="3" x:str="x:str"><div align="center">年龄情况</div></td>
+                      <td width="216" colspan="3" x:str="x:str"><div align="center">学历情况</div></td>
+                      <td width="144" colspan="2" x:str="x:str"><div align="center">性别情况</div></td>
+                    </tr>
+                    <tr height="18">
+                      <td x:str="x:str"><div align="center">35岁以下</div></td>
+                      <td x:str="x:str"><div align="center">36-49岁</div></td>
+                      <td x:str="x:str"><div align="center">50岁以上</div></td>
+                      <td x:str="x:str"><div align="center">高中及其他</div></td>
+                      <td x:str="x:str"><div align="center">大专以上</div></td>
+                      <td x:str="x:str"><div align="center">研究生</div></td>
+                      <td x:str="x:str"><div align="center">男</div></td>
+                      <td x:str="x:str"><div align="center">女</div></td>
+                    </tr>
+                    <tr height="18">
+                      <td height="18" x:str="x:str"><div align="center">渤海社区</div></td>
+                      <td x:num="x:num"><div align="center">3</div></td>
+                      <td><div align="center"></div></td>
+                      <td x:num="x:num"><div align="center">1</div></td>
+                      <td x:num="x:num"><div align="center">2</div></td>
+                      <td x:num="x:num"><div align="center">2</div></td>
+                      <td x:num="x:num"><div align="center">1</div></td>
+                      <td><div align="center"></div></td>
+                      <td x:num="x:num"><div align="center">1</div></td>
+                      <td x:num="x:num"><div align="center">2</div></td>
+                    </tr>
+                    <tr height="18">
+                      <td height="18" x:str="x:str"><div align="center">中革村</div></td>
+                      <td x:num="x:num"><div align="center">7</div></td>
+                      <td><div align="center"></div></td>
+                      <td x:num="x:num"><div align="center">5</div></td>
+                      <td x:num="x:num"><div align="center">2</div></td>
+                      <td><div align="center"></div></td>
+                      <td><div align="center"></div></td>
+                      <td><div align="center"></div></td>
+                      <td><div align="center"></div></td>
+                      <td x:num="x:num"><div align="center">1</div></td>
+                    </tr>
+                    <tr height="18">
+                      <td height="18" x:str="x:str"><div align="center">后革村</div></td>
+                      <td x:num="x:num"><div align="center">7</div></td>
+                      <td x:num="x:num"><div align="center">1</div></td>
+                      <td x:num="x:num"><div align="center">5</div></td>
+                      <td x:num="x:num"><div align="center">1</div></td>
+                      <td><div align="center"></div></td>
+                      <td x:num="x:num"><div align="center">7</div></td>
+                      <td><div align="center"></div></td>
+                      <td x:num="x:num"><div align="center">4</div></td>
+                      <td x:num="x:num"><div align="center">3</div></td>
+                    </tr>
+                    <tr height="18">
+                      <td height="18" x:str="x:str"><div align="center">夏家河村</div></td>
+                      <td x:num="x:num"><div align="center">5</div></td>
+                      <td x:num="x:num"><div align="center">1</div></td>
+                      <td x:num="x:num"><div align="center">3</div></td>
+                      <td x:num="x:num"><div align="center">1</div></td>
+                      <td><div align="center"></div></td>
+                      <td x:num="x:num"><div align="center">5</div></td>
+                      <td><div align="center"></div></td>
+                      <td x:num="x:num"><div align="center">4</div></td>
+                      <td x:num="x:num"><div align="center">1</div></td>
+                    </tr>
+                    <tr height="18">
+                      <td height="18" x:str="x:str"><div align="center">羊圈村</div></td>
+                      <td x:num="x:num"><div align="center">7</div></td>
+                      <td><div align="center"></div></td>
+                      <td x:num="x:num"><div align="center">4</div></td>
+                      <td x:num="x:num"><div align="center">3</div></td>
+                      <td><div align="center"></div></td>
+                      <td x:num="x:num"><div align="center">7</div></td>
+                      <td><div align="center"></div></td>
+                      <td x:num="x:num"><div align="center">6</div></td>
+                      <td x:num="x:num"><div align="center">1</div></td>
+                    </tr>
+                    <tr height="18">
+                      <td height="18" x:str="x:str"><div align="center">棋盘村</div></td>
+                      <td x:num="x:num"><div align="center">5</div></td>
+                      <td><div align="center"></div></td>
+                      <td x:num="x:num"><div align="center">2</div></td>
+                      <td x:num="x:num"><div align="center">3</div></td>
+                      <td><div align="center"></div></td>
+                      <td x:num="x:num"><div align="center">5</div></td>
+                      <td><div align="center"></div></td>
+                      <td x:num="x:num"><div align="center">3</div></td>
+                      <td x:num="x:num"><div align="center">2</div></td>
+                    </tr>
+                    <tr height="18">
+                      <td height="18" x:str="x:str"><div align="center">鞍子山村</div></td>
+                      <td x:num="x:num"><div align="center">7</div></td>
+                      <td><div align="center"></div></td>
+                      <td x:num="x:num"><div align="center">3</div></td>
+                      <td x:num="x:num"><div align="center">4</div></td>
+                      <td><div align="center"></div></td>
+                      <td x:num="x:num"><div align="center">7</div></td>
+                      <td><div align="center"></div></td>
+                      <td x:num="x:num"><div align="center">6</div></td>
+                      <td x:num="x:num"><div align="center">1</div></td>
+                    </tr>
+                    <tr height="18">
+                      <td height="18" x:str="x:str"><div align="center">合计</div></td>
+                      <td x:fmla="=SUM(B3:B9)" x:num="x:num"><div align="center">41</div></td>
+                      <td x:fmla="=SUM(C3:C9)" x:num="x:num"><div align="center">2</div></td>
+                      <td x:fmla="=SUM(D3:D9)" x:num="x:num"><div align="center">23</div></td>
+                      <td x:fmla="=SUM(E3:E9)" x:num="x:num"><div align="center">16</div></td>
+                      <td x:fmla="=SUM(F3:F9)" x:num="x:num"><div align="center">2</div></td>
+                      <td x:fmla="=SUM(G3:G9)" x:num="x:num"><div align="center">32</div></td>
+                      <td x:fmla="=SUM(H3:H9)" x:num="x:num"><div align="center">0</div></td>
+                      <td x:fmla="=SUM(I3:I9)" x:num="x:num"><div align="center">24</div></td>
+                      <td x:fmla="=SUM(J3:J9)" x:num="x:num"><div align="center">11</div></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </ul>
+    </div>
+</div>
+</block>	

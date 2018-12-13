@@ -1,0 +1,60 @@
+<extend name="Layout/base" />
+<block name="main">
+<link rel="stylesheet" href="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.css" />
+<script type="text/javascript" src="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.js"></script>
+
+<div class="about-history" id="fzlc">
+    <header class="about-title title-white">
+        <h3 class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+            <strong>{$fdclproData}</strong>
+        </h3>
+    </header>
+    <div class="about-history-list wow zoomIn" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: zoomIn;">		
+        <div class="flex-viewport" style="overflow: hidden; position: relative;">
+            <ul class="slides clearfix list" style="width: 2600%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
+                
+                <volist name="fdclprosData" id="v">
+                    <li style="width: 253px; float: left; display: block;">
+                        <a href="{$Think.const.HOST_NAME}/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/fdclprosxq/id/{$v.id}" class="item">
+                            <h3>
+                                {$v.addtime}
+                                <if condition="$v.completion neq 100">
+                                    <img src="/Public/Home/Static/images/timg.gif" class="jingbao">
+                                </if>
+                            </h3>
+                            <div class="desc">
+                                <p>
+                                    <span style="color:#FF0">完成情况：</span>{$v.completion}%
+                                </p>
+                                <p>
+                                    <span style="color:#FF0">计划任务：</span>{$v.plan}
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+
+                </volist>
+
+                <li style="width: 253px; float: left; display: block;"></li>
+            </ul>
+        </div>
+        <ul class="flex-direction-nav">
+            <li class="flex-nav-prev"><a class="flex-prev" href="#">&lt;</a></li>
+            <li class="flex-nav-next"><a class="flex-next" href="#">&gt;</a></li>
+         </ul>
+    </div>
+   
+</div>
+
+<script>
+    $(function(){
+        if((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))){
+            //phone
+        }else{
+            //PC
+            $(".about-history-list").flexslider({animation:"slide",slideshow:false,controlNav:false,itemWidth:340,itemMargin:31,prevText:"<",nextText:">",move:1});
+        }
+    });
+</script>
+
+</block>

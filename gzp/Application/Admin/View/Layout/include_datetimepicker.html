@@ -1,0 +1,23 @@
+<!-- 引入时间插件 -->
+<link href="/Public/Common/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" media="all" type="text/css" href="/Public/Common/jquery-ui/timepicker/jquery-ui-timepicker-addon.css" />
+<script type="text/javascript" src="/Public/Common/jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/Public/Common/jquery-ui/jquery-ui-datepicker-zh_cn.js"></script>
+<script type="text/javascript" src="/Public/Common/jquery-ui/timepicker/jquery-ui-timepicker-addon.js"></script>
+<script type="text/javascript" src="/Public/Common/jquery-ui/timepicker/i18n/jquery-ui-timepicker-zh-CN.js"></script>
+<script type="text/javascript" src="/Public/Common/jquery-ui/timepicker/jquery-ui-sliderAccess.js"></script>
+<script>
+    $(function() {
+        $('[selector]').prop('readonly', true).datetimepicker({
+            dateFormat: "yy-mm-dd",
+            timeFormat: "HH:mm:ss",
+            secondText: '秒',
+            currentText: '现在',
+            closeText: '完成',
+            inline: true,
+            showButtonPanel: true,
+            changeMonth: true,
+            changeYear: true
+        });
+    });
+</script>

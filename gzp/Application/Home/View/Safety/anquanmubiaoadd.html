@@ -1,0 +1,82 @@
+<extend name="Layout/sub"/>
+<block name="nav">安全生产 / 区内重大安全目标工作</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/Home/Static/css/style2.css"/>
+
+<div id="outer">
+	<include file="Layout/left_safety"/>
+	<div id="content">
+		<ul style="display:block;">
+			<div class="aqsc">
+				<h3>区内重大安全目标工作</h3>
+				<div class="div">
+					<form action="__SELF__" method="post">
+					<input name="add_time" type="hidden" value="<?php echo time() ?>"/>
+					<input name="year" type="hidden" value="<?php echo date('Y') ?>"/>
+					<ul class="form">
+						<li>
+							<div class="label">月　　份：</div>
+							<div class="value">
+								<select name="time" style="height: 28px;width: 90px;border: 1px solid">
+									<option value="0">--请选择--</option>
+									<?php for($i=1;$i<=12;++$i): ?>
+									<option value="<?php echo $i ?>"><?php echo $i ?>月</option>
+									<?php endfor; ?>
+								</select>
+							</div>
+						</li>
+						<li>
+							<div class="label">企业名称：</div>
+							<div class="value"><input name="name" type="text"/></div>
+						</li>
+						<li>
+							<div class="label">经　　度：</div>
+							<div class="value"><input name="lng" type="text"/></div>
+						</li>
+						<li>
+							<div class="label">纬　　度：</div>
+							<div class="value"><input name="lat" type="text"/></div>
+						</li>
+						<li>
+							<div class="label">安全级别：</div>
+							<div class="value">
+								<select name="level" style="height: 28px;width: 90px;border: 1px solid">
+									<option value="0">--请选择--</option>
+									<?php for($i=1;$i<=5;++$i): ?>
+									<option value="<?php echo $i ?>"><?php echo $i ?>级</option>
+									<?php endfor; ?>
+								</select>
+							</div>
+						</li>
+						<li>
+							<div class="label">隐患类型：</div>
+							<div class="value">
+								<select name="target" style="height: 28px;width: 90px;border: 1px solid">
+									<option value="0">--请选择--</option>
+									<option value="重大危险源">重大危险源</option>
+									<option value="危险化学品">危险化学品</option>
+									<option value="九小场所">九小场所</option>
+									<option value="其它">其它</option>
+								</select>
+							</div>
+						</li>
+						<li>
+							<div class="label">安全隐患：</div>
+							<div class="value"><textarea name="danger" id="ue_content"></textarea></div>
+						</li>
+						<li>
+							<div class="label">
+								<input type="submit" value="提交"/>
+							</div>
+						</li>
+					</ul>
+					</form>
+				</div>
+			</div>
+		</ul>
+	</div>
+</div>
+
+<include file="Layout/include_ueditor" />
+
+</block>

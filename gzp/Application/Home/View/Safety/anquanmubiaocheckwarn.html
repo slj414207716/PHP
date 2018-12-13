@@ -1,0 +1,36 @@
+<extend name="Layout/sub"/>
+<block name="nav">安全生产 / 区内重大安全目标工作</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/Home/Static/css/style2.css"/>
+
+<div id="outer">
+	<include file="Layout/left_safety"/>
+	<div id="content">
+		<ul style="display:block;">
+			<div class="aqsc">
+				<h3>区内重大安全目标工作</h3>
+
+				<form action="__SELF__" method="get" class="sys_form">
+				<a class="tixing" href="/index.php/Home/Safety/anquanmubiaocheckwarnadd/id/{:I('get.id')}">添加提醒</a>
+				</form>
+
+				<table border=1 class="sys_table">
+					<tr>
+						<th width="10%">序号</th>
+						<th width="30%">提醒时间</th>
+						<th width="60%">提醒内容</th>
+					</tr>
+					<?php foreach($data as $k=>$v): ?>
+					<tr>
+						<td align="center"><?php echo ++$a ?></td>
+						<td align="center">{$v.time}</td>
+						<td align="center">{$v.content}</td>
+					</tr>
+					<?php endforeach; ?>
+				</table>
+			</div>
+		</ul>
+	</div>
+</div>
+
+</block>

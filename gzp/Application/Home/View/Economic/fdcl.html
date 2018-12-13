@@ -1,0 +1,149 @@
+<extend name="Layout/base" />
+<block name="main">
+<link rel="stylesheet" href="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.css" />
+<script type="text/javascript" src="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.js"></script>
+
+<div id="outer">
+    <ul id="tab">
+        <li <if condition = "$Think.get.sid eq 1"> class="current" </if> >续建项目</li>
+        <li <if condition = "$Think.get.sid eq 2"> class="current" </if> >新开开工项目</li>
+        <li <if condition = "$Think.get.sid eq 3"> class="current" </if> >推进前期项目</li>
+        <!--
+        <p> 数据查询：<br><input type="text"><input type="text"><br> <button type="submit">查询</button></p>
+        -->
+    </ul>
+    <div id="content">
+    	<!-- 续建项目 -->
+        <ul <if condition="$Think.get.sid eq 1"> style="display: block;" <else /> style="display: none;" </if> >
+	       	<volist name="fdclpro1Data" id="v">
+		       	<div class="project">
+                    <!--
+					<img src="/Public/Home/Static/images/timg.gif" class="jb">
+                    -->
+					<img src="/Public/Home/Static/images/img1.jpg" class="tp">
+					<h2>{$v.name}</h2>
+					<p>
+						完成固投：
+							<if condition="$v.gt eq ''">
+								--
+							<else />
+								{$v.gt}
+							</if>
+						亿元
+					</p>
+					<p>
+						完成税收：
+							<if condition="$v.ss eq ''">
+								--
+							<else />
+								{$v.ss}
+							</if>
+						亿元
+					</p>
+					<p>
+						<a href="{$Think.const.HOST_NAME}/Home/Economic/fdclpro/id/{$v.id}">个案</a>
+						<a href="{$Think.const.HOST_NAME}/Home/Economic/fdclpros/id/{$v.id}">进展</a>
+					</p>
+	            </div>
+            </volist>
+            <!--
+            <div class="page"><a href="#">prve</a> <a href="#">next</a></div>
+            -->
+        </ul>
+		<!-- 新开开工项目 -->
+        <ul <if condition="$Think.get.sid eq 2"> style="display: block;" <else /> style="display: none;" </if> >
+	        <volist name="fdclpro2Data" id="v">
+		       	<div class="project">
+                    <!--
+					<img src="/Public/Home/Static/images/timg.gif" class="jb">
+                    -->
+					<img src="/Public/Home/Static/images/img1.jpg" class="tp">
+					<h2>{$v.name}</h2>
+					<p>
+						完成固投：
+							<if condition="$v.gt eq ''">
+								--
+							<else />
+								{$v.gt}
+							</if>
+						亿元
+					</p>
+					<p>
+						完成税收：
+							<if condition="$v.ss eq ''">
+								--
+							<else />
+								{$v.ss}
+							</if>
+						亿元
+					</p>
+					<p>
+						<a href="{$Think.const.HOST_NAME}/Home/Economic/fdclpro/id/{$v.id}">个案</a>
+						<a href="{$Think.const.HOST_NAME}/Home/Economic/fdclpros/id/{$v.id}">进展</a>
+					</p>
+	            </div>
+            </volist>
+            <!--
+            <div class="page"><a href="#">prve</a> <a href="#">next</a></div>
+            -->
+        </ul>
+		<!-- 推进前期项目 -->
+        <ul <if condition="$Think.get.sid eq 3"> style="display: block;" <else /> style="display: none;" </if> >
+	        <volist name="fdclpro3Data" id="v">
+		       	<div class="project">
+                    <!--
+					<img src="/Public/Home/Static/images/timg.gif" class="jb">
+                    -->
+					<img src="/Public/Home/Static/images/img1.jpg" class="tp">
+					<h2>{$v.name}</h2>
+					<p>
+						完成固投：
+							<if condition="$v.gt eq ''">
+								--
+							<else />
+								{$v.gt}
+							</if>
+						亿元
+					</p>
+					<p>
+						完成税收：
+							<if condition="$v.ss eq ''">
+								--
+							<else />
+								{$v.ss}
+							</if>
+						亿元
+					</p>
+					<p>
+						<a href="{$Think.const.HOST_NAME}/Home/Economic/fdclpro/id/{$v.id}">个案</a>
+						<a href="{$Think.const.HOST_NAME}/Home/Economic/fdclpros/id/{$v.id}">进展</a>
+					</p>
+	            </div>
+            </volist>
+            <!--
+            <div class="page"><a href="#">prve</a> <a href="#">next</a></div>
+            -->
+        </ul>
+    </div>
+</div>
+
+<script src="/Public/Home/Static/js/jquery.min.js"></script>
+<script>
+	$(function(){
+		window.onload = function()
+		{
+			var $li = $('#tab li');
+			var $ul = $('#content ul');
+			$li.click(function(){
+				var $this = $(this);
+				var $t = $this.index();
+				$li.removeClass();
+				$this.addClass('current');
+				$ul.css('display','none');
+				$ul.eq($t).css('display','block');
+			})
+		}
+	});
+</script>
+
+</block>

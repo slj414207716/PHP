@@ -1,0 +1,23 @@
+[ 2018-11-28T09:23:17+08:00 ] 127.0.0.1 /index.php/Home/Sports/whbh
+ERR: 1146:Table 'gzppro.gzp_whbh' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `gzp_whbh`
+
+[ 2018-11-28T14:51:01+08:00 ] 127.0.0.1 /index.php/Home/Sports/whbh
+ERR: 1146:Table 'gzppro.gzp_whbh' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `gzp_whbh`
+
+[ 2018-11-28T14:51:07+08:00 ] 127.0.0.1 /index.php/Home/Sports/whbh
+ERR: 1146:Table 'gzppro.gzp_whbh' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `gzp_whbh`
+
+[ 2018-11-28T16:49:36+08:00 ] 127.0.0.1 /index.php/Home/Work/educ
+ERR: 模板不存在:./Application/Home/View/Work/educ.html
+
+[ 2018-11-28T23:02:51+08:00 ] 192.168.1.116 /index.php/Home/Sports/whbh
+ERR: 1146:Table 'gzppro.gzp_whbh' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `gzp_whbh`
+
+[ 2018-11-28T23:05:27+08:00 ] 192.168.1.116 /index.php/Home/Sports/whbh
+ERR: 1146:Table 'gzppro.gzp_whbh' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `gzp_whbh`
+

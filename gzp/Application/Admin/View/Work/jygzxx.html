@@ -1,0 +1,106 @@
+<extend name="Layout/base" />
+<block name="main">
+
+<script type="text/javascript">
+    $(function(){
+        //自适应屏幕宽度
+        window.onresize=function(){ location=location };
+
+        var main_h = $(window).height();
+        $('.hy_list').css('height',main_h-45+'px');
+
+        var search_w = $(window).width()-40;
+        $('.search').css('width',search_w+'px');
+        $('.list_hy').css('width',search_w+'px');
+
+        $('.xial_m span').click(function(){
+            $(this).parent('.xial_m').siblings('.xl_ctn').toggle();
+        });
+    });
+</script>
+
+<div class="row">
+    <div class="col-lg-12">
+        <volist name="data2" id="vi">
+        <if condition = "$Think.get.sid eq $vi['sort']">
+            <h1 class="page-header">{$vi.name}</h1>
+        </if>
+        </volist>
+    </div>
+</div>
+<div align="right">
+    <a href="/Admin/Work/pupiladd/sid/{$sid}"><h3>添加学生信息</h3> </a>
+</div>     
+            <!--列表-->
+    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover no-footer">
+        <col width="63.47" span="22"/>
+        <col width="72" span="16362"/>
+        <tr height="16">
+            <th width="63.47" rowspan="3" x:str="x:str" style="text-align: center" scope="col">班级</th>
+            <th width="63.47" rowspan="3" x:str="x:str" style="text-align: center" scope="col">现有学生数</th>
+            <th width="63.47" rowspan="3" x:str="x:str" style="text-align: center" scope="col">女生</th>
+            <th width="253.87" colspan="4" x:str="x:str" style="text-align: center" scope="col">借读生</th>
+            <th width="253.87" colspan="4" x:str="x:str" style="text-align: center" scope="col">农民工</th>
+            <th width="126.93" colspan="2" x:str="x:str" style="text-align: center" scope="col">留守儿童</th>
+            <th width="253.87" colspan="4" x:str="x:str" style="text-align: center" scope="col">择校生</th>
+            <th width="126.93" colspan="2" x:str="x:str" style="text-align: center" scope="col">人才证</th>
+            <th width="126.93" colspan="2" x:str="x:str" style="text-align: center" scope="col">外籍学生</th>
+            <th width="63.47" rowspan="3" x:str="x:str" style="text-align: center" scope="col">编辑</th>
+        </tr>
+        <tr height="28">
+            <th rowspan="2" x:str="x:str">外省市</th>
+            <th rowspan="2" x:str="x:str">大连地区</th>
+            <th rowspan="2" x:str="x:str">合计</th>
+            <th rowspan="2" x:str="x:str">占学生数比例</th>
+            <th rowspan="2" x:str="x:str">外省市</th>
+            <th rowspan="2" x:str="x:str">大连地区</th>
+            <th rowspan="2" x:str="x:str">合计</th>
+            <th rowspan="2" x:str="x:str">占学生数比例</th>
+            <th rowspan="2" x:str="x:str">学生数</th>
+            <th rowspan="2" x:str="x:str">占学生数比例</th>
+            <th rowspan="2" x:str="x:str">区内<br/>
+                择校</th>
+            <th rowspan="2" x:str="x:str">外区择校</th>
+            <th rowspan="2" x:str="x:str">合计</th>
+            <th rowspan="2" x:str="x:str">占学生数比例</th>
+            <th rowspan="2" x:str="x:str">学生数</th>
+            <th rowspan="2" x:str="x:str">占学生数比例</th>
+            <th rowspan="2" x:str="x:str">学生数</th>
+            <th rowspan="2" x:str="x:str">占学生数比例</th>
+
+        </tr>
+            <volist name="data" id="vo">
+                <tr height="0"/></tr>
+                <tr height="19">
+                    <td x:str="x:str">{$vo.grade}</td>
+                    <td x:str="x:str">{$vo.number}</td>
+                    <td x:str="x:str">{$vo.girl}</td>
+                    <td x:str="x:str">{$vo.lend_outer}</td>
+                    <td x:str="x:str">{$vo.lend_inner}</td>
+                    <td x:str="x:str"><?php echo $vo['lend_outer']+$vo['lend_inner']?></td>
+                    <td x:str="x:str"><?php echo sprintf('%.2f%%',($vo['lend_outer']+$vo['lend_inner'])/$vo['number']*100)?></td>
+                    <td x:str="x:str">{$vo.boor_outer}</td>
+                    <td x:str="x:str">{$vo.boor_inner}</td>
+                    <td x:str="x:str"><?php echo $vo['boor_outer']+$vo['boor_inner']?></td>
+                    <td x:str="x:str"><?php echo sprintf('%.2f%%',($vo['boor_outer']+$vo['boor_inner'])/$vo['number']*100)?></td>
+                    <td x:str="x:str">{$vo.stay}</td>
+                    <td x:str="x:str"><?php echo sprintf('%.2f%%',$vo['stay']/$vo['number']*100)?></td>
+                    <td x:str="x:str">{$vo.select_outer}</td>
+                    <td x:str="x:str">{$vo.select_inner}</td>
+                    <td x:str="x:str"><?php echo $vo['select_outer']+$vo['select_inner']?></td>
+                    <td x:str="x:str"><?php echo sprintf('%.2f%%',($vo['select_outer']+$vo['select_inner'])/$vo['number']*100)?></td>
+                    <td x:str="x:str">{$vo.talents}</td>
+                    <td x:str="x:str"><?php echo sprintf('%.2f%%',$vo['talents']/$vo['number']*100)?></td>
+                    <td x:str="x:str">{$vo.foreig}</td>
+                    <td x:str="x:str"><?php echo sprintf('%.2f%%',$vo['foreig']/$vo['number']*100)?></td>
+                    <td x:str="x:str">
+                        <a href="/Admin/Work/alter/id/{$vo.id}">修改</a><br/>
+                        <a onclick="return confirm('确定要删除吗？');" href="/Admin/Work/del/id/{$vo.id}">删除</a>
+                    </td>
+                </tr>
+            </volist>
+    </table>
+            <div class="pages" align="center">
+                {$page}
+            </div>
+</block>

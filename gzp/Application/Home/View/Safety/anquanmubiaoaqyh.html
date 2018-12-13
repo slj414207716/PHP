@@ -1,0 +1,25 @@
+<extend name="Layout/sub"/>
+<block name="nav">安全生产 / 区内重大安全目标工作</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/Home/Static/css/style2.css"/>
+
+<div id="outer">
+	<include file="Layout/left_safety"/>
+	<div id="content">
+		<ul style="display:block;">
+			<div class="aqsc">
+				<h3>区内重大安全目标工作</h3>
+
+				<div style="width: 95%;height: 50px;padding: 30px 0px 0px 5%;font-size: 28px;line-height: 50px">
+					<strong>安全隐患</strong>
+				</div>
+				<div style="width: 94%;height: auto;margin: 10px 0px 0px 5%;font-size: 18px;line-height: 40px">
+					<?php echo htmlspecialchars_decode($data) ?>
+				</div>
+
+			</div>
+		</ul>
+	</div>
+</div>
+
+</block>

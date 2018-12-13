@@ -1,0 +1,129 @@
+<extend name="Layout/sub" />
+<block name="nav">安全生产 / 区内重大安全目标工作</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/Home/Static/css/style2.css" />
+
+<div id="outer">
+	<include file="Layout/left_safety"/>
+	<div id="content">
+		<ul style="display:block;">
+			<div class="aqsc">
+				<h3>区内重大安全目标工作</h3>
+
+				<div class="search_2">
+					<form action="" method="get" class="sys_form">
+					<p class="cx">
+						<label>按年份筛选</label>
+						<select name="start_year">
+							<for start="$current_year-5" end="$current_year+1">
+								<option
+								<?php if($i==I('get.start_year'))echo 'selected="selected"' ?>
+								value="{$i}">{$i}年</option>
+							</for>
+						</select>
+						<select name="start_month">
+							<for start="1" end="13">
+								<option
+								<?php if($i==I('get.start_month'))echo 'selected="selected"' ?>
+								value="{$i}">{$i}月</option>
+							</for>
+						</select>
+						&nbsp;&nbsp; — &nbsp;&nbsp;
+						<select name="end_year">
+							<for start="$current_year-5" end="$current_year+1">
+								<option
+								<?php if($i==I('get.end_year'))echo 'selected="selected"' ?> value="{$i}">{$i}年</option>
+							</for>
+						</select>
+						<select name="end_month">
+							<for start="1" end="13">
+								<option
+								<?php if($i==I('get.end_month'))echo 'selected="selected"' ?>
+								value="{$i}">{$i}月</option>
+							</for>
+						</select>
+						<input class="sub" type="submit" value="查询"/>
+					</p>
+					</form>
+				</div>
+				<a class="tj" href="/index.php/Home/Safety/anquanmubiaoadd">上报</a>
+
+				<div class="div">
+					<table border=1 class="sys_table">
+						<tr>
+							<th>时间</th>
+							<th>企业名称</th>
+							<th>安全级别</th>
+				            <th>隐患类型</th>
+				            <th>安全隐患</th>
+				            <th>上报时间</th>
+							<th>检查详情</th>
+							<th>检查提醒</th>
+						</tr>
+				        <?php foreach($data as $k=>$v): ?>
+				            <tr>
+				                <td align="center"><?php echo date('Y').'年'.$v['time'] ?>月</td>
+				                <td align="center">{$v.name}</td>
+				                <td align="center">
+									<div id="star<?php echo $k ?>"></div>
+									<script>
+				                        $('#star<?php echo $k ?>').raty({ readOnly: true, score: '<?php echo $v["level"] ?>',number: 5});
+									</script>
+								</td>
+				                <td align="center">{$v.target}</td>
+				                <td align="center"><a href="/index.php/Home/Safety/anquanmubiaoaqyh/id/{$v.id}">详情</a></td>
+				                <td align="center"><?php echo date("Y-m-d H:i:s",$v['add_time']) ?></td>
+				                <td align="center" style="position: relative">
+									<a href="/index.php/Home/Safety/anquanmubiaochecklst/id/{$v.id}">详情</a>
+									<?php if($v['checkid']!=''): ?>
+									<span style="position: absolute;top: 10px;right: 42px"><img src="/Public/images/index/new.gif" /></span>
+									<?php endif; ?>
+								</td>
+								<td align="center">
+									<?php if(in_array(date("Y-m-d"),$v['warntime'])): ?>
+									<a status="1" warnid="{$v.id}" class="warn" href="javascript:void(0)"><img src="/Public/images/index/redwarn2.gif" width="20px" /></a>
+									<?php else: ?>
+									暂无
+									<?php endif; ?>
+								</td>
+				            </tr>
+				        <?php endforeach; ?>
+					</table>
+					<div class="pagelist_area">
+						<if condition="$PAGE['total_page'] gt 1">
+							<include file="Layout/_pagelist" />
+						</if>
+					</div>
+
+				</div>
+			</div>
+		</ul>
+	</div>
+</div>
+
+<script>
+	var url = "<?php echo 'ajaxfun' ?>";
+	var content;
+	$(".warn").click(function(){
+		if($(this).attr("status")==1) {
+			var id = $(this).attr("warnid");
+			$.ajax({
+				async:false,
+				type:"post",
+				url:url,
+				data:"warnid="+id+"&status=true",
+				dateType:"Json",
+				success:function(data){
+					content = eval('('+data+')');
+				}
+			});
+			$(this).parent().parent().after('<tr class="new_line"><td colspan="8">'+content+'</td></tr>');
+			$(this).attr("status", 2);
+		}else{
+			$('.new_line').remove();
+			$(this).attr("status", 1);
+		}
+	});
+</script>
+
+</block>

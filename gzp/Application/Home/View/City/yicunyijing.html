@@ -1,0 +1,39 @@
+<extend name="Layout/sub"/>
+<block name="nav">城市管理 / 一村一景</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/Home/Static/css/style2.css"/>
+
+<div id="outer">
+	<include file="Layout/left_city"/>
+	<div id="content">
+		<ul style="display:block;">
+			<div class="aqsc">
+				<h3>一村一景</h3>
+				<div class="div">
+
+					<!--{/*
+					<div style="width:942px;height: 502px;margin: auto;">
+						<img src="{$Think.const.__APP_PUBLIC__}/images/index/city/yicunyijing.gif"/>
+					</div>
+					*/}-->
+					<table border=1 class="sys_table">
+						<tr>
+							<th width="20%">年份</th>
+							<th>工程名称</th>
+						</tr>
+						<!--<?php dump($data) ?>-->
+						<volist name="data" id="vo">
+							<tr>
+								<td align="center">{$vo.time}</td>
+								<td align="center">{$vo.name}</td>
+							</tr>
+						</volist>
+					</table>
+				</div>
+
+			</div>
+		</ul>
+	</div>
+</div>
+
+</block>

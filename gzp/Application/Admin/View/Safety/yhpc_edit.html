@@ -1,0 +1,118 @@
+<extend name="Layout/base"/>
+<block name="main">
+    <style>
+        .hypz li .title {
+            width: 200px;
+        }
+    </style>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">隐患排查治理</h1>
+        </div>
+    </div>
+
+    <form action="yhpc_edit/id/{:I('get.id')}" method="post" enctype="multipart/form-data">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">企业名称</label>
+                    <div class="col-sm-10">
+                        <select name="comid"
+                                style="width: 190px;height: 25px;border-radius: 2px;border: 1px solid lightgrey;">
+                            <option value="0">--请选择--</option>
+                            <?php foreach($com as $k=>$v): ?>
+                            <option
+                            <?php if($v['id']==$data['comid'])echo 'selected="selected"' ?>
+                            value="{$v.id}">{$v.qymc}</option>
+                            <?php endforeach; ?>
+                        </select>
+                        <i>*</i>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">检查单位</label>
+                    <div class="col-sm-10">
+                        <input name="chkdep" type="text" value="{$data.chkdep}">
+                        <i>*</i>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">检查日期</label>
+                    <div class="col-sm-10">
+                        <input class="datetime" name="chktime" type="text" value="{$data.chktime}">
+                        <i>*</i>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">隐患</label>
+                    <div class="col-sm-10">
+                        <textarea style="width: 400px;height: 100px"
+                                  name="danger">{$data.danger}</textarea>
+                        <i>*</i>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">隐患图片</label>
+                    <?php if($data['danimg']==null): ?>
+                    <div class="col-sm-10">
+                        <input name="danimg" type="file">
+                        <i>*</i>
+                    </div>
+                    <?php else: ?>
+                    <div class="col-sm-10">
+                        <div class="{$v.id}"
+                             style="width: auto;height:auto;background: red;position: relative;float: left;margin: 0px 10px 10px 0px">
+                            <img src="__ROOT__/{$data.danimg}"/>
+                        </div>
+                    </div>
+                    <?php endif; ?>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">复查单位</label>
+                    <div class="col-sm-10">
+                        <input name="rechkdep" type="text" value="{$data.rechkdep}">
+                        <i>*</i>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">复查日期</label>
+                    <div class="col-sm-10">
+                        <input class="datetime" name="rechktime" type="text" value="{$data.rechktime}">
+                        <i>*</i>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">整改</label>
+                    <div class="col-sm-10">
+                        <textarea style="width: 400px;height: 100px" name="rec">{$data.rec}</textarea>
+                        <i>*</i>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">整改图片</label>
+                    <?php if($data['recimg']==null): ?>
+                    <div class="col-sm-10">
+                        <input name="recimg" type="file">
+                        <i>*</i>
+                    </div>
+                    <?php else: ?>
+                    <div class="col-sm-10">
+                        <div class="{$v.id}"
+                             style="width: auto;height:auto;background: red;position: relative;float: left;margin: 0px 10px 10px 0px">
+                            <img src="__ROOT__/{$data.recimg}"/>
+                        </div>
+                    </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button type="submit" class="btn btn-primary">提交</button>
+                <button type="button" class="btn btn-default btn-back">返回</button>
+            </div>
+        </div>
+    </form>
+
+    <include file="Layout/include_datetimepicker" selector=".datetime" />
+
+</block>

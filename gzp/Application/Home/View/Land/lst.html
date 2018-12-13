@@ -1,0 +1,24 @@
+<extend name="Layout/base" />
+<block name="main">
+<link rel="stylesheet" href="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.css" />
+<script type="text/javascript" src="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.js"></script>
+
+<div class="general">
+    <volist name="data" id="v">
+    <ul>
+        <h1>{$v.name}</h1>
+        <volist name="v.child" id="v1">
+            <li>
+                <!--
+                <img src="/Public/Home/Static/images/timg.gif">
+                -->
+            <a href="{$Think.const.HOST_NAME}/{$Think.MODULE_NAME}/{$Think.CONTROLLER_NAME}/{$v1.action}/sid/{$v1.sid}">
+                <i class="fa fa-{$v1.logo} fa-2x"></i><p>{$v1.name}</p>
+            </a>
+            </li>
+        </volist>
+    </ul>
+    </volist>
+</div>
+
+</block>	

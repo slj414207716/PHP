@@ -1,0 +1,147 @@
+<extend name="Layout/sub"/>
+<block name="nav">城市管理 / 物业管理</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/Home/Static/css/style2.css"/>
+
+<div id="outer">
+	<include file="Layout/left_city"/>
+	<div id="content">
+		<ul style="display:block;">
+			<div class="aqsc">
+				<h3>物业管理</h3>
+				<div class="div">
+
+					<script type="text/javascript">
+						var current_start_year  = "{$current_start_year}";
+						var current_start_month = "{$current_start_month}";
+						var current_end_year    = "{$current_end_year}";
+						var current_end_month   = "{$current_end_month}";
+						var amount_data         = {$amount_data};
+						var type_data           = {$type_data};
+						var progress_data       = {$progress_data};
+					</script>
+
+					<table width="1183.20" border="1" cellpadding="0" cellspacing="0" class="sys_table">
+						<col width="40.73"/>
+						<col width="64.60"/>
+						<col width="70.73"/>
+						<col width="169.93"/>
+						<col width="58.47"/>
+						<col width="48.40"/>
+						<col width="72"/>
+						<col width="56.07"/>
+						<col width="80"/>
+						<col width="72" span="2"/>
+						<col width="131.47"/>
+						<col width="87.67"/>
+						<col width="70.73"/>
+						<col width="88.40"/>
+						<tr height="32">
+							<th height="32" width="40.73" x:str="x:str">序号</th>
+							<th width="64.60" x:str="x:str">社区名称</th>
+							<th width="70.73" x:str="x:str">项目名称</th>
+							<th width="169.93" x:str="x:str">项目地址</th>
+							<th width="58.47" x:str="x:str">建成时间</th>
+							<th width="48.40" x:str="x:str">总栋数</th>
+							<th width="72" x:str="x:str">总建筑面积(万平方米)</th>
+							<th width="56.07" x:str="x:str">总户数</th>
+							<th width="80" x:str="x:str">房屋性质</th>
+							<th width="72" x:str="x:str">是否成立业主委员会</th>
+							<th width="72" x:str="x:str">是否社区代行业委会</th>
+							<th width="131.47" x:str="x:str">物业服务企业名称</th>
+							<th width="87.67" x:str="x:str">物业服务企业项目负责人</th>
+							<th width="70.73" x:str="x:str">物业服务企业联系方式</th>
+							<th width="88.40" x:str="x:str">管理项目评价</th>
+						</tr>
+						<tr height="60">
+							<td height="60" x:num="x:num">1</td>
+							<td rowspan="2" x:str="x:str">中革村</td>
+							<td x:str="x:str">镇中街小区</td>
+							<td x:str="x:str">镇中街1、3、5、7、9、11、13、15、16、17、18、19、20、21、22、23、24、26、27、29、31、34号</td>
+							<td x:num="x:num">1993</td>
+							<td x:num="x:num">23</td>
+							<td x:num="x:num">9.89</td>
+							<td x:num="x:num">938</td>
+							<td x:str="x:str">住宅</td>
+							<td x:str="x:str">否</td>
+							<td x:str="x:str">是</td>
+							<td x:str="x:str">中革物业管理有限公司</td>
+							<td x:str="x:str">王世连</td>
+							<td x:num="x:num">86450142</td>
+							<td x:str="x:str">好</td>
+						</tr>
+						<tr height="30">
+							<td height="30" x:num="x:num">2</td>
+							<td x:str="x:str">槐屹街小区</td>
+							<td x:str="x:str">槐屹街8、10、12、14、16、18、20、22、24、26、B11号</td>
+							<td x:num="x:num">1999</td>
+							<td x:num="x:num">11</td>
+							<td x:num="x:num">3.93</td>
+							<td x:num="x:num">487</td>
+							<td x:str="x:str">住宅、非住宅</td>
+							<td x:str="x:str">否</td>
+							<td x:str="x:str">是</td>
+							<td x:str="x:str">中革物业管理有限公司</td>
+							<td x:str="x:str">王世连</td>
+							<td x:num="x:num">86450142</td>
+							<td x:str="x:str">好</td>
+						</tr>
+						<tr height="60">
+							<td height="60" x:num="x:num">3</td>
+							<td rowspan="2" x:str="x:str">后革村</td>
+							<td x:str="x:str">大连中航华府</td>
+							<td x:str="x:str">里程西园1、3、4、5、6、7号；里程东园21、22、29、30、31、32、33、35、36、42、43、44、45、47、48、49号</td>
+							<td x:num="x:num">2016</td>
+							<td x:num="x:num">22</td>
+							<td x:num="x:num">14.023302</td>
+							<td x:num="x:num">1618</td>
+							<td x:str="x:str">住宅、非住宅</td>
+							<td x:str="x:str">否</td>
+							<td x:str="x:str">是</td>
+							<td x:str="x:str">中航物业管理有限公司大连分公司</td>
+							<td x:str="x:str">张成意</td>
+							<td x:num="x:num">86424230</td>
+							<td x:str="x:str">好</td>
+						</tr>
+						<tr height="30">
+							<td height="30" x:num="x:num">4</td>
+							<td x:str="x:str">大连妇女儿童医疗中心</td>
+							<td x:str="x:str">甘井子区体育新城规划一号路1、3号&nbsp;</td>
+							<td></td>
+							<td x:num="x:num">7</td>
+							<td x:num="x:num">12</td>
+							<td></td>
+							<td x:str="x:str">非住宅</td>
+							<td x:str="x:str">否</td>
+							<td x:str="x:str">否</td>
+							<td x:str="x:str">大连开成物业</td>
+							<td x:str="x:str">刘克成</td>
+							<td x:num="x:num">84202877</td>
+							<td x:str="x:str">好</td>
+						</tr>
+						<tr height="18">
+							<td height="18"></td>
+							<td></td>
+							<td x:str="x:str">合计</td>
+							<td></td>
+							<td></td>
+							<td x:fmla="=SUM(F2:F5)" x:num="x:num">63</td>
+							<td x:fmla="=SUM(G2:G5)" x:num="x:num">39.843302</td>
+							<td x:fmla="=SUM(H2:H5)" x:num="x:num">3043</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+
+			</div>
+		</ul>
+	</div>
+</div>
+
+</block>

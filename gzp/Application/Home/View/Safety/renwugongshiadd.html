@@ -1,0 +1,49 @@
+<extend name="Layout/sub"/>
+<block name="nav">安全生产 / 任务公示</block>
+<block name="main">
+    <link rel="stylesheet" href="/Public/Home/Static/css/style2.css"/>
+
+    <div id="outer">
+        <include file="Layout/left_safety"/>
+        <div id="content">
+            <ul style="display:block;">
+                <div class="aqsc">
+                    <h3>任务公示</h3>
+                    <div class="div">
+                        <form action="__SELF__" method="post">
+                            <input name="time" type="hidden" value="<?php echo time() ?>"/>
+                            <input name="childid" type="hidden" value="196"/>
+
+                            <ul class="form">
+                                <li>
+                                    <div class="label">标　　题：</div>
+                                    <div class="value"><input name="title" type="text"/></div>
+                                </li>
+                                <li>
+                                    <div class="label">责任部门：</div>
+                                    <div class="value"><input name="maindep" type="text"/></div>
+                                </li>
+                                <li>
+                                    <div class="label">内容摘要：</div>
+                                    <div class="value"><textarea name="maincontent"></textarea></div>
+                                </li>
+                                <li>
+                                    <div class="label">详细内容：</div>
+                                    <div class="value"><textarea name="content" id="ue_content" class="editor"></textarea></div>
+                                </li>
+                                <li>
+                                    <div class="footer">
+                                        <input type="submit" value="提交"/>
+                                    </div>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <include file="Layout/include_ueditor" id="ue_content" />
+
+</block>

@@ -1,0 +1,125 @@
+<extend name="Layout/sub"/>
+<block name="nav">应急管理 / 应急管理</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/Home/Static/css/style2.css"/>
+{$app:self_css()}
+
+<div id="outer">
+    <include file="Layout/left_video"/>
+    <div id="content">
+        <ul style="display:block;">
+            <div class="aqsc">
+                <h3>应急管理</h3>
+
+                <div class="div">
+                    <div class="part-row right_window">
+                        <div class="part-left" id="map_inside"></div>
+                        <div class="part-right video_window">
+                            <span>暂无直播</span>
+                        </div>
+                    </div>
+
+                    <div class="plan_list">
+                        <ul class="form">
+                            <li>
+                                <div class="label">详细地址：</div>
+                                <div class="value">
+                                    <input type="text" id="address" placeholder="请输入地址"/>
+                                    <button type="button" id="fix_position">定位</button>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="label">标题：</div>
+                                <div class="value"><input name="people" type="text"/></div>
+                            </li>
+                            <li>
+                                <div class="label">时间：</div>
+                                <div class="value"><input name="people" type="text"/></div>
+                            </li>
+                            <li>
+                                <div class="label">突发事件：</div>
+                                <div class="value">
+                                    <select id="shijian">
+                                        <option value="0">--请选择--</option>
+                                        <option value="1">火灾</option>
+                                        <option value="2">大规模群体事件</option>
+                                        <option value="3">事故灾难</option>
+                                        <option value="4">公共卫生事件</option>
+                                        <option value="5">社会安全事件</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="label">事件等级：</div>
+                                <div class="value">
+                                    <select>
+                                        <option value="0">--请选择--</option>
+                                        <option value="1">一级</option>
+                                        <option value="2">二级</option>
+                                        <option value="3">三级</option>
+                                        <option value="4">四级</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="label">响应分级：</div>
+                                <div class="value">
+                                    <select>
+                                        <option value="0">--请选择--</option>
+                                        <option value="0">Ⅰ级响应</option>
+                                        <option value="0">Ⅱ级响应</option>
+                                        <option value="0">Ⅲ级响应</option>
+                                        <option value="0">Ⅳ级响应</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="label">建议人：</div>
+                                <div class="value"><input name="people" type="text"/></div>
+                            </li>
+                            <li>
+                                <div class="label">建议人：</div>
+                                <div class="value"><input name="people" type="text"/></div>
+                            </li>
+                            <li>
+                                <div class="label">描述：</div>
+                                <div class="value"><textarea name="content" id="ue_content"></textarea></div>
+                            </li>
+                            <li>
+                                <div class="footer">
+                                    <input type="submit" value="提交本次"/>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="footer">
+                                    <a href="yingji" target="_blank">应急救援队伍保障</a>
+                                    <a href="xiangying" target="_blank">响应程序</a>
+                                    <a href="lishichakan" target="_blank">历史查看</a>
+                                    <a href="Diff://">启动直播</a>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </ul>
+    </div>
+</div>
+
+{$app:self_js()}
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZMeRv4P7zfn7c23xQRGK7fDo"></script>
+<script type="text/javascript">
+    var plan_list_json = '{$plan_list_json}';
+    var huozai = "<?php echo U('/index/video_live/huozai') ?>";
+    var daguimo = "<?php  ?>";
+    $("#shijian").change(function () {
+        if ($(this).val() == 1) {
+            window.open("huozai");
+        } else if ($(this).val() == 2) {
+            window.open("daguimo");
+        }
+    })
+</script>
+
+</block>

@@ -1,0 +1,251 @@
+<extend name="Layout/sub"/>
+<block name="nav">城市管理 / 绿化</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/Home/Static/css/style2.css"/>
+
+<div id="outer">
+	<include file="Layout/left_city"/>
+	<div id="content">
+		<ul style="display:block;">
+
+			<div class="data">
+				<div id="main1" style="width:90%; height:90%; margin:8% 5% 5%;"></div>
+			</div>
+			<div class="data">
+				<div id="main2" style="width:90%; height:90%; margin:8% 5% 5%;"></div>
+			</div>
+
+			<div class="aqsc">
+				<h3>绿化</h3>
+
+				<div class="search_2">
+					<form action="" method="get" class="sys_form">
+						<label>按年份筛选</label>
+						<select name="start_year">
+							<for start="$current_year-5" end="$current_year+1">
+								<option value="{$i}">{$i}年</option>
+							</for>
+						</select>
+						<select name="start_month">
+							<for start="1" end="13">
+								<option value="{$i}">{$i}月</option>
+							</for>
+						</select>
+						&nbsp;&nbsp; — &nbsp;&nbsp;
+						<select name="end_year">
+							<for start="$current_year-5" end="$current_year+1">
+								<option value="{$i}">{$i}年</option>
+							</for>
+						</select>
+						<select name="end_month">
+							<for start="1" end="13">
+								<option value="{$i}">{$i}月</option>
+							</for>
+						</select>
+						<input class="sub" type="submit" value="查询"/>
+					</form>
+				</div>
+
+				<div class="div">
+					<table border=1 class="sys_table">
+						<input type="hidden" class="startyear" value="{$startyear}">
+						<input type="hidden" class="endyear" value="{$endyear}">
+						<tr>
+							<th>年份</th>
+							<th>公共绿地规模</th>
+							<th>人均绿地</th>
+						</tr>
+						<volist name="data" id="vo">
+							<tr>
+								<td align="center">{$vo['time']}</td>
+								<td align="center">{$vo['guimo']}</td>
+								<td align="center">{$vo['renjun']}</td>
+							</tr>
+						</volist>
+					</table>
+					<div class="pagelist_area">
+						<if condition="$PAGE['total_page'] gt 1">
+							<include file="Layout/_pagelist"/>
+						</if>
+					</div>
+				</div>
+			</div>
+		</ul>
+	</div>
+</div>
+
+<script type="text/javascript">
+	var current_start_year  = "{$current_start_year}";
+	var current_start_month = "{$current_start_month}";
+	var current_end_year    = "{$current_end_year}";
+	var current_end_month   = "{$current_end_month}";
+	var data_json           = '{$data_json}';
+
+	$(function () {
+		var startyear    = $('.startyear').val();
+		var endyear      = $('.endyear').val();
+		var time_value   = new Object;
+		var guimo_value  = new Object;
+		var renjun_value = new Object;
+		$.post('getdata', {
+			startyear: startyear,
+			endyear: endyear
+		}, function (data) {
+			if (data.result) {
+				$(data.info).each(function (i, v) {
+					time_value[i]   = v.time;
+					guimo_value[i]  = v.guimo;
+					renjun_value[i] = v.renjun;
+				});
+				newecharts(time_value, guimo_value, renjun_value);
+			} else {
+
+			}
+		}, 'JSON');
+	});
+</script>
+<script type="text/javascript">
+	function newecharts(time_value, guimo_value, renjun_value) {
+		var jsonLength = 0;
+		for (var item in time_value) {
+			jsonLength++;
+		}
+		var timevalue   = "";
+		var guimovalue  = "";
+		var renjunvalue = "";
+		for (var i = 0; i < jsonLength; i++) {
+			timevalue += time_value[i] + ",";
+			guimovalue += guimo_value[i] + ",";
+			renjunvalue += renjun_value[i] + ",";
+		}
+		timevalue   = timevalue.substr(0, timevalue.length - 1);
+		guimovalue  = guimovalue.substr(0, guimovalue.length - 1);
+		renjunvalue = renjunvalue.substr(0, renjunvalue.length - 1);
+		timevalue   = timevalue.split(",");
+		guimovalue  = guimovalue.split(",");
+		renjunvalue = renjunvalue.split(",");
+		// 基于准备好的dom，初始化echarts实例
+		var myChart = echarts.init(document.getElementById('main1'), 'shine');
+
+		// 指定图表的配置项和数据
+		option1 = {
+			title: {
+				text: '城市管理'
+			},
+			tooltip: {
+				trigger: 'axis',
+				axisPointer: {
+					type: 'cross',
+					label: {
+						backgroundColor: '#6a7985'
+					}
+				}
+			},
+			legend: {
+				data: ['公共绿地规模']
+			},
+			grid: {
+				left: '3%',
+				right: '4%',
+				bottom: '3%',
+				containLabel: true
+			},
+			toolbox: {
+				feature: {
+					saveAsImage: {}
+				}
+			},
+			xAxis: {
+				type: 'category',
+				boundaryGap: false,
+				data: timevalue,
+                axisLine: {
+                    lineStyle: {
+                        color: '#fff'
+                    }
+                }
+            },
+			yAxis: {
+				type: 'value',
+                axisLine: {
+                    lineStyle: {
+                        color: '#fff'
+                    }
+                }
+			},
+			series: [
+				{
+					name: '公共绿地规模',
+					type: 'line',
+					stack: '总量',
+					areaStyle: {normal: {}},
+					data: guimovalue
+				}
+			]
+		};
+		myChart.setOption(option1);
+		// 基于准备好的dom，初始化echarts实例
+		var myChart = echarts.init(document.getElementById('main2'), 'shine');
+
+		// 指定图表的配置项和数据
+		option2 = {
+			title: {
+				text: '城市管理'
+			},
+			tooltip: {
+				trigger: 'axis',
+				axisPointer: {
+					type: 'cross',
+					label: {
+						backgroundColor: '#6a7985'
+					}
+				}
+			},
+			legend: {
+				data: ['人均绿地']
+			},
+			grid: {
+				left: '3%',
+				right: '4%',
+				bottom: '3%',
+				containLabel: true
+			},
+			toolbox: {
+				feature: {
+					saveAsImage: {}
+				}
+			},
+			xAxis: {
+				type: 'category',
+				boundaryGap: false,
+				data: timevalue,
+                axisLine: {
+                    lineStyle: {
+                        color: '#fff'
+                    }
+                }
+			},
+			yAxis: {
+				type: 'value',
+                axisLine: {
+                    lineStyle: {
+                        color: '#fff'
+                    }
+                }
+			},
+			series: [
+				{
+					name: '人均绿地',
+					type: 'line',
+					stack: '总量',
+					areaStyle: {normal: {}},
+					data: renjunvalue
+				},
+			]
+		};
+		myChart.setOption(option2);
+	};
+</script>
+
+
+</block>

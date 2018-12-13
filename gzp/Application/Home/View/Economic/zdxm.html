@@ -1,0 +1,248 @@
+<extend name="Layout/base" />
+<block name="main">
+<link rel="stylesheet" href="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.css" />
+<script type="text/javascript" src="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.js"></script>
+<div id="outer">
+    <ul id="tab">
+        <li <if condition = "$Think.get.sid eq 1"> class="current" </if> >地区生产总值</li>
+        <li <if condition = "$Think.get.sid eq 2"> class="current" </if> >财政收入</li>
+        <li <if condition = "$Think.get.sid eq 3"> class="current" </if> >规上工业总产值</li>
+        <li <if condition = "$Think.get.sid eq 4"> class="current" </if> >固定资产投资</li>
+        <li <if condition = "$Think.get.sid eq 5"> class="current" </if> >社会消费品零售额</li>
+        <li <if condition = "$Think.get.sid eq 6"> class="current" </if> >使用内资</li>
+        <li <if condition = "$Think.get.sid eq 7"> class="current" </if> >引进外资</li>
+    </ul>
+    <div id="content">
+    	<!-- 地区生产总值 -->
+        <ul <if condition="$Think.get.sid eq 1"> style="display: block;" <else /> style="display: none;" </if> >
+	        <p> 数据查询：<input type="text"> - <input type="text"> <button type="submit">查询</button></p>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<th scope="col">月份</th>
+					<th scope="col">计划完成(千万)</th>
+					<th scope="col">实际完成(千万)</th>
+					<th scope="col">警报</th>
+					<th scope="col">同比增减速度</th>
+					<th scope="col">环比增减速度</th>
+					<th scope="col">完成年度百分比</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>5</td>
+					<td>4</td>
+					<td><img src="/Public/Home/Static/images/timg.gif"></td>
+					<td>20% ↓</td>
+					<td>20% ↓</td>
+					<td>10%</td>
+				</tr>
+			</table>
+        </ul>
+		<!-- 财政收入 -->
+        <ul <if condition="$Think.get.sid eq 2"> style="display: block;" <else /> style="display: none;" </if> >
+			<p> 数据查询：<input type="text"> - <input type="text"> <button type="submit">查询</button></p>
+        	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<th scope="col">月份</th>
+					<th scope="col">计划完成(千万)</th>
+					<th scope="col">实际完成(千万)</th>
+					<th scope="col">警报</th>
+					<th scope="col">同比增减速度</th>
+					<th scope="col">环比增减速度</th>
+					<th scope="col">完成年度百分比</th>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>5</td>
+					<td>4</td>
+					<td><img src="/Public/Home/Static/images/timg.gif"></td>
+					<td>20% ↓</td>
+					<td>20% ↓</td>
+					<td>10%</td>
+				</tr>
+			</table>
+        </ul>
+		<!-- 规上工业总产值 -->
+        <ul <if condition="$Think.get.sid eq 3"> style="display: block;" <else /> style="display: none;" </if> >
+			<p> 数据查询：<input type="text"> - <input type="text"> <button type="submit">查询</button></p>
+        	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<th scope="col">月份</th>
+					<th scope="col">计划完成(千万)</th>
+					<th scope="col">实际完成(千万)</th>
+					<th scope="col">警报</th>
+					<th scope="col">同比增减速度</th>
+					<th scope="col">环比增减速度</th>
+					<th scope="col">完成年度百分比</th>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>5</td>
+					<td>4</td>
+					<td><img src="/Public/Home/Static/images/timg.gif"></td>
+					<td>20% ↓</td>
+					<td>20% ↓</td>
+					<td>10%</td>
+				</tr>
+			</table>
+        </ul>
+		<!-- 固定资产投资 -->
+        <ul <if condition="$Think.get.sid eq 4"> style="display: block;" <else /> style="display: none;" </if> >
+			<p> 数据查询：<input type="text"> - <input type="text"> <button type="submit">查询</button></p>
+        	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<th scope="col">月份</th>
+					<th scope="col">计划完成(千万)</th>
+					<th scope="col">实际完成(千万)</th>
+					<th scope="col">警报</th>
+					<th scope="col">同比增减速度</th>
+					<th scope="col">环比增减速度</th>
+					<th scope="col">完成年度百分比</th>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>5</td>
+					<td>4</td>
+					<td><img src="/Public/Home/Static/images/timg.gif"></td>
+					<td>20% ↓</td>
+					<td>20% ↓</td>
+					<td>10%</td>
+				</tr>
+			</table>
+        </ul>
+		<!-- 社会消费品零售额 -->
+        <ul <if condition="$Think.get.sid eq 5"> style="display: block;" <else /> style="display: none;" </if> >
+			<p><button type="submit" onclick="window.location.href='{$Think.const.HOST_NAME}/Home/Economic/yearShxf'">年度数据查询</button></p>
+        	<div class="echars">
+        		<div class="echars1">
+					<div id="main1"></div>
+        		</div>
+        		<div class="echars2">
+					<div id="main2"></div>
+        		</div>
+        	</div>
+        	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<th scope="col">月份</th>
+					<th scope="col">计划完成(千万)</th>
+					<th scope="col">实际完成(千万)</th>
+					<th scope="col">任务完成情况</th>
+					<th scope="col">同比</th>
+					<th scope="col">环比</th>
+					<th scope="col">完成年度百分比</th>
+				</tr>
+				<volist name="shxfData" id="v">
+				<tr>
+					<td>{$v.month}月</td>
+					<td>{$v.plan}</td>
+					<td>{$v.real}</td>
+					<td>
+						<if condition="$v.over LT 0">						
+							<img src="/Public/Home/Static/images/timg.gif">	
+						<else />
+							完成
+						</if>
+					</td>
+					<!-- 同比 -->
+					<td>
+						{$tb[$v['month']]}
+						<if condition="$tb[$v['month']] GT 0">
+							<span class="trendUp">↑</span>
+						<elseif condition="$tb[$v['month']] LT 0" />
+							<span class="trendDown">↓</span>	
+						</if>				
+					</td>
+					<!-- 环比 -->
+					<td>
+						{$hb[$v['month']]}
+						<if condition="$hb[$v['month']] GT 0">
+							<span class="trendUp">↑</span>
+						<elseif condition="$hb[$v['month']] LT 0" />
+							<span class="trendDown">↓</span>	
+						</if>		
+					</td>
+					<td>
+						{$zb[$v['month']]}
+					</td>
+				</tr>
+				</volist>
+				<tr>
+					<th scope="col">合计</th>
+					<th colspan="6" scope="col">
+						全年计划任务：<strong><span class="hj">{$yShxfData}</span></strong>&nbsp千万；
+						实际完成：<strong><span class="hj">{$shxfReal}</span></strong>&nbsp千万；
+						完成全年计划任务占比：<strong><span class="hj">{$nowZb}</span></strong>
+					</th>
+				</tr>
+			</table>
+        </ul>
+		<!-- 使用内资 -->
+        <ul <if condition="$Think.get.sid eq 6"> style="display: block;" <else /> style="display: none;" </if> >
+			<p> 数据查询：<input type="text"> - <input type="text"> <button type="submit">查询</button></p>
+        	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<th scope="col">月份</th>
+					<th scope="col">计划完成(千万)</th>
+					<th scope="col">实际完成(千万)</th>
+					<th scope="col">警报</th>
+					<th scope="col">同比增减速度</th>
+					<th scope="col">环比增减速度</th>
+					<th scope="col">完成年度百分比</th>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>5</td>
+					<td>4</td>
+					<td><img src="/Public/Home/Static/images/timg.gif"></td>
+					<td>20% ↓</td>
+					<td>20% ↓</td>
+					<td>10%</td>
+				</tr>
+			</table>
+        </ul>
+		<!-- 引进外资 -->
+        <ul <if condition="$Think.get.sid eq 7"> style="display: block;" <else /> style="display: none;" </if> >
+			<p> 数据查询：<input type="text"> - <input type="text"> <button type="submit">查询</button></p>
+        	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<th scope="col">月份</th>
+					<th scope="col">计划完成(千万)</th>
+					<th scope="col">实际完成(千万)</th>
+					<th scope="col">警报</th>
+					<th scope="col">同比增减速度</th>
+					<th scope="col">环比增减速度</th>
+					<th scope="col">完成年度百分比</th>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>5</td>
+					<td>4</td>
+					<td><img src="/Public/Home/Static/images/timg.gif"></td>
+					<td>20% ↓</td>
+					<td>20% ↓</td>
+					<td>10%</td>
+				</tr>
+			</table>
+        </ul>
+    </div>
+</div>
+
+<script src="/Public/Home/Static/js/jquery.min.js"></script>
+<script>
+	$(function(){
+		window.onload = function()
+		{
+			var $li = $('#tab li');
+			var $ul = $('#content ul');
+			$li.click(function(){
+				var $this = $(this);
+				var $t = $this.index();
+				$li.removeClass();
+				$this.addClass('current');
+				$ul.css('display','none');
+				$ul.eq($t).css('display','block');
+			})
+		}
+	});
+</script>
+
+</block>	

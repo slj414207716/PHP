@@ -1,0 +1,18 @@
+[ 2018-11-27T08:49:53+08:00 ] 127.0.0.1 /index.php/Home/Work/child
+ERR: 非法操作:child
+
+[ 2018-11-27T08:49:56+08:00 ] 127.0.0.1 /index.php/Home/Health/ylwj
+ERR: 非法操作:ylwj
+
+[ 2018-11-27T09:08:26+08:00 ] 127.0.0.1 /index.php/Home/Health/ylwj
+ERR: 非法操作:ylwj
+
+[ 2018-11-27T10:49:55+08:00 ] 127.0.0.1 /index.php/Home/Work/educ
+ERR: 非法操作:educ
+
+[ 2018-11-27T13:13:55+08:00 ] 127.0.0.1 /index.php/Home/people/canjiYear
+ERR: 非法操作:canjiYear
+
+[ 2018-11-27T15:02:24+08:00 ] 127.0.0.1 /index.php/Home/People/canjiYear
+ERR: 模板不存在:./Application/Home/View/People/canjiYear.html
+

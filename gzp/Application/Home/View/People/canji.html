@@ -1,0 +1,59 @@
+<extend name="Layout/sub" />
+<block name="nav">民生保障 / 残疾类别</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.css" />
+<script type="text/javascript" src="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.js"></script>
+<script type="text/javascript">
+</script>
+<div id="outer">
+    <include file="Layout/left_people"/>
+    <div id="content">
+        	<div class="data">
+        		<H3 style="color: #fff">残疾数据</H3>
+        		<div id="main1" style="width: 100%; height: 100%; margin: auto;"></div>
+        	</div>
+       		<div class="data">
+       			<H3 style="color: #fff">数据比例</H3>
+       			<div id="main2" style="width: 100%; height: 100%; margin: auto;"></div>
+       		</div>
+            <ul style="display:block;">
+            <div class="aqsc">
+                <h3>残疾类别统计</h3>
+                <div class="div"> 
+        	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<th scope="col">单位</th>
+					<th scope="col">总人数</th>
+                        <th scope="col">精神智力</th>
+                        <th scope="col">言语听力</th>
+                        <th scope="col">肢体</th>
+                        <th scope="col" colspan="2">多重</th>
+
+                    </if>
+				</tr>
+				<volist name="data" id="v">
+                <tr>
+                    <td>{$v.name}</td>
+                    <td>{$v.number}</td>
+                    <td>{$v.sum}</td>
+                    <td>{$v.number1}</td>
+                    <td>{$v.sum1}</td>
+                    <td colspan="2">{$v.sum_number}</td>
+                </tr>
+                </volist>
+                <tr>
+                    <th scope="col">合计</th>
+                    <th scope="col">{$number}</th>
+                    <th scope="col">{$sum}</th>
+                    <th scope="col">{$number1}</th>
+                    <th scope="col">{$sum1}</th>
+                    <th scope="col">{$sum_number}</th>
+                    <th scope="col"><a class="search1" href="{$Think.const.HOST_NAME}/Home/People/canjiYear">年度数据查询</a></th>
+                </tr>
+			</table>
+        </div>
+    </div>
+</ul>
+    </div>
+</div>
+</block>	

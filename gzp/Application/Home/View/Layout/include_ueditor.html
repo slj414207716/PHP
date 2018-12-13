@@ -1,0 +1,13 @@
+<!--在线编辑器 -->
+<script type="text/javascript" src="/Public/Common/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/Public/Common/ueditor/ueditor.all.js"></script>
+<script type="text/javascript">
+    var ue = UE.getEditor('[id]', {
+        zIndex: "0",
+        //initialFrameWidth : '95%',
+        initialFrameHeight: 300,
+        toolbars: [
+            ['bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', '|', 'justifyleft', 'justifycenter', 'justifyright', 'fontsize', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', 'simpleupload', 'insertimage', 'insertvideo', 'attachment']
+        ]
+    });
+</script>

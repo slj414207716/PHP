@@ -1,0 +1,46 @@
+<extend name="Layout/sub"/>
+<block name="nav">安全生产 / 任务公示</block>
+<block name="main">
+    <link rel="stylesheet" href="/Public/Home/Static/css/style2.css"/>
+
+    <div id="outer">
+        <include file="Layout/left_safety"/>
+        <div id="content">
+            <ul style="display:block;">
+                <div class="aqsc">
+                    <h3>DDDDDDDDD</h3>
+
+
+                    <div style="width: 95%;height: 50px;font-size: 28px;line-height: 50px;padding: 20px 0px 0px 5%">
+                        添加
+                    </div>
+                    <div class="div">
+                        <form action="__SELF__" method="post">
+                            <input name="time" type="hidden" value="<?php echo time() ?>"/>
+                            <input name="childid" type="hidden" value="187"/>
+                            <ul class="form">
+                                <li>
+                                    <div class="label">标题：</div>
+                                    <div class="value"><input name="title" type="text"/></div>
+                                </li>
+                                <li>
+                                    <div class="label">内容：</div>
+                                    <div class="value"><textarea name="content" id="ue_content"></textarea></div>
+                                </li>
+                                </li>
+                                <li>
+                                    <div class="label">
+                                        <input type="submit" value="提交"/>
+                                    </div>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <include file="Layout/include_ueditor" id="ue_content" />
+
+</block>

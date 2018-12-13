@@ -1,0 +1,473 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=6;IE=7; IE=8; IE=EmulateIE7" />
+<script>
+	window.onload=function(){
+		LoginDevice();
+		RealPlay();
+	}
+</script>
+<style>
+html,body{width:100%;height:100%;margin:0;padding:0; font-size:12px;}
+ul,li,p,h1{margin:0;padding:0}
+li{list-style:none}
+.search{width:48%; font-size:12px; position:absolute;top:0;right:0}
+.search_a{height:auto; overflow:hidden;border:1px solid #029ee8;margin-bottom:10px;}
+.search_a h1{width:100%;height:30px; font-size:16px; text-indent:1em; background-color:#029ee8;margin:0;padding:0; color:#FFF; line-height:30px;}
+.search_a ul{margin:0 10px;}
+.search_a li{border-bottom:1px solid #e3e6e9;width:50%; list-style:none; line-height:24px;float:left;}
+a{ text-decoration:none; color:#000}
+tr:nth-of-type(2n){background:#edf2f6;}
+td{padding-left:5px; line-height:30px;}
+#colee_left img{height:150px}
+.yinhuan_list{ width:100%;height:210px; overflow:auto;  float:left; }
+.yinhuan_left{ width:35%; height:210px; background:#f1f1f1; float:left}
+.yinhuan_left ul{ width:100%; padding:10px}
+.yinhuan_left ul li{ width:100%;line-height:24px;float:left}
+.yinhuan_left ul li span{ font-size:14px; color:#333333; float:left; width:80%; height:40px; overflow:hidden; padding-left:5px}
+.yinhuan_left ul li img{ height:8px; margin-right:5px}
+.yinhuan_right{ width:63%; height:210px; background: #f0f0f0; float:left; margin-left:5px}
+.yinhuan_right ul{ width:50%; margin-top:5px; float:left}
+.yinhuan_right ul li{ width:100%; text-align:center;}
+</style>
+    </head>
+    <body>
+        <!--loading-->
+		<div id="login_install_dialog"  style="display:none;height:20px; width:400px;padding-top:30px; margin:auto;">
+		<div style="clear: both;zoom:1; border: 2px solid #373737;background: #D5D5D5;">
+		 <a id="login_btn_install" href="/webplugin.exe" target="_download" onclick = "instal()"style ="background: rgb(255,0,0);">Instal</a>
+		 <a id="login_btn_cancel" href="javascript:;">Cancle</a>
+		</div>
+        </div>
+		<div >
+			<button id="Login" href="javascript:;"Onclick = "LoginDevice()" style = "display:none;">Login</button>
+			<button id="Play" href="javascript:;"Onclick = "RealPlay()" style = "display:none;">RealPlay</button>
+			<button id="Ptzctrl" href="javascript:;"Onclick = "ControlPtz()" style = "display:none;">云台</button>
+			<button id="Stop" href="javascript:;"Onclick = "StopPlay()" style = "display:none;">Stop</button>
+			<button id="FullScreen" href="javascript:;"Onclick = "FullScreen()" style = "display:none;">FullScreen</button>
+			<button id="LocalPlay" href="javascript:;"Onclick = "LocalPlay()" style = "display:none;">LocalPlay</button>
+			<button id="Logout" href="javascript:;"Onclick = "LogoutDevice()" style = "display:none;">Logout</button>
+			<button id="PlayAll" href="javascript:;"Onclick = "RealPlayAll()" style = "display:none;">RealPlayAll</button>
+			<button id="StopPlayAll" href="javascript:;"Onclick = "StopPlayAll()" style = "display:none;">StopPlayAll</button>
+		</div>
+		<div id="f_ocx" style="top:60px; left:0; width:50%; height: 100%;"></div>
+		<div >
+			<button id="idQuery" href="javascript:;"Onclick = "QueryRecord()" style = "display:none;">QueryRecord</button>
+			<button id="PlayBack" href="javascript:;"Onclick = "PlayBack()" style = "display:none;">Playback</button>
+			<button id="download" href="javascript:;"Onclick = "Download()" style = "display:none;">Download</button>
+			<button id="PlayRec" href="javascript:;"Onclick = "PlayRec()" style = "display:none;">PlayRec</button>
+			<button id="PauseRec" href="javascript:;"Onclick = "PauseRec()" style = "display:none;">PauseRec</button>
+			<button id="FastPlay" href="javascript:;"Onclick = "FastPlay()" style = "display:none;">FastPlay</button>
+			<button id="SlowPlay" href="javascript:;"Onclick = "SlowPlay()" style = "display:none;">SlowPlay</button>
+		</div >
+		<div id="ShowPlayTime" style = "display:none;">
+			<label >now time</label><input type="text" id="playtime">
+		</div>
+		<div id="DwonLoadPos" style = "display:none;">
+			<label >pos</label><input type="text" style="width:50%" id="downPos">
+		</div>
+		<div style="display:none;" id="RecInfo">
+			<div id="RecInfoList" style = "overflow:auto;width:600px;height:200px;">
+			</div>
+        </div>
+
+
+     <div class="search">
+                <div class="search_a">
+                <h1>大连金鹏混凝土有限公司<<安全生产基本信息>></h1>
+				<ul>
+					<li>经济性质：<span>有限责任公司</span></li><li>行业分类：<span>建材行业</span></li>
+					<li>注册地址：<span>大连市甘井子区革镇堡街道羊圈子村西洼地段</span></li><li>人员规模：<span>大型（30人以上）</span></li>
+					<li>经营范围：<span>水泥制品生产、销售；</span></li><li>危险级别：<span>Ⅲ  级</span></li>
+					<li>法定代表人或企业负责人：<span>席保存</span></li><li>联系电话：<span>86426653</span></li>
+					<li>专(兼)安全管理人员：<span>陈志</span></li><li>联系电话：<span>86426653</span></li>
+					<li>安全培训证数量：<span>2人</span></li><li>特种作业证种类,人数：<span>焊接与热切割2人；电工2人</span></li>
+					<li>安"三同时"全手续(类型,日期)：<span>2014年，安全现状</span></li><li>安全生产标准化(日期)：<span>无</span></li>
+					<li>环评手续：<span>有，2009年</span></li><li>消防手续：<span>无</span></li>
+					<li>占地面积：<span>33000万㎡</span></li><li>建筑面积：<span>7759㎡</span></li>
+					<li>产权性质：<span>租赁</span></li><li>建成时间：<span>2009年</span></li>
+					<li>从业人员：<span>78人 </span></li><li>建筑分区：<span>厂房3、库房1、堆场2、办公楼2</span></li>
+				</ul>
+                    </div>
+
+           <!--下面是向左滚动代码-->
+
+<div id="colee_left" style="overflow:hidden;width:100%;">
+<table cellpadding="0" cellspacing="0" border="0">
+<tr><td id="colee_left1" valign="top" align="center">
+<table cellpadding="2" cellspacing="0" border="0">
+<tr align="center">
+<td><p><img src="{$Think.const.__APP_PUBLIC__}/Uploads/1.jpeg"></p></td>
+<td><p><img src="{$Think.const.__APP_PUBLIC__}/Uploads/2.jpeg"></p></td>
+<td><p><img src="{$Think.const.__APP_PUBLIC__}/Uploads/3.jpeg"></p></td>
+<td><p><img src="{$Think.const.__APP_PUBLIC__}/Uploads/1.jpeg"></p></td>
+<td><p><img src="{$Think.const.__APP_PUBLIC__}/Uploads/2.jpeg"></p></td>
+<td><p><img src="{$Think.const.__APP_PUBLIC__}/Uploads/3.jpeg"></p></td>
+
+</tr>
+</table>
+</td>
+<td id="colee_left2" valign="top"></td>
+</tr>
+</table>
+</div>
+
+<div class="yinhuan_list">
+			<div class="yinhuan_left">
+				<ul>
+					<li><b>检查单位</b></li>
+					<li>大连注安汇企业服务有限公司</li>
+					<li><b>检查日期</b></li>
+					<li>2018-01-16</li>
+					<li><b>复查单位</b></li>
+					<li>大连注安汇企业服务有限公司</li>
+					<li><b>复查日期</b></li>
+					<li>2018-05-01</li>
+				</ul>
+			</div>
+			<div class="yinhuan_right">
+				<ul style="float:left">
+                					<li><img src="{$Think.const.__APP_PUBLIC__}/Uploads/4.jpeg" width="97%" height="170" /></li>
+					<li><div class="yinhuan_text1"></div></li>
+					<li style="border-top:1px dotted #CCCCCC">
+					<div class="yinhuan_text2">隐患：&nbsp;&nbsp;厂区有沟未盖盖板</div></li>
+				</ul>
+				<ul style="float:right">
+                					<li><img src="{$Think.const.__APP_PUBLIC__}/Uploads/5.jpeg" width="100%" height="170" /></li>
+					<li><div class="yinhuan_text1"></div></li>
+					<li style="border-top:1px dotted #CCCCCC">
+					<div class="yinhuan_text2">整改：&nbsp;&nbsp;</div></li>
+				</ul>
+			</div>
+            <div class="yinhuan_left">
+				<ul>
+					<li><b>检查单位</b></li>
+					<li>大连注安汇企业服务有限公司</li>
+					<li><b>检查日期</b></li>
+					<li>2018-01-16</li>
+					<li><b>复查单位</b></li>
+					<li>大连注安汇企业服务有限公司</li>
+					<li><b>复查日期</b></li>
+					<li>2018-05-01</li>
+				</ul>
+			</div>
+			<div class="yinhuan_right">
+				<ul style="float:left">
+                					<li><img src="{$Think.const.__APP_PUBLIC__}/Uploads/4.jpeg" width="97%" height="170" /></li>
+					<li><div class="yinhuan_text1"></div></li>
+					<li style="border-top:1px dotted #CCCCCC">
+					<div class="yinhuan_text2">隐患：&nbsp;&nbsp;厂区有沟未盖盖板</div></li>
+				</ul>
+				<ul style="float:right">
+                					<li><img src="{$Think.const.__APP_PUBLIC__}/Uploads/5.jpeg" width="100%" height="170" /></li>
+					<li><div class="yinhuan_text1"></div></li>
+					<li style="border-top:1px dotted #CCCCCC">
+					<div class="yinhuan_text2">整改：&nbsp;&nbsp;</div></li>
+				</ul>
+			</div>
+		</div>
+
+<script>
+//使用div时，请保证colee_left2与colee_left1是在同一行上.
+var speed=30//速度数值越大速度越慢
+var colee_left2=document.getElementById("colee_left2");
+var colee_left1=document.getElementById("colee_left1");
+var colee_left=document.getElementById("colee_left");
+colee_left2.innerHTML=colee_left1.innerHTML
+function Marquee3(){
+if(colee_left2.offsetWidth-colee_left.scrollLeft<=0)//offsetWidth 是对象的可见宽度
+colee_left.scrollLeft-=colee_left1.offsetWidth//scrollWidth 是对象的实际内容的宽，不包边线宽度
+else{
+colee_left.scrollLeft++
+}
+}
+var MyMar3=setInterval(Marquee3,speed)
+colee_left.onmouseover=function() {clearInterval(MyMar3)}
+colee_left.onmouseout=function() {MyMar3=setInterval(Marquee3,speed)}
+</script>
+
+<!--向左滚动代码结束-->
+
+                    </div>
+
+
+
+
+	</body>
+</html>
+<script>
+var agent = navigator.userAgent.toLowerCase();
+var g_ocx;
+var PLUGINS_CLASSID = '7F9063B6-E081-49DB-9FEC-D72422F2727F';
+var VERSION_GUI = 'version=3,1,0,4'; //注意：本地GUI上版本信息显示需要的字符串，修改版本的时候这个字符串也要修改
+var Sys = {};
+var isMac = navigator.userAgent.toLowerCase().indexOf("mac") != -1;
+var ua = navigator.userAgent.toLowerCase();
+        var s;
+        (s = ua.match(/(msie\s|trident.*rv:)([\d.]+)/)) ? Sys.ie = s[2] :
+        (s = ua.match(/firefox\/([\d.]+)/)) ? Sys.firefox = s[1] :
+        (s = ua.match(/chrome\/([\d.]+)/)) ? Sys.chrome = s[1] :
+        (s = ua.match(/opera.([\d.]+)/)) ? Sys.opera = s[1] :
+        (s = ua.match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0;
+ var PLUGINS_NAME = 'WebActiveEXE.Plugin.1';
+var hasPlugin = checkPlugins();
+
+var g_PlayTime;
+var g_curSpeed = 4;//默认的正常速度
+var htmlStChn1 = '';
+
+/**
+ * 检测浏览器是否存在视频插件
+ * @return {Boolean}
+ */
+function checkPlugins(){
+    var result;
+    if (Sys.ie) {
+        try {
+            result = new ActiveXObject(PLUGINS_NAME);
+            delete result;
+        } catch (e) {
+            return false;
+        }
+        return true;
+    } else {
+        navigator.plugins.refresh(false);
+        result = navigator.mimeTypes["application/media-plugin-version-3.1.0.2"];
+        return !!(result && result.enabledPlugin);
+    }
+}
+
+function hideInstallDialog()
+{
+	document.getElementById('login_install_dialog').style.display = 'none';
+	if(document.getElementById('username') && !g_isRemoteLogin)
+	{
+		if(document.getElementById('username').value != '')
+		{
+			document.getElementById('password').focus();
+		}
+		else
+		{
+			document.getElementById('username').focus();
+		}
+	}
+}
+function showInstallDialog()
+{
+	document.getElementById('login_install_dialog').style.display = '';
+}
+function instal(){
+	hideInstallDialog();
+	setTimeout('loadPlugins()',1000);
+}
+var mainOcxHtml = '';
+if (Sys.ie)
+{
+	mainOcxHtml = '<object id="ocx" width="100%" height="100%" classid="CLSID:{'+PLUGINS_CLASSID+'}"codebase="/webrec.cab"></object>';
+}
+else
+{
+	mainOcxHtml = '<object id="ocx" width="100%" height="100%" type="application/media-plugin-version-3.1.0.2" VideoWindTextColor="9c9c9c" VideoWindBarColor="414141"></object>';
+}
+
+var handlerOcxEvents = {
+	fireOcxEvent: function(jsonStr) {
+		document.getElementById('downPos').value = jsonStr;
+	}
+}
+
+function loadPlugins()
+{
+	if(checkPlugins())
+	{
+		hasPlugin = true;
+		setTimeout('loadPageOcx()',2000);
+	}
+	else
+	{
+		setTimeout('loadPlugins()',1000);
+	}
+}
+
+if (!hasPlugin )
+{
+	showInstallDialog();
+}
+else
+{
+	hideInstallDialog();
+	loadPageOcx();
+}
+
+function loadPageOcx (){
+		document.getElementById('f_ocx').innerHTML = mainOcxHtml;
+		document.getElementById('Login').style.display = 'none';
+		initPageOcx();
+
+}
+
+function initPageOcx() {
+	g_ocx = document.getElementById('ocx');
+	//g_ocx.AddEventListener('SetNetPlayRecordStatus', ShowRecInfo);
+	g_ocx.AddEventListener('SetNetPlayFileInfo', ShowRecInfo);
+	g_ocx.AddEventListener('NetPlayTimeInform', ShowPlayTime);
+	g_ocx.AddEventListener('TransEvent', handlerOcxEvents.fireOcxEvent);
+}
+
+function RealPlay(){
+	g_ocx.SetModuleMode(1); //监视模式
+	g_ocx.ConnectRealVideo(12 ,1);
+}
+
+function RealPlayAll(){
+	g_ocx.SetModuleMode(1); //监视模式
+	g_ocx.ConnectAllChannelEx(1);
+}
+
+function StopPlayAll(){
+	g_ocx.DisConnectAllChannel();
+}
+
+function ControlPtz(){
+	g_ocx.ControlPtzEx(0, 1, 1, 8, 1, 0);
+}
+// //设置窗口数量
+// g_ocx.SetWinBindedChannel(1, 0, 63, 64);
+//     //设置截图保存地址
+//     g_ocx.SetConfigPath(1,"C:\\视频监控\\{$Think.const.__APP_PUBLIC__}"Uploads/);
+//     //设置录制视频保存地址
+//     g_ocx.SetConfigPath(2,"C:\\视频监控\\vidos");
+//     //设置画质 0 高 1 低
+//     // g_ocx.SetPicQuality(0);
+//     //设置视频实时性 0-10 实时登记依次降低
+//     g_ocx.SetAdjustFluency(0);
+//     //监视模式
+//     g_ocx.SetModuleMode(1);
+//     //连接视频
+//     g_ocx.ConnectRealVideo(0, 1);
+
+function LoginDevice(){
+		//:223.100.198.34, 223.100.198.35, 223.100.198.38, 223.100.198.39  用户名admin密码admin12345
+	// var bRet = g_ocx.LoginDeviceEx("223.100.198.34",37777,"admin","admin12345", 0);
+	var bRet = g_ocx.LoginDeviceEx("223.100.198.47",37777,"admin","admin12345", 0);
+		//设置窗口数量
+		g_ocx.SetWinBindedChannel(1, 0, 63, 64);
+	if(bRet == 0){
+	}
+}
+
+function LogoutDevice(){
+	g_ocx.LogoutDevice();
+	document.getElementById('Login').style.display = 'none';
+	document.getElementById('PlayBack').style.display = 'none';
+	document.getElementById('LocalPlay').style.display = 'none';
+	document.getElementById('Stop').style.display = 'none';
+	document.getElementById('FullScreen').style.display = 'none';
+	document.getElementById('Play').style.display = 'none';
+	document.getElementById('Logout').style.display = 'none';
+	document.getElementById('PlayRec').style.display = 'none';
+	document.getElementById('PauseRec').style.display = 'none';
+	document.getElementById('FastPlay').style.display = 'none';
+	document.getElementById('SlowPlay').style.display = 'none';
+	document.getElementById('ShowPlayTime').style.display = 'none';
+	document.getElementById('DwonLoadPos').style.display = 'none';
+	document.getElementById('RecInfo').style.display = 'none';
+	document.getElementById('PlayAll').style.display = 'none';
+	document.getElementById('Ptzctrl').style.display = 'none';
+	document.getElementById('StopPlayAll').style.display = 'none';
+}
+
+function LocalPlay()
+{
+	g_ocx.QuickOperation(0);
+}
+
+function StopPlay()
+{
+	g_ocx.DisConnectRealVideo(0);
+}
+
+function FullScreen(){
+	g_ocx.OnFullScreenClk();
+}
+
+function QueryRecord(){
+	g_ocx.SetModuleMode(4);	//回放模式
+	//设置窗口数量
+	g_ocx.SetWinBindedChannel(1, 0, 63,64);
+	g_ocx.SwitchMonth(2014,11,17);
+	g_ocx.SwitchDay(2014,11,17);
+	htmlStChn1 = '';
+}
+
+function PlayBack(){
+	//ocx.SetSearchBeginTime('2014-10-13 00:00:00',true);
+	g_ocx.PlayBackByTime(0, '01:00:00');
+}
+
+function FastPlay(){
+	if(g_curSpeed >= 8){//达到最大速度以后再快放就回到正常速度,客户可以按照自己的意愿来处理此时是否灰显快放按钮
+		g_curSpeed = 4;
+	}
+	else{
+		g_curSpeed++;
+	}
+	ocx.SpeedPlayBack(g_curSpeed);
+}
+
+function SlowPlay(){
+	if(g_curSpeed <= 0){//达到最小速度以后再慢放就回到正常速度,客户可以按照自己的意愿来处理此时是否灰显快放按钮
+		g_curSpeed = 4;
+	}
+	else{
+		g_curSpeed--;
+	}
+	ocx.SpeedPlayBack(g_curSpeed);
+}
+
+function Download(){
+	g_ocx.DownloadRecordByTime(0, '2014-11-04 01:05:00','2014-11-04 01:18:00', 'C:\\RecordDownload', 'dav');
+}
+
+function PlayRec()
+{
+	g_ocx.PlayBack();
+}
+
+function PauseRec()
+{
+	g_ocx.PausePlayBack();
+}
+
+function ShowPlayTime(time)
+{
+	//时间的格式00020018|  |是通道分隔符
+	g_PlayTime = time;
+	document.getElementById('playtime').value = g_PlayTime;
+}
+
+function ShowRecInfo(nCh, strRecodInfo)
+{
+	document.getElementById('PlayBack').style.display = '';
+	document.getElementById('PlayRec').style.display = '';
+	document.getElementById('PauseRec').style.display = '';
+	document.getElementById('FastPlay').style.display = '';
+	document.getElementById('SlowPlay').style.display = '';
+	document.getElementById('download').style.display = '';
+	document.getElementById('RecInfo').style.display = '';
+	document.getElementById('ShowPlayTime').style.display = '';
+	document.getElementById('DwonLoadPos').style.display = '';
+	g_PlayTime = "";
+	var readtime = strRecodInfo.split(':');
+	var num = readtime.length;
+	for(var i=0; i<num ; i++){
+		if(readtime[i]=='')
+			continue;
+		htmlStChn1 += '<li><a id="StChn'+(i)+'">' +'channel: '+nCh+' info: '+ readtime[i]+'</a></li>';
+	}
+	document.getElementById('RecInfoList').innerHTML = htmlStChn1;
+}
+</script>

@@ -1,0 +1,54 @@
+<extend name="Layout/sub"/>
+<block name="nav">城市管理 / 城建项目</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/Home/Static/css/style2.css"/>
+
+<div id="outer">
+	<include file="Layout/left_city"/>
+	<div id="content">
+		<ul style="display:block;">
+			<div class="aqsc">
+				<h3>城建项目</h3>
+				<div class="div">
+
+					<script type="text/javascript">
+						var current_start_year  = "{$current_start_year}";
+						var current_start_month = "{$current_start_month}";
+						var current_end_year    = "{$current_end_year}";
+						var current_end_month   = "{$current_end_month}";
+						var amount_data         = {$amount_data};
+						var type_data           = {$type_data};
+						var progress_data       = {$progress_data};
+					</script>
+
+					<table border=1 class="sys_table">
+						<tr>
+							<th>项目</th>
+							<th>责任部门</th>
+							<th>责任领导</th>
+							<th>{$time[0]}月</th>
+							<th>{$time[1]}月</th>
+							<th>{$time[2]}月</th>
+							<th>{$time[3]}月</th>
+						</tr>
+						<!--<?php dump($data) ?>-->
+						<volist name="data" id="vo">
+							<tr>
+								<td align="center">{$vo.project}</td>
+								<td align="center">{$vo.responsible_department}</td>
+								<td align="center">{$vo.responsible_leadership}</td>
+								<td align="center">{$vo.2018-03}</td>
+								<td align="center">{$vo.2018-04}</td>
+								<td align="center">{$vo.2018-05}</td>
+								<td align="center">{$vo.2018-06}</td>
+							</tr>
+						</volist>
+					</table>
+				</div>
+
+			</div>
+		</ul>
+	</div>
+</div>
+
+</block>

@@ -1,0 +1,13 @@
+<extend name="Layout/base" />
+<block name="main">
+<link rel="stylesheet" href="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.css" />
+<script type="text/javascript" src="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.js"></script>
+
+<div class="warpp">
+	<div class="main">
+	<h2>在问题</h2>
+		{$czwtData|htmlspecialchars_decode}
+	</div>
+</div>
+
+</block>

@@ -1,0 +1,40 @@
+/*图表大框*/
+.echars{
+	margin-top: 10px; 
+	width: 100%;
+	/*background: #CAF3E9;*/
+	height: 500px;
+}
+/*图表1*/
+.echars1{
+	width: 50%;
+	height: 500px;
+	/*background: #DFD0F6;*/
+	float: left;
+}
+#main1{
+	width: 100%;
+	height: 100%;
+	margin: auto;
+}
+/*图表2*/
+.echars2{
+	width: 50%;
+	height: 500px;
+	/*background: #EBEDD7;*/
+	float: right;
+}
+#main2{
+	width: 100%;
+	height: 100%;
+	margin: auto;
+}
+.trendUp{
+	color: red;
+}
+.trendDown{
+	color: green;
+}
+.hj{
+	color: red;
+}

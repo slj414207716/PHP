@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=6;IE=7; IE=8; IE=EmulateIE7"/>
+    <link rel="stylesheet" href="{$Think.const.__APP_PUBLIC__}/css/reset.css"/>
+    <script type="text/javascript" src="{$Think.const.__APP_PUBLIC__}/js/jQuery/jquery-1.8.2.js"></script>
+    <style>
+        .search {width:48%; font-size:12px; position:absolute;top:0;right:0}
+        .search_a {height:auto; overflow:hidden;border:1px solid #029ee8;margin-bottom:10px;}
+        .search_a h1 {width:100%;height:30px; font-size:16px; text-indent:1em; background-color:#029ee8;margin:0;padding:0; color:#FFF; line-height:30px;}
+        .search_a ul {margin:0 10px;}
+        .search_a li {border-bottom:1px solid #e3e6e9;width:50%; list-style:none; line-height:24px;float:left;}
+        a { text-decoration:none; color:#000}
+        tr:nth-of-type(2n) {background:#edf2f6;}
+        td {padding-left:5px; line-height:30px;}
+        #colee_left img {height:150px}
+        .yinhuan_list { width:100%;min-height:200px; overflow:auto; float:left; }
+        .yinhuan_left { width:35%; height:210px; background:#f1f1f1; float:left}
+        .yinhuan_left ul { width:100%; padding:10px}
+        .yinhuan_left ul li { width:100%;line-height:24px;float:left}
+        .yinhuan_left ul li span { font-size:14px; color:#333333; float:left; width:80%; height:40px; overflow:hidden; padding-left:5px}
+        .yinhuan_left ul li img { height:8px; margin-right:5px}
+        .yinhuan_right { width:63%; height:210px; background:#f0f0f0; float:left; margin-left:5px}
+        .yinhuan_right ul { width:50%; margin-top:5px; float:left}
+        .yinhuan_right ul li { width:100%; text-align:center;}
+    </style>
+    <script type="text/javascript">
+        $(document).ready
+        (
+            function () {
+                // 获取页面尺寸
+                var screen_width = $(window).width();
+                var screen_height = $(window).height();
+
+                // 获取search_a高度
+                var search_a_height = $('.search_a').outerHeight(true);
+                // 获取colee_left高度
+                var colee_left_height = $('#colee_left').outerHeight(true);
+                // 计算yinhuan_list高度
+                var yinhuan_list_height = screen_height - search_a_height - colee_left_height;
+                // 应用样式
+                $('.yinhuan_list').css('height', yinhuan_list_height + 'px');
+            }
+        );
+    </script>
+</head>
+<body>
+
+<!--后端处理后代码77-186-->
+<div class="search">
+    <!--公司属性-->
+    <div class="search_a">
+        <?php echo $data; ?>
+        <h1>{$data.qymc}<
+            <安全生产基本信息>>
+        </h1>
+        <ul>
+            <li>经济性质：<span>{$data.jjxz}</span></li>
+            <li>行业分类：<span>{$data.catname}</span></li>
+            <li>注册地址：<span>{$data.zcdz}</span></li>
+            <li>人员规模：<span>{$data.rygmname}</span></li>
+            <li>经营范围：<span>{$data.jyfw}</span></li>
+            <li>危险级别：<span>{$data.wxjbname}</span></li>
+            <li>法定代表人或企业负责人：<span>{$data.dbfzr}</span></li>
+            <li>联系电话：<span>{$data.lxdh1}</span></li>
+            <li>专(兼)安全管理人员：<span>{$data.glry}</span></li>
+            <li>联系电话：<span>{$data.lxdh2}</span></li>
+            <li>安全培训证数量：<span>{$data.pxzsl}</span></li>
+            <li>特种作业证种类,人数：<span>{$data.tzzy}</span></li>
+            <li>安"三同时"全手续(类型,日期)：<span>{$data.sx}</span></li>
+            <li>安全生产标准化(日期)：<span>{$data.aqsc}</span></li>
+            <li>环评手续：<span>{$data.hpsx}</span></li>
+            <li>消防手续：<span>{$data.xfsx}</span></li>
+            <li>占地面积：<span>{$data.zdmj}</span></li>
+            <li>建筑面积：<span>{$data.jzmj}</span></li>
+            <li>产权性质：<span>{$data.cqxz}</span></li>
+            <li>建成时间：<span>{$data.jcsj}</span></li>
+            <li>从业人员：<span>{$data.cyry}</span></li>
+            <li>建筑分区：<span>{$data.jzfq}</span></li>
+        </ul>
+    </div>
+    <!--公司图片-->
+    <div id="colee_left" style="overflow:hidden;width:100%;">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td id="colee_left1" valign="top" align="center">
+                    <table cellpadding="2" cellspacing="0" border="0">
+                        <tr align="center">
+                            <?php foreach($img as $k=>$v): ?>
+                            <?php if($v['smallimg']): ?>
+                            <td><p><img src="{$v.smallimg}"></p></td>
+                            <?php endif; ?>
+                            <?php endforeach; ?>
+                            <?php if($v['smallimg']==''): ?>
+                            <td><p><img src="{$Think.const.__APP_PUBLIC__}/images/index/no.jpg"></p>
+                            </td>
+                            <td><p><img src="{$Think.const.__APP_PUBLIC__}/images/index/no.jpg"></p>
+                            </td>
+                            <td><p><img src="{$Think.const.__APP_PUBLIC__}/images/index/no.jpg"></p>
+                            </td>
+                            <?php endif; ?>
+                        </tr>
+                    </table>
+                </td>
+                <td id="colee_left2" valign="top"></td>
+            </tr>
+        </table>
+    </div>
+    <!--隐患排查-->
+    <div class="yinhuan_list">
+        <?php foreach($ycpc as $k=>$v): ?>
+        <div class="yinhuan_left">
+            <ul>
+                <li><b>检查单位</b></li>
+                <li>{$v.chkdep}</li>
+                <li><b>检查日期</b></li>
+                <li><?php echo strtok($v['chktime'],' '); ?></li>
+                <li><b>复查单位</b></li>
+                <li><?php if($v['rechkdep']=='')echo '--';else echo $v['rechkdep']; ?></li>
+                <li><b>复查日期</b></li>
+                <li><?php if($v['rechktime']=='')echo '--';else echo strtok($v['rechktime'],' '); ?></li>
+            </ul>
+        </div>
+        <div class="yinhuan_right">
+            <ul style="float:left">
+                <li><img src="{$v.danimg}" width="97%" height="170"/></li>
+                <li>
+                    <div class="yinhuan_text1"></div>
+                </li>
+                <li style="border-top:1px dotted #CCCCCC">
+                    <div class="yinhuan_text2">隐患：&nbsp;&nbsp;{$v.danger}</div>
+                </li>
+            </ul>
+            <ul style="float:right">
+                <?php if($v['recimg']): ?>
+                <li><img src="{$v.recimg}" width="100%" height="170"/></li>
+                <?php endif; ?>
+                <?php if($v['recimg']==''): ?>
+                <li><img src="{$Think.const.__APP_PUBLIC__}/images/index/no.jpg" width="100%" height="170"/></li>
+                <?php endif; ?>
+                <li>
+                    <div class="yinhuan_text1"></div>
+                </li>
+                <li style="border-top:1px dotted #CCCCCC">
+                    <div class="yinhuan_text2">整改：&nbsp;&nbsp;{$v.rec}</div>
+                </li>
+            </ul>
+        </div>
+        <?php endforeach; ?>
+    </div>
+    <!--图片滚动效果-->
+    <script>
+        //使用div时，请保证colee_left2与colee_left1是在同一行上.
+        var speed = 30//速度数值越大速度越慢
+        var colee_left2 = document.getElementById("colee_left2");
+        var colee_left1 = document.getElementById("colee_left1");
+        var colee_left = document.getElementById("colee_left");
+        colee_left2.innerHTML = colee_left1.innerHTML
+
+        function Marquee3() {
+            if (colee_left2.offsetWidth - colee_left.scrollLeft <= 0)//offsetWidth 是对象的可见宽度
+                colee_left.scrollLeft -= colee_left1.offsetWidth//scrollWidth 是对象的实际内容的宽，不包边线宽度
+            else {
+                colee_left.scrollLeft++
+            }
+        }
+
+        var MyMar3 = setInterval(Marquee3, speed)
+        colee_left.onmouseover = function () {
+            clearInterval(MyMar3)
+        }
+        colee_left.onmouseout = function () {
+            MyMar3 = setInterval(Marquee3, speed)
+        }
+    </script>
+</div>
+</body>
+</html>

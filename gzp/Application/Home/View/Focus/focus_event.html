@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="refresh" content="30;url={$Think.const.HOST_NAME}{$Think.const.GROUP_NAME}/{$Think.const.MODULE_NAME}/{$Think.const.ACTION_NAME}?turn={$event_info['next_page']}" />
+		<title>{$Think.const.SITE_TITLE}</title>
+		<link type="text/css" rel="stylesheet" href="{$Think.const.__APP_PUBLIC__}/css/{$Think.const.GROUP_NAME}/{$Think.const.MODULE_NAME}/{$Think.const.ACTION_NAME}.css" />
+		<script type="text/javascript" src="{$Think.const.__APP_PUBLIC__}/js/jQuery/jquery-1.8.2.js"></script>
+		<script type="text/javascript" src="{$Think.const.__APP_PUBLIC__}/js/{$Think.const.GROUP_NAME}/{$Think.const.MODULE_NAME}/{$Think.const.ACTION_NAME}.js"></script>
+		<script type="text/javascript">
+			var past_ratio_int = "{$event_info['past_ratio_int']}";
+		</script>
+	</head>
+	<body style="height:768px; overflow:hidden;">
+		<div class="top"><img src="{$Think.const.__APP_PUBLIC__}/images/{$Think.const.GROUP_NAME}/1536_768/title.gif" width="45%" /></div>
+		<div class="title">
+			<p><img src="{$Think.const.__APP_PUBLIC__}/images/{$Think.const.GROUP_NAME}/1536_768/icon3.png" /><span>{$event_info['leader']}</span></p>
+			<img src="{$Think.const.__APP_PUBLIC__}/images/{$Think.const.GROUP_NAME}/1536_768/icon1.png" /><span>{$event_info['name']}</span>
+			<p style="margin-right:10%;"><img src="{$Think.const.__APP_PUBLIC__}/images/{$Think.const.GROUP_NAME}/1536_768/icon2.png" /><span>{$event_info['department']}</span></p>
+		</div>
+		<div class="imggif">
+			<if condition="$event_info['current_timeline_status'] eq 0">
+				<img src="{$Think.const.__APP_PUBLIC__}/images/{$Think.const.GROUP_NAME}/1536_768/worker_fail.gif" width="5%" />
+			</if>
+			<if condition="$event_info['current_timeline_status'] eq 1">
+				<img src="{$Think.const.__APP_PUBLIC__}/images/{$Think.const.GROUP_NAME}/1536_768/worker_complete.gif" width="5%" />
+			</if>
+			<if condition="$event_info['current_timeline_status'] eq 2">
+				<img src="{$Think.const.__APP_PUBLIC__}/images/{$Think.const.GROUP_NAME}/1536_768/worker_continue.gif" width="5%" />
+			</if>
+		</div>
+		<div class="time">
+			<ul>
+				<volist name="event_info['month_list']" id="vo">
+					<if condition="$vo['status'] eq 'active'">
+						<li><img src="{$Think.const.__APP_PUBLIC__}/images/{$Think.const.GROUP_NAME}/1536_768/star.gif" /><font>{$vo['month']}</font></li>
+					<else/>
+						<li><img src="{$Think.const.__APP_PUBLIC__}/images/{$Think.const.GROUP_NAME}/1536_768/star_dark.png" /><font color="#FFE620">{$vo['month']}</font></li>
+					</if>
+				</volist>
+			</ul>
+		</div>
+		<div class="test">
+			<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<th scope="col" style="border:0">工期</th>
+					<for start="1" end="5">
+						<th scope="col">上旬</th>
+						<th scope="col">中旬</th>
+						<th scope="col">下旬</th>
+					</for>
+				</tr>
+				<tr>
+					<td rowspan="2" style="background-color:#FFF;">
+						<div class="work" style="height:255px; line-height:200px;">工作进度</div>
+						<div class="problem">存在问题</div>
+					</td>
+					<td colspan="12" class="bar" >
+						<div class="green"><img src="{$Think.const.__APP_PUBLIC__}/images/{$Think.const.GROUP_NAME}/1536_768/bar.png" /></div>
+					</td>
+				</tr>
+				<tr>
+					<volist name="event_info['timeline_data']" id="vo">
+						<if condition="$i eq count($event_info['timeline_data'])">
+							<td colspan="{$vo['continue_term']}" class="{$vo['status']} end">
+						<else/>
+							<td colspan="{$vo['continue_term']}" class="{$vo['status']}">
+						</if>
+							<div class="work">{$vo['contents']}</div>
+							<div class="problem">{$vo['remark']}</div>
+						</td>
+					</volist>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

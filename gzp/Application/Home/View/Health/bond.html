@@ -1,0 +1,85 @@
+<extend name="Layout/sub" />
+<block name="nav">医疗卫生 /卫生/ 医养结合</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.css" />
+
+<script type="text/javascript" src="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.js"></script>
+<script type="text/javascript">
+
+</script>
+<div id="outer">
+<include file="Layout/left_ylws"/>
+    <div id="content">
+            <div class="data">
+                <H3 style="color: #fff;">近五年数据</H3>
+                <div id="main1" style="width: 100%; height: 100%; margin: auto;"></div>
+            </div>
+            <div class="data">
+                <H3 style="color: #fff;">本年数据</H3>
+                <div id="main2" style="width: 100%; height: 100%; margin: auto;"></div>
+            </div>
+            <ul style="display:block;">
+            <div class="aqsc">
+                <h3>医养结合统计</h3>
+                <div class="div"> 
+            <table border="0" cellpadding="0" cellspacing="0" width="1260">
+                  <col width="52" />
+                  <col width="325" />
+                  <col width="139" />
+                  <col width="370" />
+                  <col width="158" />
+                  <col width="72" span="3" />
+                  <tr>
+                    <td width="52">序号</td>
+                    <td width="325">名称</td>
+                    <td width="139">地址</td>
+                    <td width="370">开展项目</td>
+                    <td width="158">受众人数</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>大连市甘井子区金牛山庄休闲养老福利院</td>
+                    <td>夏家河村</td>
+                    <td rowspan="6" width="370">1、摸清新入住的老年人健康状况，建立健康档案<br />
+                      2、全面监测、分析、评估老人的健康数据，对有问题的老人进行指导、咨询、危险因素干预，制定针对性的综合诊疗方案。<br />
+                      3、每周开展一次上门诊视、健康查体、慢性病管理、保健咨询等。<br />
+                      4、急性病需住院的提供救护车接送，并与就诊医院合作开通绿色通道，让老人及时得到救治</td>
+                    <td>36</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>大连市甘井子区革镇堡蓝天养老院</td>
+                    <td>夏家河村</td>
+                    <td>169</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>大连甘井子阳光养老中心</td>
+                    <td>鞍子山村</td>
+                    <td>37</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>大连市甘井子区春阳养老院</td>
+                    <td>鞍子山村</td>
+                    <td>46</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>大连市甘井子区革镇堡镇敬老院</td>
+                    <td>中革村</td>
+                    <td>120</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>大连市甘井子区敬爱之乡养老院</td>
+                    <td>夏家河村</td>
+                    <td>10</td>
+                  </tr>
+                </table>
+        </div>
+    </div>
+        </ul>
+    </div>
+</div>
+</block>    

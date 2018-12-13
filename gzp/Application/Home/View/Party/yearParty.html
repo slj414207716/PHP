@@ -1,0 +1,53 @@
+<extend name="Layout/base" />
+<block name="main">
+	
+<link rel="stylesheet" href="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.css" />
+<style>
+    .data05 h3{margin: 0px};
+</style>
+<script type="text/javascript" src="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.js"></script>
+
+<div class="data01">
+	<div class="data04">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <th scope="col">年份</th>
+                <if condition="$Think.get.sid eq 1">
+                    <th scope="col">大专以下</th>
+                    <th scope="col">大专及以上</th>
+                <elseif condition="$Think.get.sid eq 2" />
+                    <th scope="col">男</th>
+                    <th scope="col">女</th>
+                <elseif condition="$Think.get.sid eq 3" />
+                    <th scope="col">60岁以下</th>
+                    <th scope="col">60岁及以上</th>
+                <elseif condition="in_array($_GET['sid'],array(4,5,6,7,8,9,10,11,12))" />
+                    <th scope="col">机关事业单位</th>
+                    <th scope="col">农村</th>
+                    <th scope="col">非公企</th>
+                </if>
+            </tr>
+            <volist name="data" id="v">
+            <tr>
+                <td>{$key}年</td>
+                <if condition="$Think.get.sid eq 1">
+                    <td>{$v['大专以下']}人</td>
+                    <td>{$v['大专及以上']}人</td>
+                <elseif condition="$Think.get.sid eq 2" />
+                    <td>{$v['男']}人</td>
+                    <td>{$v['女']}人</td>
+                <elseif condition="$Think.get.sid eq 3" />
+                    <td>{$v['60岁以下']}人</td>
+                    <td>{$v['60岁及以上']}人</td>
+                <elseif condition="in_array($_GET['sid'],array(4,5,6,7,8,9,10,11,12))" />
+                    <td>{$v['机关事业单位']}</td>
+                    <td>{$v['农村']}</td>
+                    <td>{$v['非公企']}</td>
+                </if>
+            </tr>
+            </volist>
+        </table>
+	</div>	
+</div>
+
+</block>	

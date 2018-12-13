@@ -1,0 +1,62 @@
+<extend name="Layout/base" />
+<block name="main">
+	
+<link rel="stylesheet" href="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.css" />
+<style>
+    .data02 h3{margin:0px}
+</style>
+<script type="text/javascript" src="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.js"></script>
+<script type="text/javascript">
+    var jsonData = '';
+    var jsonHb = '';
+    var jsonTb = '';
+    jsonData = '<?php echo $jsonData ?>';
+    jsonHb = '<?php echo $jsonHb ?>';
+    jsonTb = '<?php echo $jsonTb ?>';
+</script>
+<div class="data01">
+	<div class="data02">
+		<h3>基础数据</h3>
+		<div id="main1"></div>
+	</div>
+	<div class="data02">
+		<h3>同比/环比</h3>
+		<div id="main2"></div>
+	</div>
+	<div class="data04">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<th scope="col">月份</th>
+				<th scope="col">实际完成(千万)</th>
+				<th scope="col">同比</th>
+				<th scope="col">环比</th>
+			</tr>
+			<volist name="shxfData" id="v">
+			<tr>
+				<td>{$v.month}月</td>
+				<td>{$v.real}</td>
+				<!-- 同比 -->
+				<td>
+					{$tb[$v['month']]}
+					<if condition="$tb[$v['month']] GT 0">
+						<span class="trendUp">↑</span>
+					<elseif condition="$tb[$v['month']] LT 0" />
+						<span class="trendDown">↓</span>	
+					</if>				
+				</td>
+				<!-- 环比 -->
+				<td>
+					{$hb[$v['month']]}
+					<if condition="$hb[$v['month']] GT 0">
+						<span class="trendUp">↑</span>
+					<elseif condition="$hb[$v['month']] LT 0" />
+						<span class="trendDown">↓</span>	
+					</if>		
+				</td>
+			</tr>
+			</volist>
+		</table>
+	</div>	
+</div>
+
+</block>	

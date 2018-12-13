@@ -1,0 +1,6 @@
+[ 2018-11-23T09:46:58+08:00 ] 127.0.0.1 /index.php/Admin/Land/plot1
+ERR: 非法操作:plot1
+
+[ 2018-11-23T09:47:02+08:00 ] 127.0.0.1 /index.php/Admin/Land/map2
+ERR: 非法操作:map2
+

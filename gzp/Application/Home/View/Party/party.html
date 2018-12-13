@@ -1,0 +1,118 @@
+<extend name="Layout/base" />
+<block name="main">
+<link rel="stylesheet" href="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.css" />
+<style>
+.data h3{margin: 0px 0px 20px 0px};
+</style>
+<script type="text/javascript" src="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.js"></script>
+<script type="text/javascript">
+    var jsonData = '';
+    jsonData = '<?php echo $jsonData; ?>';
+    var jsonName = '';
+    jsonName = '<?php echo $jsonName; ?>';
+    var jsonData2 = '';
+    jsonData2 = '<?php echo $jsonData2; ?>';
+</script>
+<div id="outer">
+    <ul id="tab">
+        <!-- 党员 -->
+        <if condition="in_array($_GET['sid'],array(1,2,3))">
+            <li num="1" <if condition = "$Think.get.sid eq 1"> class="current" </if> >学历</li>
+            <li num="2" <if condition = "$Think.get.sid eq 2"> class="current" </if> >性别</li>
+            <li num="3" <if condition = "$Think.get.sid eq 3"> class="current" </if> >年龄</li>
+        <!-- 妇联 -->
+        <elseif condition="in_array($_GET['sid'],array(4,5,6))"/>
+            <li num="4" <if condition = "$Think.get.sid eq 4"> class="current" </if> >数量</li>
+            <li num="5" <if condition = "$Think.get.sid eq 5"> class="current" </if> >人数</li>
+            <li num="6" <if condition = "$Think.get.sid eq 6"> class="current" </if> >妇女部</li>
+        <!-- 共青团 -->
+        <elseif condition="in_array($_GET['sid'],array(7,8,9))"/>
+            <li num="7" <if condition = "$Think.get.sid eq 7"> class="current" </if> >团支部数</li>
+            <li num="8" <if condition = "$Think.get.sid eq 8"> class="current" </if> >团员数</li>
+            <li num="9" <if condition = "$Think.get.sid eq 9"> class="current" </if> >干部数</li>
+        <!-- 科协 -->
+        <elseif condition="in_array($_GET['sid'],array(10,11,12))"/>
+            <li num="10" <if condition = "$Think.get.sid eq 10"> class="current" </if> >科协数</li>
+            <li num="11" <if condition = "$Think.get.sid eq 11"> class="current" </if> >人数</li>
+            <li num="12" <if condition = "$Think.get.sid eq 12"> class="current" </if> >干部数</li>
+        </if>
+    	<!-- <p> 数据查询<br><input type="text"><input type="text"><br> <button type="submit" class="search">查询</button></p> -->
+    </ul>
+    <div id="content">
+        <?php echo $_GET['sid'] ?>
+        <?php echo $csid ?>
+        <ul <if condition="$Think.get.sid eq $csid"> style="display: block;" <else /> style="display: none;" </if> >
+        	<div class="data">
+        		<H3>近五年数据</H3>
+        		<div id="party1"></div>
+        	</div>
+       		<div class="data">
+       			<H3>本年数据</H3>
+       			<div id="party2"></div>
+       		</div>
+        	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<th scope="col">年份</th>
+                    <if condition="$Think.get.sid eq 1">
+                        <th scope="col">大专以下</th>
+                        <th scope="col">大专及以上</th>
+                    <elseif condition="$Think.get.sid eq 2" />
+                        <th scope="col">男</th>
+                        <th scope="col">女</th>
+                    <elseif condition="$Think.get.sid eq 3" />
+                        <th scope="col">60岁以下</th>
+                        <th scope="col">60岁及以上</th>
+                    <elseif condition="in_array($_GET['sid'],array(4,5,6,7,8,9,10,11,12))" />
+                        <th scope="col">机关事业单位</th>
+                        <th scope="col">农村</th>
+                        <th scope="col">非公企</th>
+                    </if>
+				</tr>
+				<volist name="data" id="v">
+				<tr>
+					<td>{$key}年</td>
+                    <if condition="$Think.get.sid eq 1">
+                        <td>{$v['大专以下']}人</td>
+                        <td>{$v['大专及以上']}人</td>
+                    <elseif condition="$Think.get.sid eq 2" />
+                        <td>{$v['男']}人</td>
+                        <td>{$v['女']}人</td>
+                    <elseif condition="$Think.get.sid eq 3" />
+                        <td>{$v['60岁以下']}人</td>
+                        <td>{$v['60岁及以上']}人</td>
+                    <elseif condition="in_array($_GET['sid'],array(4,5,6,7,8,9,10,11,12))" />
+                        <td>{$v['机关事业单位']}人</td>
+                        <td>{$v['农村']}人</td>
+                        <td>{$v['非公企']}人</td>
+                    </if>
+				</tr>
+				</volist>
+                <tr>
+                    <th colspan="4" style="text-align:right">
+                        <a class="search1" href="{$Think.const.HOST_NAME}/Home/Party/yearParty/sid/{$Think.get.sid}">年度数据查询</a>
+                    </th>
+                </tr>
+			</table>
+        </ul>
+    </div>
+</div>
+
+<script src="/Public/Home/Static/js/jquery.min.js"></script>
+<script>
+	$(function(){
+		window.onload = function()
+		{
+			var $li = $('#tab li');
+			var $ul = $('#content ul');
+			$li.click(function(){
+				var num = $(this).attr("num");
+				//console.log(num);
+				var url = "<?php echo C('HOST_NAME'); ?>";
+				console.log(url);
+				window.location.href= url+"/Home/Party/party/sid/"+num;
+			})
+		}
+	});
+</script>
+
+</block>	

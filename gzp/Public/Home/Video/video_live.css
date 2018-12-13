@@ -1,0 +1,92 @@
+.part-left { width:50%; height:550px; }
+.part-right { width:50%; height:550px; }
+
+.video_window {
+	background-color: #555;
+	text-align:center;
+}
+.video_window span {
+	display: inline-block;
+	margin-top:240px;
+	color: #BBB;
+	font-weight: bold;
+	font-size: 40px;
+	letter-spacing: 10px;
+	text-shadow: 0 0 1px #FF0;
+}
+
+/*
+.right_window
+{
+	float: left;
+	width: 50%;
+}
+
+.map_window
+{
+	width: 100%;
+	height: 50%;
+}
+
+.plan_list
+{
+	width: auto;
+	font-size: 16px;
+	margin-left: 15px;
+}
+
+.plan_list h2
+{
+	line-height: 35px;
+	font-size: 22px;
+}
+
+.plan_list ul{ margin-top: 20px; }
+
+.plan_list li
+{
+	float: left;
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	margin-right: 25px;
+}
+
+.plan_list li input[type="checkbox"]
+{
+	vertical-align: middle;
+	margin-right: 8px;
+}
+
+.plan_list table
+{
+	width: 95%;
+	margin-top: 20px;
+}
+
+.plan_list thead
+{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.plan_list td{ padding: 10px; }
+
+#address
+{
+	float: left;
+	width: 85%;
+	height: 30px;
+	padding: 5px 10px;
+	font-size: 16px;
+	letter-spacing: 1px;
+	border: 1px solid #CCC;
+	border-right: none;
+}
+
+#fix_position
+{
+	height: 38px;
+	padding: 0px 10px;
+}
+*/

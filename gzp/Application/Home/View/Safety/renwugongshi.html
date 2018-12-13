@@ -1,0 +1,94 @@
+<extend name="Layout/sub" />
+<block name="nav">安全生产 / 任务公示</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/Home/Static/css/style2.css" />
+
+<div id="outer">
+	<include file="Layout/left_safety"/>
+	<div id="content">
+		<ul style="display:block;">
+			<div class="aqsc">
+				<h3>任务公示</h3>
+				<div class="search_2">
+					<form action="__SELF__" method="get">
+					<input name="keyword" value="" class="sea" type="text" placeholder="请您输入要查询关键字">
+					<input class="sub" type="submit" value="搜索">
+					</form>
+				</div>
+				<a class="tj" href="/index.php/Home/Safety/renwugongshiadd">添加</a>
+
+				<div class="div">
+					<table width="100%" cellspacing="0" cellpadding="0" border="0">
+						<tbody>
+						<tr>
+							<th width="5%">序号</th>
+							<th width="10%">责任部门</th>
+							<th width="15%">标题</th>
+							<th>内容摘要</th>
+							<th width="7%">详细内容</th>
+							<th width="10%">上传时间</th>
+							<th width="7%">编辑</th>
+						</tr>
+						<?php foreach($data as $k=>$v): ?>
+						<tr>
+							<td style="position: relative" align="center">
+								<?php if(date("Y-m-d")==date("Y-m-d",$v['time'])||date("Y-m-d")==date("Y-m-d",$v['time']+1*24*60*60)||date("Y-m-d")==date("Y-m-d",$v['time']+2*24*60*60)): ?>
+								<img style="position: absolute;top: 6px;left: 0px;" src="__ROOT__/Public/images/Home/hot.gif" />
+								<?php endif; ?>
+								<?php echo ++$a ?>
+							</td>
+							<td align="center">{$v.maindep}</td>
+							<td align="center">{$v.title}</td>
+							<td class="content" align="center" title="{$v.maincontent}">
+								<?php
+                        if(strlen($v['maincontent'])>=90){
+								echo mb_substr($v['maincontent'],0,35,"UTF-8").'...';
+								}elseif(strlen($v['maincontent'])<90){
+								echo $v['maincontent'];
+								}
+								?>
+							</td>
+							<td align="center"><a href="/index.php/Home/Safety/renwugongshixq/id/{$v.id}">详情</a></td>
+							<td align="center"><?php echo date('Y-m-d',$v['time']) ?></td>
+							<td align="center">
+								<a href="/index.php/Home/Safety/renwugongshiedit/id/{$v.id}">修改</a>|
+								<a href="/index.php/Home/Safety/renwugongshidel/id/{$v.id}" onclick="return confirm('确定要删除吗？');">删除</a>
+							</td>
+						</tr>
+						<?php endforeach; ?>
+						<tr>
+							<td align="center">1</td>
+							<td align="center">测试1</td>
+							<td align="center">测试1</td>
+							<td align="center">测试1</td>
+							<td align="center"><a href="/index.php/Home/Safety/gainianxq/id/4">详情</a></td>
+							<td align="center">2018-06-06 14:49:43</td>
+							<td align="center">
+								<a href="/index.php/Home/Safety/gainianedit/id/4">修改</a>|
+								<a href="/index.php/Home/Safety/gainiandel/id/4" onclick="return confirm('确定要删除吗？');">删除</a>
+							</td>
+						</tr>
+						<tr>
+							<td align="center">2</td>
+							<td align="center">安全的认识阶段</td>
+							<td align="center">安全的认识阶段</td>
+							<td align="center">安全的认识阶段</td>
+							<td align="center"><a href="/index.php/Home/Safety/gainianxq/id/1">详情</a></td>
+							<td align="center">2018-06-06 14:00:09</td>
+							<td align="center">
+								<a href="/index.php/Home/Safety/gainianedit/id/1">修改</a>|
+								<a href="/index.php/Home/Safety/gainiandel/id/1" onclick="return confirm('确定要删除吗？');">删除</a>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+
+				</div>
+			</div>
+		</ul>
+	</div>
+</div>
+
+</block>
+
+

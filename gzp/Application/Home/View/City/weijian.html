@@ -1,0 +1,70 @@
+<extend name="Layout/sub"/>
+<block name="nav">城市管理 / 违建项目</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/Home/Static/css/style2.css"/>
+
+<div id="outer">
+	<include file="Layout/left_city"/>
+	<div id="content">
+		<ul style="display:block;">
+			<div class="aqsc">
+				<h3>违建项目</h3>
+				<div class="div">
+
+					<script type="text/javascript">
+						var current_start_year  = "{$current_start_year}";
+						var current_start_month = "{$current_start_month}";
+						var current_end_year    = "{$current_end_year}";
+						var current_end_month   = "{$current_end_month}";
+						var data_json           = '{$data_json}';
+					</script>
+
+					<table border=1 class="sys_table">
+						<tr>
+							<th>序列</th>
+							<th>所属村委会</th>
+							<th>违建责任人</th>
+							<th>违建地址</th>
+							<th>违建数量</th>
+							<th>违建占地面积（㎡）</th>
+							<th>违建建筑面积（㎡）</th>
+							<th>违建结构</th>
+							<th>建设时间</th>
+							<th>目前状况</th>
+							<th>土地类别</th>
+							<th>合同签订时间及期限</th>
+							<th>完成时限</th>
+							<th>备注</th>
+						</tr>
+						<volist name="data" id="vo">
+							<tr>
+								<td align="center">{$i}</td>
+								<td align="center">{$vo['suosuh']}</td>
+								<td align="center">{$vo['zerenren']}</td>
+								<td align="center">{$vo['dizhi']}</td>
+								<td align="center">{$vo['shuliang']}</td>
+								<td align="center">{$vo['zhanmian']}</td>
+								<td align="center">{$vo['jianmian']}</td>
+								<td align="center">{$vo['jiegou']}</td>
+								<td align="center">{$vo['shijian']}</td>
+								<td align="center">{$vo['zhuangkuang']}</td>
+								<td align="center">{$vo['leibie']}</td>
+								<td align="center">{$vo['hetong']}</td>
+								<td align="center">{$vo['shixian']}</td>
+								<td align="center">{$vo['beizhu']}</td>
+							</tr>
+						</volist>
+					</table>
+					<div class="pagelist_area">
+						<if condition="$PAGE['total_page'] gt 1">
+							<include file="Layout/_pagelist"/>
+						</if>
+					</div>
+				</div>
+
+			</div>
+		</ul>
+	</div>
+</div>
+
+</block>

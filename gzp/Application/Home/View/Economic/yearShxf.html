@@ -1,0 +1,49 @@
+<extend name="Layout/base" />
+<block name="main">
+	
+<link rel="stylesheet" href="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.css" />
+<style>
+    .data05 h3{margin: 0px};
+</style>
+<script type="text/javascript" src="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.js"></script>
+<script type="text/javascript">
+   var jsonData = '';
+   jsonData = '<?php echo $jsonData ?>';
+</script>
+
+<div class="data01">
+	<div class="data05">
+		<h3>历年数据</h3>
+		<div id="year"></div>
+	</div>
+	<div class="data04">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<th scope="col">年度</th>
+				<th scope="col">实际完成(亿）</th>
+				<th scope="col">详细</th>
+			</tr>
+			<volist name="data" id="v">
+				<tr>
+					<td>
+						{$v.year}年
+					</td>
+					<td>
+						<if condition="$v.real eq ''">
+							--
+						<else />
+							{$v.real}
+						</if>
+					</td>
+					<td>
+                        <a href="{$Think.const.HOST_NAME}/Home/Economic/monthShxf/year/{$v.year}/sid/{$Think.get.sid}">
+							查看
+						</a>
+					</td>
+				</tr>
+			</volist>
+		</table>
+	</div>	
+</div>
+
+</block>	

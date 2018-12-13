@@ -1,0 +1,46 @@
+<extend name="Layout/sub" />
+<block name="nav">教育工作 / 学校配餐统计 / 初中配餐情况</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.css" />
+<style>
+.data h3{margin: 0px 0px 20px 0px};
+</style>
+<script type="text/javascript" src="/Public/{$Think.const.MODULE_NAME}/{$Think.const.CONTROLLER_NAME}/{$Think.const.ACTION_NAME}.js"></script>
+<script type="text/javascript">
+
+</script>
+<div id="outer">
+<include file="Layout/left_food"/>
+    <div id="content">
+            <ul style="display:block;">
+            <div class="aqsc">
+                <h3>初中配餐统计</h3>
+                <div class="div"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <th scope="col">序号</th>
+                    <th scope="col">单位</th>
+                    <th scope="col">合作单位</th>
+                    <th scope="col">收费标准</th>
+                    <th scope="col">合同签订情况</th>
+                    <th scope="col">是否有正规资质</th>
+                    <th scope="col">存在的主要问题</th>
+                </tr>
+                <volist name="data" id="v">
+                <tr>
+                    <td><?php echo ++$a?></td>
+                    <td>{$v.name}</td>
+                    <td>{$v.hzdw}</td>
+                    <td>{$v.money}</td>
+                    <td>{$v.htqd}</td>
+                    <td>{$v.zgzz}</td>
+                    <td>{$v.zywt}</td>
+                </tr>
+                </volist>
+            </table>
+                </div>
+            </div>
+        </ul>
+    </div>
+</div>
+</block>    

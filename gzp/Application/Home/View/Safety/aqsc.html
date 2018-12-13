@@ -1,0 +1,118 @@
+<extend name="Layout/sub"/>
+<block name="nav">安全生产 / 安全信息综合查询</block>
+<block name="main">
+<link rel="stylesheet" href="/Public/Home/Static/css/style2.css"/>
+
+<div id="outer">
+	<include file="Layout/left_safety"/>
+	<div id="content">
+		<ul style="display:block;">
+			<div class="aqsc">
+				<h3>安全信息综合查询</h3>
+
+				<!--地图-->
+				<iframe id="iframe1" src="<?php echo U('company'); ?>/lng/{$lng}/lat/{$lat}?>" width="70%" height="100%" frameborder="0" scrolling="no"></iframe>
+
+				<!--企业-->
+				<div class="search">
+					<!--条件-->
+					<div class="search_a">
+						<h1>安全信息综合查询</h1>
+						<form method="post" action="">
+						<ul>
+							<li class="sf1 sfsshy">
+								<span>所属行业：</span>
+								<x style="cursor: pointer" class="fhsshy">[+]</x>
+								<a target="_self" style="<?php if(I('get.catid')==0)echo 'color: red' ?>" href="__SELF__/catid/0">不限</a>&nbsp;&nbsp;&nbsp;
+								<?php foreach($catinfo as $k=>$v): ?>
+								<a style="<?php if(I('get.catid')==$v['id'])echo 'color: red' ?>" href="__SELF__/catid/{$v.id}">{$v.name}</a>&nbsp;&nbsp;&nbsp;
+								<?php endforeach; ?>
+							</li>
+							<li>
+								<span>危险等级：</span>
+								<a style="<?php if(I('get.wxjbid')==0)echo 'color: red' ?>" href="__SELF__/wxjbid/0">不限</a>&nbsp;&nbsp;&nbsp;
+								<?php foreach($wxjbinfo as $k=>$v): ?>
+								<a style="<?php if(I('get.wxjbid')==$v['id'])echo 'color: red' ?>"
+								   href="__SELF__/wxjbid/{$v.id}">{$v.name}</a>&nbsp;&nbsp;&nbsp;
+								<?php endforeach; ?>
+							</li>
+							<li class="sf2 sfwxys">
+			                    <span>
+			                        危险因素：
+			                    </span>
+								<y style="cursor: pointer" class="fhwxys">[+]</y>
+								<a style="<?php if(I('get.wxysid')==0)echo 'color: red' ?>" href="__SELF__/wxysid/0">不限</a>&nbsp;&nbsp;&nbsp;
+								<?php foreach($wxysinfo as $k=>$v): ?>
+								<a style="<?php if(I('get.wxysid')==$v['id'])echo 'color: red' ?>"
+								   href="__SELF__/wxysid/{$v.id}">{$v.name}</a>&nbsp;&nbsp;&nbsp;
+								<?php endforeach; ?>
+							</li>
+							<li>
+			                    <span>
+			                        人员规模：
+			                    </span>
+								<a style="<?php if(I('get.yygmid')==0)echo 'color: red' ?>" href="__SELF__/yygmid/0">不限</a>&nbsp;&nbsp;&nbsp;
+								<?php foreach($yygminfo as $k=>$v): ?>
+								<a style="<?php if(I('get.yygmid')==$v['id'])echo 'color: red' ?>"
+								   href="__SELF__/yygmid/{$v.id}">{$v.name}</a>&nbsp;&nbsp;&nbsp;
+								<?php endforeach; ?>
+							</li>
+						</ul>
+						</form>
+					</div>
+					<!--列表-->
+					<table border="0" width="100%" cellpadding="0" cellspacing="0" id="ab1">
+						<tr style="height:25px;background-color:#029ee8;color:#FFF;">
+							<td width="29%"><b>企业名称</b></td>
+							<td width="29%"><b>危险等级</b></td>
+							<td width="29%"><b>所属区域</b></td>
+							<td width="13%"></td>
+						</tr>
+						<?php foreach($data as $k=>$v): ?>
+						<tr style="height:25px">
+							<td>{$v.qymc}</td>
+							<td>{$v.wxdjname}</td>
+							<td>{$v.ssqyname}</td>
+							<td>
+								<a href="javascript:void(0);" data-jump="1" data-herf="/jiankong/index.html?company_id={$v.id}&ip={$v.ip}&port={$v.port}&jkusername=<?php echo $v['jkusername']?>&jkpassword=<?php echo $v['jkpassword']?>&channelnum={$v.channelnum}"><b>详情</b></a>
+							</td>
+						</tr>
+						<?php endforeach; ?>
+						<tr>
+							<td align="right" nowrap="true" colspan="99" height="30"><?php echo $pag; ?></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</ul>
+	</div>
+</div>
+
+<script>
+	$(".fhsshy").click(function () {
+		if ($("x").text() == "[+]") {
+			$("li.sf1").removeClass("sfsshy");
+			$("x").text("[-]");
+			return;
+		}
+		if ($("x").text() == "[-]") {
+			$("li.sf1").addClass("sfsshy");
+			$("x").text("[+]");
+			return;
+		}
+	});
+	$(".fhwxys").click(function () {
+		if ($("y").text() == "[+]") {
+			$("li.sf2").removeClass("sfwxys");
+			$("y").text("[-]");
+			return;
+		}
+		if ($("y").text() == "[-]") {
+			$("li.sf2").addClass("sfwxys");
+			$("y").text("[+]");
+			return;
+		}
+	});
+</script>
+
+</block>

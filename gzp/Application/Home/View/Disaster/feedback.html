@@ -1,0 +1,51 @@
+<extend name="Layout/sub"/>
+<block name="nav">城市防灾 / 部门建议</block>
+<block name="main">
+    <link rel="stylesheet" href="/Public/Home/Static/css/style2.css"/>
+
+    <div id="outer">
+        <include file="Layout/left_disaster"/>
+        <div id="content">
+            <ul style="display:block;">
+                <div class="aqsc">
+                    <h3>部门建议</h3>
+                    <div class="div">
+
+                        <div class="div">
+
+                            <form action="/index.php/Home/Departmentadvice/accept" method="post">
+                                <input type="hidden" name="list_id" value="城市防灾"/>
+                                <input type="hidden" name="time" value="<?php echo time() ?>"/>
+                                <input type="hidden" name="controller" value="<?php echo MODULE_NAME ?>"/>
+
+                                <ul class="form">
+                                    <li>
+                                        <div class="label">题　目：</div>
+                                        <div class="value"><input name="name" type="text"/></div>
+                                    </li>
+                                    <li>
+                                        <div class="label">建议人：</div>
+                                        <div class="value"><input name="people" type="text"/></div>
+                                    </li>
+                                    <li>
+                                        <div class="label">内　容：</div>
+                                        <div class="value"><textarea name="content" id="ue_content"></textarea></div>
+                                    </li>
+                                    <li>
+                                        <div class="label">
+                                            <input type="submit" value="提交"/>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <include file="Layout/include_ueditor" id="ue_content" />
+
+</block>

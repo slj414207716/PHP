@@ -1,0 +1,55 @@
+<extend name="Layout/base" />
+<block name="main">
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">添加</h1>
+    </div>
+</div>
+
+<form action="/index.php/Admin/Economic/jbzbEdit/id/{$Think.get.id}" method="post">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">项目</label>
+                <div class="col-sm-10">
+                    <select name="sid" class="form-control">
+                        <option value="0">--请选择--</option>
+                        <option <if condition="$data.sid eq 1">selected="selected"</if> value="1">地区生产总值</option>
+                        <option <if condition="$data.sid eq 2">selected="selected"</if> value="2">财政收入</option>
+                        <option <if condition="$data.sid eq 3">selected="selected"</if> value="3">规上工业总产值</option>
+                        <option <if condition="$data.sid eq 4">selected="selected"</if> value="4">固定资产投资</option>
+                        <option <if condition="$data.sid eq 5">selected="selected"</if> value="5">社会消费品零售额</option>
+                        <option <if condition="$data.sid eq 6">selected="selected"</if> value="6">使用内资</option>
+                        <option <if condition="$data.sid eq 7">selected="selected"</if> value="7">引进外资</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="year" class="col-sm-2 col-form-label">年份</label>
+                <div class="col-sm-10">
+                    <input type="date" name="year" id="year" class="form-control" value="{$data.time}" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="plan" class="col-sm-2 col-form-label">计划任务</label>
+                <div class="col-sm-10">
+                    <input type="text" name="plan" id="plan" class="form-control" value="{$data.plan}" placeholder="必须：填写计划任务数字部分，单位：亿元，例：100">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="real" class="col-sm-2 col-form-label">实际完成</label>
+                <div class="col-sm-10">
+                    <input type="text" name="real" id="real" class="form-control" value="{$data.real}" placeholder="选填：填写实际完成数字部分，单位：亿元，例：100">
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <button type="submit" class="btn btn-primary">提交</button>
+            <button type="button" class="btn btn-default">返回</button>
+        </div>
+    </div>
+
+</form>
+
+</block>
